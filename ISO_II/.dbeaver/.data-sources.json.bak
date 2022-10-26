@@ -1,0 +1,30 @@
+{
+	"folders": {},
+	"connections": {
+		"derby-1840b1050a1-e102e53aea2751c": {
+			"provider": "generic",
+			"driver": "derby",
+			"name": "iso2_db",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\loren\\git\\ISO2\\ISO_II\\iso2_db",
+				"url": "jdbc:derby:C:\\Users\\loren\\git\\ISO2\\ISO_II\\iso2_db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

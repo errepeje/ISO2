@@ -1,0 +1,68 @@
+{
+	"folders": {},
+	"connections": {
+		"derby-1840b1050a1-e102e53aea2751c": {
+			"provider": "generic",
+			"driver": "derby",
+			"name": "iso2_db",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\loren\\git\\ISO2\\ISO_II\\iso2_db",
+				"url": "jdbc:derby:C:\\Users\\loren\\git\\ISO2\\ISO_II\\iso2_db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"virtual-models": {
+		"derby-1840b1050a1-e102e53aea2751c": {
+			"ADMIN": {
+				"@properties": {
+					"erd.diagram.state": {
+						"serialized": "<diagram version=\"1\" name=\"empty\" time=\"202210241940\"><entities><data-source id=\"derby-1840b1050a1-e102e53aea2751c\"><entity id=\"1\" name=\"CENTRO\" fq-name=\"ADMIN.CENTRO\" order=\"0\" x=\"717\" y=\"48\"><path name=\"ADMIN\"/></entity><entity id=\"2\" name=\"CURSOPROPIO\" fq-name=\"ADMIN.CURSOPROPIO\" order=\"1\" x=\"519\" y=\"96\"><path name=\"ADMIN\"/></entity><entity id=\"3\" name=\"ESTUDIANTE\" fq-name=\"ADMIN.ESTUDIANTE\" order=\"2\" x=\"549\" y=\"372\"><path name=\"ADMIN\"/></entity><entity id=\"4\" name=\"MATERIA\" fq-name=\"ADMIN.MATERIA\" order=\"3\" x=\"154\" y=\"359\"><path name=\"ADMIN\"/></entity><entity id=\"5\" name=\"MATRICULA\" fq-name=\"ADMIN.MATRICULA\" order=\"4\" x=\"384\" y=\"314\"><path name=\"ADMIN\"/></entity><entity id=\"6\" name=\"PROFESOR\" fq-name=\"ADMIN.PROFESOR\" order=\"5\" x=\"246\" y=\"114\"><path name=\"ADMIN\"/></entity><entity id=\"7\" name=\"PROFESOREXTERNO\" fq-name=\"ADMIN.PROFESOREXTERNO\" order=\"6\" x=\"20\" y=\"181\"><path name=\"ADMIN\"/></entity><entity id=\"8\" name=\"PROFESORUCLM\" fq-name=\"ADMIN.PROFESORUCLM\" order=\"7\" x=\"20\" y=\"20\"><path name=\"ADMIN\"/></entity></data-source></entities><relations><relation name=\"CURSOPROPIO_FK\" fq-name=\"ADMIN.CURSOPROPIO.CURSOPROPIO_FK\" type=\"fk\" pk-ref=\"1\" fk-ref=\"2\"/><relation name=\"PROFESORUCLM_FK2\" fq-name=\"ADMIN.PROFESORUCLM.PROFESORUCLM_FK2\" type=\"fk\" pk-ref=\"1\" fk-ref=\"8\"><bend type=\"abs\" x=\"213\" y=\"85\"/><bend type=\"abs\" x=\"384\" y=\"85\"/><bend type=\"abs\" x=\"549\" y=\"85\"/></relation><relation name=\"MATERIA_FK\" fq-name=\"ADMIN.MATERIA.MATERIA_FK\" type=\"fk\" pk-ref=\"2\" fk-ref=\"4\"/><relation name=\"MATRICULA_FK2\" fq-name=\"ADMIN.MATRICULA.MATRICULA_FK2\" type=\"fk\" pk-ref=\"2\" fk-ref=\"5\"/><relation name=\"MATRICULA_FK\" fq-name=\"ADMIN.MATRICULA.MATRICULA_FK\" type=\"fk\" pk-ref=\"3\" fk-ref=\"5\"/><relation name=\"PROFESOR_FK\" fq-name=\"ADMIN.PROFESOR.PROFESOR_FK\" type=\"fk\" pk-ref=\"4\" fk-ref=\"6\"/><relation name=\"PROFESOREXTERNO_FK\" fq-name=\"ADMIN.PROFESOREXTERNO.PROFESOREXTERNO_FK\" type=\"fk\" pk-ref=\"6\" fk-ref=\"7\"/><relation name=\"PROFESORUCLM_FK\" fq-name=\"ADMIN.PROFESORUCLM.PROFESORUCLM_FK\" type=\"fk\" pk-ref=\"6\" fk-ref=\"8\"/><relation name=\"CURSOPROPIO_FK1\" fq-name=\"ADMIN.CURSOPROPIO.CURSOPROPIO_FK1\" type=\"fk\" pk-ref=\"6\" fk-ref=\"2\"><bend type=\"abs\" x=\"441\" y=\"222\"/></relation><relation name=\"CURSOPROPIO_FK_2\" fq-name=\"ADMIN.CURSOPROPIO.CURSOPROPIO_FK_2\" type=\"fk\" pk-ref=\"6\" fk-ref=\"2\"><bend type=\"abs\" x=\"453\" y=\"164\"/></relation></relations></diagram>"
+					}
+				},
+				":PROFESOR": {
+					"foreign-keys": [
+						{
+							"entity": "database://derby-1840b1050a1-e102e53aea2751c/ADMIN/org.jkiss.dbeaver.ext.generic.model.GenericTable/CURSOPROPIO",
+							"constraint": "CURSOPROPIO_VK",
+							"attributes": {
+								"DNI": "DIRECTOR"
+							}
+						}
+					]
+				},
+				":CURSOPROPIO": {
+					"constraints": {
+						"CURSOPROPIO_VK": {
+							"type": "vpk",
+							"attributes": [
+								"DIRECTOR"
+							]
+						},
+						"CURSOPROPIO_VK": {
+							"type": "vpk",
+							"attributes": [
+								"DIRECTOR"
+							]
+						}
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
