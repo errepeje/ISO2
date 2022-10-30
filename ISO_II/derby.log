@@ -1,19 +1,13 @@
 ----------------------------------------------------------------
-Sat Oct 15 17:49:11 CEST 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0183-dc55-c14b-00000742e2c0 
-on database directory C:\Users\loren\eclipse-workspace\ISO_II\iso2_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@22d8cfe0 
+Sun Oct 30 13:00:30 CET 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0184-28c3-c6c6-00000134c1f0 
+on database directory C:\Users\loren\git\ISO2\ISO_II\iso2_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@22d8cfe0 
 Loaded from file:/C:/Users/loren/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Eclipse Adoptium
 java.runtime.version=17.0.4+8
-user.dir=C:\Users\loren\eclipse-workspace\ISO_II
+user.dir=C:\Users\loren\git\ISO2\ISO_II
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Oct 15 17:49:12 CEST 2022: Shutting down Derby engine
-----------------------------------------------------------------
-Sat Oct 15 17:49:12 CEST 2022:
-Shutting down instance a816c00e-0183-dc55-c14b-00000742e2c0 on database directory C:\Users\loren\eclipse-workspace\ISO_II\iso2_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@22d8cfe0 
-----------------------------------------------------------------
