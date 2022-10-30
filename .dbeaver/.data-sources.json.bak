@@ -1,0 +1,29 @@
+{
+	"folders": {},
+	"connections": {
+		"derby-18428dcdbeb-7230d752d299630": {
+			"provider": "generic",
+			"driver": "derby",
+			"name": "Derby Embedded",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"url": "jdbc:derby:{folder}",
+				"configurationType": "URL",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

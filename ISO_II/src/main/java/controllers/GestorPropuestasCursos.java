@@ -112,6 +112,4 @@ public class GestorPropuestasCursos {
 	public static CursoPropio obtenerCurso(int id) {
 		return (CursoPropio) cpDAO.findById(CursoPropio.class, id);
 	}
-	
-	
 }
