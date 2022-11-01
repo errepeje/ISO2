@@ -13,6 +13,7 @@ import javax.swing.event.ListSelectionListener;
 
 import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
+import entities.EstadoCurso;
 
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
@@ -270,6 +271,8 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		btnAprobarPropuesta.setEnabled(false);
 		btnAprobarPropuesta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				GPC.evaluarPropuesta(cp.get_id(),EstadoCurso.VALIDADO); //Curso aceptado
+				//¿Feedback?
 			}
 		});
 		btnAprobarPropuesta.setBounds(205, 574, 89, 23);
@@ -277,10 +280,17 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		
 		JButton btnRechazarPropuesta = new JButton("Rechazar");
 		btnRechazarPropuesta.setEnabled(false);
+		btnRechazarPropuesta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//cambiar boton a enviar , lockear boton de aceptar y activar la caja de comentarios
+				//evento dentro de evento con boton de enviar y actualizar datos
+			}
+		});
 		btnRechazarPropuesta.setBounds(320, 574, 89, 23);
 		contentPane.add(btnRechazarPropuesta);
 		
 		textCommentario = new JTextField();
+		textCommentario.setEnabled(false);
 		textCommentario.setHorizontalAlignment(SwingConstants.LEFT);
 		textCommentario.setText("Comentario:");
 		textCommentario.setBounds(10, 547, 166, 77);
@@ -317,6 +327,8 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 					textFieldDiaFin.setText(solF[0]);
 					textFieldMesFin.setText(Integer.toString(cp.get_fechaFin().getMonth() + 1));
 					textFieldAnyoFin.setText(Integer.toString(cp.get_fechaFin().getYear() + 1900));
+					btnAprobarPropuesta.setEnabled(true);
+					btnRechazarPropuesta.setEnabled(true);
 
 				}
 			}
