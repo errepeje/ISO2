@@ -3,11 +3,20 @@ package controllers;
 import java.util.Date;
 import java.util.List;
 
+import entities.Centro;
 import entities.CursoPropio;
 import entities.TipoCurso;
+import persistencia.CentroDAO;
+import persistencia.CursoPropioDAO;
+import persistencia.ProfesorDAO;
 import entities.EstadoCurso;
+import entities.ProfesorUCLM;
 
 public class GestorConsultas {
+	
+	static CursoPropioDAO cpDAO = new CursoPropioDAO<CursoPropio>();
+	static CentroDAO cDAO = new CentroDAO<Centro>();
+	static ProfesorDAO pDAO = new ProfesorDAO<ProfesorUCLM>();
 
 	public List<CursoPropio> consultarIngresos(TipoCurso aTipo, Date aFechaInicio, Date aFechaFin) {
 		throw new UnsupportedOperationException();
@@ -20,4 +29,42 @@ public class GestorConsultas {
 	public List<CursoPropio> listarEdicionesCursos(Date aFechaInicio, Date aFechaFin) {
 		throw new UnsupportedOperationException();
 	}
+	
+	
+	
+	public static int[] obtenerCursos() {
+		/*Ahora muestra todos los cursos -> hay q cambiarlo
+		 * para que muestre unicamente los denegados*/
+		int i = 0;
+		
+		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
+		int[] id = new int[cursos.size()];
+		
+		for(CursoPropio c: cursos) {
+			id[i] = c.get_id();
+			i++;
+		}
+		
+		return id;
+	}
+	
+	
+	
+	
+	
+	public static int[] obtenerEdicion() {
+		/*Ahora muestra todos los cursos -> hay q cambiarlo
+		 * para que muestre unicamente los denegados*/
+		int i = 0;
+		
+		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
+		int[] Edicion = new int[cursos.size()];
+		
+		for(CursoPropio c: cursos) {
+			Edicion[i] = c.get_edicion();
+			i++;
+		}
+		
+		return Edicion;
+		}
 }
