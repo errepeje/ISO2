@@ -288,25 +288,6 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 		for(int i=0; i<AllEstados.length; i++)
 			EstadosBox.addItem(AllEstados[i]);
 		
-		
-		
-		JButton btnprueba = new JButton("Buscar");
-		btnprueba.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				listModel.removeAllElements();
-		
-				
-				
-		
-				
-				
-				
-				
-			}
-		});
-		btnprueba.setBounds(475, 116, 87, 21);
-		panel.add(btnprueba);
-		
 		JTextPane txtpnIntroduceUnValor = new JTextPane();
 		txtpnIntroduceUnValor.setText("estado de curso deseado:");
 		txtpnIntroduceUnValor.setBackground(new Color(240, 240, 240));

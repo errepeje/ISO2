@@ -84,7 +84,37 @@ public class GestorConsultas {
 		}
 	
 	
+	public static String[] obtenerTipoCurso() {
+		/*Ahora muestra todos los cursos -> hay q cambiarlo
+		 * para que muestre unicamente los denegados*/
+		int i = 0;
+		
+		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
+		String[] TipoCurso = new String[cursos.size()];
+		
+		for(CursoPropio c: cursos) {
+			TipoCurso[i] = c.get_tipo().toString();
+			i++;
+		}
+		
+		return TipoCurso;
+		}
 	
+	public static int[] obtenerIngresos() {
+		/*Ahora muestra todos los cursos -> hay q cambiarlo
+		 * para que muestre unicamente los denegados*/
+		int i = 0;
+		
+		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
+		int[] Ingresos = new int[cursos.size()];
+		
+		for(CursoPropio c: cursos) {
+			Ingresos[i] = c.get_tasaMatricula();
+			i++;
+		}
+		
+		return Ingresos;
+		}
 	
 	
 	
