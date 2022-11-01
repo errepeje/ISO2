@@ -76,6 +76,12 @@ public class PantallaDireccionCursos extends JFrame {
         		frame.getContentPane().add(btnEditarCurso);
         		
         		JButton btnVisualizar = new JButton("VISUALIZAR PROPUESTA");
+        		btnVisualizar.addActionListener(new ActionListener() {
+        			public void actionPerformed(ActionEvent arg0) {
+        				
+        				visualizarPropuesta();
+        			}
+        		});
         		btnVisualizar.setBounds(67, 115, 153, 23);
         		frame.getContentPane().add(btnVisualizar);
         		btnEditarCurso.addActionListener(new ActionListener() {
@@ -133,6 +139,11 @@ public class PantallaDireccionCursos extends JFrame {
     }
 	
 	public static void crearEdicionCursoFrame() {
-        
+       
+    }
+	
+	public static void visualizarPropuesta() {
+		
+		 PantallaVisualizarPropuesta.main(null);
     }
 }
