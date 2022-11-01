@@ -19,7 +19,11 @@ import javax.swing.SwingConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,7 +34,9 @@ import java.awt.Component;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
-public class PantallaConsultarCursos_Ediciones extends JFrame {
+
+public class PantallaConsultarRechazadoAceptado extends JFrame {
+
 
 	private JPanel panel;
 	private JTextField textFieldDiaInicio;
@@ -51,7 +57,6 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 	private JTextField textNombreCentro;
 	private JTextField textDirector;
 	private JTextField textFieldSecretario;
-	private JTextField prueba2;
 	/**
 	 * Launch the application.
 	 */
@@ -59,7 +64,7 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PantallaConsultarCursos_Ediciones frame = new PantallaConsultarCursos_Ediciones();
+					PantallaConsultarRechazadoAceptado frame = new PantallaConsultarRechazadoAceptado();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -72,8 +77,8 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 	 * Create the frame.
 	 */
 	@SuppressWarnings("deprecation")
-	public PantallaConsultarCursos_Ediciones() {
-		setTitle("Edición de un curso");
+	public PantallaConsultarRechazadoAceptado() {
+		setTitle("Seleccion cursos estados");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 728, 597);
 		panel = new JPanel();
@@ -274,6 +279,17 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		textFieldTasa.setEditable(false);
 		
 		
+		
+		
+		JComboBox EstadosBox = new JComboBox();
+		EstadosBox.setBounds(475, 85, 207, 21);
+		panel.add(EstadosBox);
+		String [] AllEstados = {"PROPUESTO", "VALIDADO", "PROPUESTA_RECHAZADA", "EN_MATRICULACIÓN", "EN_IMPARTICIÓN", "TERMINADO"};
+		for(int i=0; i<AllEstados.length; i++)
+			EstadosBox.addItem(AllEstados[i]);
+		
+		
+		
 		JButton btnprueba = new JButton("Buscar");
 		btnprueba.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -281,14 +297,46 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		
 				
 				
+		
+				
+				
+				
+				
+			}
+		});
+		btnprueba.setBounds(475, 116, 87, 21);
+		panel.add(btnprueba);
+		
+		JTextPane txtpnIntroduceUnValor = new JTextPane();
+		txtpnIntroduceUnValor.setText("estado de curso deseado:");
+		txtpnIntroduceUnValor.setBackground(new Color(240, 240, 240));
+		txtpnIntroduceUnValor.setBounds(531, 60, 218, 19);
+		panel.add(txtpnIntroduceUnValor);
+		
+
+		
+
+		
+		
+
+		/* ACCIONES */
+		EstadosBox.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent itemEvent) {
+				String opcion = EstadosBox.getSelectedItem().toString();
+
+		
 				int[] idCursos = GC.obtenerCursos();
-				int[] edicionCursos = GC.obtenerEdicion();
-				//for(int i=0; i<idCursos.length; i++) {
-					for(int j=0; j<edicionCursos.length; j++) {
-						if (edicionCursos[j]== Integer.parseInt(prueba2.getText())){
-						
+				String[] estadoCursos = GC.obtenerEstado();
+		switch(opcion) {						
+			case "PROPUESTO":
+
+				listModel.removeAllElements();
+				
+				 idCursos = GC.obtenerCursos();
+				 estadoCursos = GC.obtenerEstado();
+					for(int j=0; j<estadoCursos.length; j++) {
+						if (estadoCursos[j]== "PROPUESTO"){
 							listModel.addElement(idCursos[j]);
-				//	}
 						
 				}
 					
@@ -297,26 +345,101 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 				
 				
 				
+				break;
+			case "VALIDADO":
 				
-			}
-		});
-		btnprueba.setBounds(531, 227, 87, 21);
-		panel.add(btnprueba);
-		
-		prueba2 = new JTextField();
-		prueba2.setBounds(518, 201, 109, 19);
-		panel.add(prueba2);
-		prueba2.setColumns(10);
-		
-		JTextPane txtpnIntroduceUnValor = new JTextPane();
-		txtpnIntroduceUnValor.setText("edición a buscar:");
-		txtpnIntroduceUnValor.setBackground(new Color(240, 240, 240));
-		txtpnIntroduceUnValor.setBounds(531, 179, 218, 19);
-		panel.add(txtpnIntroduceUnValor);
-		
+				listModel.removeAllElements();
+				
+				idCursos = GC.obtenerCursos();
+				estadoCursos = GC.obtenerEstado();
+					for(int j=0; j<estadoCursos.length; j++) {
+						if (estadoCursos[j]== "VALIDADO"){
+							listModel.addElement(idCursos[j]);
+						
+				}
+					
+				}
+				
+				break;
+			case "PROPUESTA_RECHAZADA":
+				listModel.removeAllElements();
+				
+				idCursos = GC.obtenerCursos();
+				estadoCursos = GC.obtenerEstado();
+					for(int j=0; j<estadoCursos.length; j++) {
+						if (estadoCursos[j]== "PROPUESTA_RECHAZADA"){
+							listModel.addElement(idCursos[j]);
+						
+				}
+					
+				}
+				
+				break;
+				
 	
+			case "EN_MATRICULACIÓN":
+				listModel.removeAllElements();
+				
+				idCursos = GC.obtenerCursos();
+				estadoCursos = GC.obtenerEstado();
+					for(int j=0; j<estadoCursos.length; j++) {
+						if (estadoCursos[j]== "EN_MATRICULACIÓN"){
+							listModel.addElement(idCursos[j]);
+						
+				}
+					
+				}
+				break;
+				
+				
+			case "EN_IMPARTICIÓN":
+				listModel.removeAllElements();
+				
+				idCursos = GC.obtenerCursos();
+				estadoCursos = GC.obtenerEstado();
+					for(int j=0; j<estadoCursos.length; j++) {
+						if (estadoCursos[j]== "EN_IMPARTICIÓN"){
+							listModel.addElement(idCursos[j]);
+						
+				}
+					
+				}
+				break;
+				
+				
+			case "TERMINADO":
+				listModel.removeAllElements();
+				
+				idCursos = GC.obtenerCursos();
+				estadoCursos = GC.obtenerEstado();
+					for(int j=0; j<estadoCursos.length; j++) {
+						if (estadoCursos[j]== "TERMINADO"){
+							listModel.addElement(idCursos[j]);
+						
+				}
+					
+				}
+					
+					
+				break;	
+		}
 
-		/* ACCIONES */
+		}
+	});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		listCursos.addListSelectionListener(new ListSelectionListener() {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {

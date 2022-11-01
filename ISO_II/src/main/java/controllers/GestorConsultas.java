@@ -33,8 +33,7 @@ public class GestorConsultas {
 	
 	
 	public static int[] obtenerCursos() {
-		/*Ahora muestra todos los cursos -> hay q cambiarlo
-		 * para que muestre unicamente los denegados*/
+
 		int i = 0;
 		
 		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
@@ -67,4 +66,37 @@ public class GestorConsultas {
 		
 		return Edicion;
 		}
+	
+	public static String[] obtenerEstado() {
+		/*Ahora muestra todos los cursos -> hay q cambiarlo
+		 * para que muestre unicamente los denegados*/
+		int i = 0;
+		
+		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
+		String[] Estado = new String[cursos.size()];
+		
+		for(CursoPropio c: cursos) {
+			Estado[i] = c.get_estado().toString();
+			i++;
+		}
+		
+		return Estado;
+		}
+	
+	
+	
+	
+	
+	
+	public static CursoPropio obtenerCursos(int id) {
+		return (CursoPropio) cpDAO.findById(CursoPropio.class, id);
+	}
+	
+	
+	
+
+	
+	
+	
+	
 }
