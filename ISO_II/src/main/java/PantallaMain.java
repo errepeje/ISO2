@@ -53,9 +53,9 @@ public class PantallaMain extends JFrame {
 		contentPanel.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Vicerrectorado");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				PantallaEmpleadosVicerrectorado.main();
+				PantallaEmpleadosVicerrectorado.main(null);
 			}
 		});
 		contentPanel.add(btnNewButton);

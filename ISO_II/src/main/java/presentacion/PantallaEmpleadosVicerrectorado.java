@@ -105,22 +105,10 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 	        		frame.getContentPane().add(btnVisualizar);
 	        		btnEditarCurso.addActionListener(new ActionListener() {
 	        			public void actionPerformed(ActionEvent e) {
-//	        				crearEdicionCursoFrame();
 	        			}
 	        		});
 	  
 	            }
 	        });
 	    }
-	public Date darFormatoFecha(String cadena) {
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
-		Date fecha = null;
-		try {
-			fecha = formato.parse(cadena);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-
-		return fecha;
-	}
 }
