@@ -60,7 +60,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 	     EventQueue.invokeLater(new Runnable() {
 	            @Override
 	            public void run() {
-	                JFrame frame = new JFrame("Dirección Cursos");
+	                JFrame frame = new JFrame("Vicerrectorado");
 	                frame.setResizable(false);
 	                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	                frame.setVisible(true);
@@ -71,12 +71,12 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 	                   e.printStackTrace();
 	                }
 	                
-	                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	        		frame.setBounds(100, 100, 299, 194);
 	        		contentPanel = new JPanel();
 	        		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 	                
-	                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	        		frame.getContentPane().setLayout(null);
 	        		
 	        		JLabel lblTitulo = new JLabel("¿QUÉ DESEA HACER?");

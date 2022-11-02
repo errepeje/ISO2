@@ -7,6 +7,7 @@ import javax.swing.border.EmptyBorder;
 import presentacion.PantallaConsultarCursos;
 import presentacion.PantallaConsultarCursos_Ingresos;
 import presentacion.PantallaDireccionCursos;
+import presentacion.PantallaEmpleadosVicerrectorado;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -59,8 +60,13 @@ public class PantallaMain extends JFrame {
 		});
 		contentPanel.add(btnJefegabinete);
 		
-		JButton btnNewButton = new JButton("New button");
-		contentPanel.add(btnNewButton);
+		JButton btnVicerrectorado = new JButton("Vicerrectorado");
+		btnVicerrectorado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PantallaEmpleadosVicerrectorado.main(null);
+			}
+		});
+		contentPanel.add(btnVicerrectorado);
 	}
 
 }

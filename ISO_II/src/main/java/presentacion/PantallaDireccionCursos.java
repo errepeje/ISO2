@@ -46,12 +46,12 @@ public class PantallaDireccionCursos extends JFrame {
                    e.printStackTrace();
                 }
                 
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         		frame.setBounds(100, 100, 299, 194);
         		contentPanel = new JPanel();
         		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
                 
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         		frame.getContentPane().setLayout(null);
         		
         		JLabel lblTitulo = new JLabel("¿QUÉ DESEA HACER?");
@@ -103,7 +103,6 @@ public class PantallaDireccionCursos extends JFrame {
     }
 	
 	public static void visualizarPropuesta() {
-		
 		 PantallaVisualizarPropuesta.main(null);
     }
 }
