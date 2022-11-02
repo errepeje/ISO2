@@ -78,6 +78,30 @@ public class CursoPropio {
 		this.idDirector = _director.get_dni();
 		this.idSecretario = _secretario.get_dni();
 	}
+	
+	public String getNombreCentro() {
+		return nombreCentro;
+	}
+
+	public void setNombreCentro(String nombreCentro) {
+		this.nombreCentro = nombreCentro;
+	}
+
+	public String getIdDirector() {
+		return idDirector;
+	}
+
+	public void setIdDirector(String idDirector) {
+		this.idDirector = idDirector;
+	}
+
+	public String getIdSecretario() {
+		return idSecretario;
+	}
+
+	public void setIdSecretario(String idSecretario) {
+		this.idSecretario = idSecretario;
+	}
 
 	public String getNombreCentro() {
 		return nombreCentro;
