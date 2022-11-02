@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import presentacion.PantallaDireccionCursos;
+import presentacion.*;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -52,7 +52,12 @@ public class PantallaMain extends JFrame {
 		JButton btnNewButton_1 = new JButton("New button");
 		contentPanel.add(btnNewButton_1);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Vicerrectorado");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				PantallaEmpleadosVicerrectorado.main();
+			}
+		});
 		contentPanel.add(btnNewButton);
 	}
 
