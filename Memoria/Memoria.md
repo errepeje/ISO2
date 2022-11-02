@@ -18,7 +18,7 @@
 #### **UML ACTUALIZADO:**
 ![](Aspose.Words.5f0b6885-34f2-4041-8844-0c546775ad86.001.jpeg)
 
-#### **BACKLOG DEL SPRINT 1****
+#### **BACKLOG DEL SPRINT 1**
 
 - **Características del sprint:**
 
@@ -46,7 +46,7 @@ Este sprint puede que tenga estimaciones de tiempo y carga de trabajo por sprint
 
 ![](https://i.imgur.com/RF1PyU9.png)
 
-#### **BACKLOG DEL SPRINT 2****
+#### **BACKLOG DEL SPRINT 2**
 
 - **Características del sprint:**
 
@@ -69,7 +69,7 @@ Al acabarlo, será planteada una corta reunión retrospectiva sobre el sprint pa
 
 Este sprint puede que tenga estimaciones de tiempo y carga de trabajo por sprint incorrecto o inapropiado, en los próximos sprints backlogs, deberemos tener en cuenta lo aprendido en este sprint para mejorar la planificación.
 
-![](Aspose.Words.5f0b6885-34f2-4041-8844-0c546775ad86.002.jpeg)
+![](https://i.imgur.com/TNo3iNI.png)
 
 - **Características del sprint:**
 
