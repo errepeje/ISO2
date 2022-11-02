@@ -50,27 +50,6 @@ Este sprint puede que tenga estimaciones de tiempo y carga de trabajo por sprint
 
 - **Características del sprint:**
 
-Duración: 2 semanas (28/09/22 - 17/10/22). Estimación de tiempo de trabajo: 12 horas.
-
-Tomaremos este sprint como una prueba para los próximos sprints, así aprenderemos a estimar mejor la carga de trabajo por objetivo y la cantidad de objetivos que somos capaces de cumplir.
-
-Al acabarlo, será planteada una corta reunión retrospectiva sobre el sprint para analizar nuestro desempeño y efectividad a la hora de cumplir los objetivos en el plazo acordado. Con esto podremos preparar mejor el backlog del sprint 2.
-
-- **Objetivos del Sprint:**
-  - Seguir y llevar al día las clases de laboratorio.
-  - Crear proyecto Maven.
-  - Configurar y crear repositorio git.
-  - Generar el esqueleto del código.
-  - Crear y configurar la base de datos.
-  - Comenzar con los casos de uso (realizar propuestas de curso, editar propuestas de curso, visualizar propuesta de curso). El número de casos que realicemos en este sprint podrá cambiar si vemos imposible realizarlos todos en este periodo de tiempo.
-  - Plantear si es necesaria una revisión del sprint con el cliente.
-
-**Notas:**
-
-Este sprint puede que tenga estimaciones de tiempo y carga de trabajo por sprint incorrecto o inapropiado, en los próximos sprints backlogs, deberemos tener en cuenta lo aprendido en este sprint para mejorar la planificación.
-
-- **Características del sprint:**
-
 Duración: 2 semanas (19/10/22- 1/11/22). Estimación de tiempo de trabajo: 13 horas.
 
 En este sprint revisaremos y finalizaremos casos de uso comenzados en el sprint 1 además de finalizar nuevos casos de uso.
