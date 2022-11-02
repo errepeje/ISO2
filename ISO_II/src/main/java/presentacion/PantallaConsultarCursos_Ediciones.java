@@ -94,7 +94,7 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		
 		
 		JList listCursos = new JList(listModel);
-		listCursos.setBounds(10, 11, 166, 525);
+		listCursos.setBounds(10, 94, 166, 442);
 		panel.add(listCursos);
 
 		JLabel lblFechaInicio = new JLabel("Fecha de inicio (dd-mm-yyyy): ");
@@ -300,19 +300,18 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 				
 			}
 		});
-		btnprueba.setBounds(531, 227, 87, 21);
+		btnprueba.setBounds(10, 61, 87, 21);
 		panel.add(btnprueba);
 		
 		prueba2 = new JTextField();
-		prueba2.setBounds(518, 201, 109, 19);
+		prueba2.setBounds(10, 29, 109, 19);
 		panel.add(prueba2);
 		prueba2.setColumns(10);
 		
-		JTextPane txtpnIntroduceUnValor = new JTextPane();
-		txtpnIntroduceUnValor.setText("edición a buscar:");
-		txtpnIntroduceUnValor.setBackground(new Color(240, 240, 240));
-		txtpnIntroduceUnValor.setBounds(531, 179, 218, 19);
-		panel.add(txtpnIntroduceUnValor);
+		JLabel lblEdicinABuscar = new JLabel("Edición a buscar:");
+		lblEdicinABuscar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEdicinABuscar.setBounds(10, 10, 279, 19);
+		panel.add(lblEdicinABuscar);
 		
 	
 

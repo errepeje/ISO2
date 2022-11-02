@@ -99,7 +99,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 		
 		
 		JList listCursos = new JList(listModel);
-		listCursos.setBounds(10, 11, 166, 525);
+		listCursos.setBounds(10, 82, 166, 454);
 		panel.add(listCursos);
 
 		JLabel lblFechaInicio = new JLabel("Fecha de inicio (dd-mm-yyyy): ");
@@ -282,17 +282,16 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 		
 		
 		JComboBox EstadosBox = new JComboBox();
-		EstadosBox.setBounds(475, 85, 207, 21);
+		EstadosBox.setBounds(10, 39, 166, 21);
 		panel.add(EstadosBox);
-		String [] AllEstados = {"PROPUESTO", "VALIDADO", "PROPUESTA_RECHAZADA", "EN_MATRICULACIÓN", "EN_IMPARTICIÓN", "TERMINADO"};
+		String [] AllEstados = {"NINGUN CURSO","PROPUESTO", "VALIDADO", "PROPUESTA_RECHAZADA", "EN_MATRICULACIÓN", "EN_IMPARTICIÓN", "TERMINADO"};
 		for(int i=0; i<AllEstados.length; i++)
 			EstadosBox.addItem(AllEstados[i]);
 		
-		JTextPane txtpnIntroduceUnValor = new JTextPane();
-		txtpnIntroduceUnValor.setText("estado de curso deseado:");
-		txtpnIntroduceUnValor.setBackground(new Color(240, 240, 240));
-		txtpnIntroduceUnValor.setBounds(531, 60, 218, 19);
-		panel.add(txtpnIntroduceUnValor);
+		JLabel lblEstadoDeCurso = new JLabel("Estado de curso:");
+		lblEstadoDeCurso.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEstadoDeCurso.setBounds(10, 11, 279, 19);
+		panel.add(lblEstadoDeCurso);
 		
 
 		
@@ -309,6 +308,15 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 				int[] idCursos = GC.obtenerCursos();
 				String[] estadoCursos = GC.obtenerEstado();
 		switch(opcion) {						
+			
+			case "NINGUN CURSO":
+
+			listModel.removeAllElements();
+		
+			break;
+		
+		
+		
 			case "PROPUESTO":
 
 				listModel.removeAllElements();

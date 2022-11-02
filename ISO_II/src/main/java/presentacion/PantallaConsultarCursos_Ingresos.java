@@ -100,7 +100,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		
 		
 		JList listCursos = new JList(listModel);
-		listCursos.setBounds(10, 11, 166, 525);
+		listCursos.setBounds(10, 109, 166, 427);
 		panel.add(listCursos);
 
 		JLabel lblFechaInicio = new JLabel("Fecha de inicio (dd-mm-yyyy): ");
@@ -283,28 +283,26 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		
 		
 		JComboBox TiposBox = new JComboBox();
-		TiposBox.setBounds(475, 85, 207, 21);
+		TiposBox.setBounds(10, 28, 166, 21);
 		panel.add(TiposBox);
-		String [] AllEstados = {"MASTER", "EXPERTO", "ESPECIALISTA", "FORMACION_AVANZADA", "FORMACION_CONTINUA", "MICROCREDENCIALES", "CORTA_DURACION"};
+		String [] AllEstados = {"NINGUN CURSO", "MASTER", "EXPERTO", "ESPECIALISTA", "FORMACION_AVANZADA", "FORMACION_CONTINUA", "MICROCREDENCIALES", "CORTA_DURACION"};
 		for(int i=0; i<AllEstados.length; i++)
 			TiposBox.addItem(AllEstados[i]);
 		
-		JTextPane txtpnIntroduceUnValor = new JTextPane();
-		txtpnIntroduceUnValor.setText("Tipo de curso deseado:");
-		txtpnIntroduceUnValor.setBackground(new Color(240, 240, 240));
-		txtpnIntroduceUnValor.setBounds(475, 60, 218, 19);
-		panel.add(txtpnIntroduceUnValor);
-		
 		txtIngresos = new JTextField();
-		txtIngresos.setBounds(475, 134, 96, 19);
+		txtIngresos.setBounds(10, 82, 96, 19);
 		panel.add(txtIngresos);
 		txtIngresos.setColumns(10);
 		
-		JTextPane txtpnIngresosTotales = new JTextPane();
-		txtpnIngresosTotales.setBackground(new Color(240, 240, 240));
-		txtpnIngresosTotales.setText("Ingresos totales:");
-		txtpnIngresosTotales.setBounds(475, 115, 96, 19);
-		panel.add(txtpnIngresosTotales);
+		JLabel lblTipoDeCurso_1 = new JLabel("Tipo de curso:");
+		lblTipoDeCurso_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTipoDeCurso_1.setBounds(10, 11, 279, 19);
+		panel.add(lblTipoDeCurso_1);
+		
+		JLabel lblIngresosTotales = new JLabel("Ingresos totales:");
+		lblIngresosTotales.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblIngresosTotales.setBounds(10, 59, 279, 19);
+		panel.add(lblIngresosTotales);
 		
 
 		
@@ -322,6 +320,14 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				int[] IngresosCursos = GC.obtenerIngresos();
 				String[] TipoCursos = GC.obtenerTipoCurso();
 		switch(opcion) {						
+			
+		
+			case "NINGUN CURSO":
+
+				listModel.removeAllElements();
+	
+			break;
+		
 			case "MASTER":
 				txtIngresos.setText(null);
 				listModel.removeAllElements();
