@@ -69,8 +69,6 @@ Al acabarlo, será planteada una corta reunión retrospectiva sobre el sprint pa
 
 Este sprint puede que tenga estimaciones de tiempo y carga de trabajo por sprint incorrecto o inapropiado, en los próximos sprints backlogs, deberemos tener en cuenta lo aprendido en este sprint para mejorar la planificación.
 
-![](https://i.imgur.com/TNo3iNI.png)
-
 - **Características del sprint:**
 
 Duración: 2 semanas (19/10/22- 1/11/22). Estimación de tiempo de trabajo: 13 horas.
@@ -95,7 +93,7 @@ Al acabarlo, plantearemos una corta reunión retrospectiva sobre el sprint para 
 
 Este sprint está centrado en generar código y realizar los casos de uso necesario para él proyecto. Con esta entrega estamos proporcionando un prototipo, en busca de feedback del cliente para realizar cambios y mejoras.
 
-![](Aspose.Words.5f0b6885-34f2-4041-8844-0c546775ad86.003.jpeg)
+![](https://i.imgur.com/TNo3iNI.png)
 
 
 #### **PLAN DE GESTIÓN DE CONFIGURACIÓN:** 
