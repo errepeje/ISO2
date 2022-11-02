@@ -49,8 +49,10 @@ public class GestorPropuestasCursos {
 		cpDAO.update(aCurso);
 	}
 
-	public EstadoCurso evaluarPropuesta(CursoPropio aCurso) {
-		throw new UnsupportedOperationException();
+	public void evaluarPropuesta(int idCurso, EstadoCurso evaluacion) { 
+		CursoPropio evaluado = (CursoPropio) cpDAO.findById(CursoPropio.class, idCurso);
+		evaluado.set_estado(evaluacion);
+		editarPropuestaCurso(evaluado);
 	}
 
 	public void altaCursoAprobado(CursoPropio aCurso) {
