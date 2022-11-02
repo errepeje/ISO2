@@ -285,7 +285,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		JComboBox TiposBox = new JComboBox();
 		TiposBox.setBounds(10, 28, 166, 21);
 		panel.add(TiposBox);
-		String [] AllEstados = {"NINGUN CURSO", "MASTER", "EXPERTO", "ESPECIALISTA", "FORMACION_AVANZADA", "FORMACION_CONTINUA", "MICROCREDENCIALES", "CORTA_DURACION"};
+		String [] AllEstados = {"NINGUN CURSO", "MASTER", "EXPERTO", "ESPECIALISTA", "FORMACION_AVANZADA", "FORMACION_CONTINUA", "MICROCREDENCIALES", "CORTA_DURACION","VERANO_Y_EXTENSION"};
 		for(int i=0; i<AllEstados.length; i++)
 			TiposBox.addItem(AllEstados[i]);
 		
@@ -481,6 +481,27 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j]== "CORTA_DURACION"){
+							listModel.addElement(idCursos[j]);
+							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							
+						
+				}
+					
+				}
+				
+				txtIngresos.setText(Integer.toString(ingresosTotales));	
+
+				break;	
+			case "VERANO_Y_EXTENSION":
+				txtIngresos.setText(null);
+				listModel.removeAllElements();
+				ingresosTotales=0;
+				
+				 idCursos = GC.obtenerCursos();
+				 IngresosCursos = GC.obtenerIngresos();
+				 TipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<IngresosCursos.length; j++) {
+						if (TipoCursos[j]== "VERANO_Y_EXTENSION"){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							

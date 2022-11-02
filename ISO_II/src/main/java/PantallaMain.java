@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import presentacion.PantallaConsultarCursos;
+import presentacion.PantallaConsultarCursos_Ingresos;
 import presentacion.PantallaDireccionCursos;
 
 import javax.swing.JButton;
@@ -49,8 +51,13 @@ public class PantallaMain extends JFrame {
 		});
 		contentPanel.add(btnDirector);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		contentPanel.add(btnNewButton_1);
+		JButton btnJefegabinete = new JButton("Jefe de gabinete ");
+		btnJefegabinete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PantallaConsultarCursos.main(null);
+			}
+		});
+		contentPanel.add(btnJefegabinete);
 		
 		JButton btnNewButton = new JButton("New button");
 		contentPanel.add(btnNewButton);

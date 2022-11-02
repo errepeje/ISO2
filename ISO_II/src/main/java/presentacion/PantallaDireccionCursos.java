@@ -96,50 +96,10 @@ public class PantallaDireccionCursos extends JFrame {
 	
 	public static void crearAltaCursoFrame() {
 		PantallaAltaCurso.main(null);
-		
-		
-		
-//        EventQueue.invokeLater(new Runnable() {
-//            @Override
-//            public void run() {
-//                JFrame frame = new JFrame("Alta Curso");
-//                frame.setResizable(false);
-//                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-//                frame.setVisible(true);
-//                
-//                try  {
-//                   UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//                } catch (Exception e) {
-//                   e.printStackTrace();
-//                }
-//                
-//        		frame.setBounds(100, 100, 299, 194);
-//        		contentPanel = new JPanel();
-//        		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
-//                
-//        		frame.getContentPane().setLayout(null);
-//        		
-//        		JLabel lblTitulo = new JLabel("¿QUÉ DESEA HACER?");
-//        		lblTitulo.setBackground(SystemColor.activeCaption);
-//        		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-//        		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 17));
-//        		lblTitulo.setBounds(0, 0, 280, 36);
-//        		frame.getContentPane().add(lblTitulo);
-//        		
-//        		JButton btnEditarCurso = new JButton("EDITAR CURSO");
-//        		btnEditarCurso.setBounds(67, 81, 153, 23);
-//        		frame.getContentPane().add(btnEditarCurso);
-//        		
-//        		JButton btnRealizarPropuesta = new JButton("REALIZAR PROPUESTA");
-//        		btnRealizarPropuesta.setBounds(67, 47, 153, 23);
-//        		frame.getContentPane().add(btnRealizarPropuesta);
-//        		
-//            }
-//        });
     }
 	
 	public static void crearEdicionCursoFrame() {
-       
+       PantallaEditarCurso.main(null);
     }
 	
 	public static void visualizarPropuesta() {
