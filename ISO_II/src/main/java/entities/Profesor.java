@@ -1,21 +1,15 @@
 package entities;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
-import persistencia.ProfesorDAO;
-
 @Entity
 @Table(name="profesor")
 @Inheritance(strategy=InheritanceType.JOINED)
-//@DiscriminatorColumn(name="dni", discriminatorType=DiscriminatorType.INTEGER)
-public class Profesor {
+public class Profesor extends Usuario {
 	@Id
 	@Column(name="dni")
 	private String _dni;

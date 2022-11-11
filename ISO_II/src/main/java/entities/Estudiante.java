@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="estudiante")
 
-public class Estudiante {
+public class Estudiante extends Usuario {
 	private String _dni;
 	private String _nombre;
 	private String _apellidos;
