@@ -104,13 +104,16 @@ public class PantallaLogin extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String typeOfUser = "";
 				try {
-					uID=gL.iniciarSesion(textFieldUser.getText(),textFieldPass.getText());
+					uID = gL.iniciarSesion(textFieldUser.getText(),textFieldPass.getText());
+					typeOfUser = gL.obtenerTipoUsuario(uID);
 					if (typeOfUser.equals("JefeGabinete")) 
 						PantallaConsultarCursos.main(null);
 					if (typeOfUser.equals("Vicerrectorado")) 
 						PantallaEmpleadosVicerrectorado.main(null);
 					if (typeOfUser.equals("Profesor"))
 						PantallaDireccionCursos.crearMainFrame();
+					if (typeOfUser.equals("Estudiante"))
+						System.out.println("nice");
 				}catch (Exception exception) {
 					exception.printStackTrace();
 					lblErrorLogin.setVisible(true);

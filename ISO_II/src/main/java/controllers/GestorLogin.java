@@ -1,10 +1,11 @@
 package controllers;
 
 import entities.CursoPropio;
+import entities.Estudiante;
+import entities.JefeGabinete;
+import entities.PersonalVicerrectorado;
 import entities.ProfesorUCLM;
 import entities.Usuario;
-import persistencia.CursoPropioDAO;
-import persistencia.ProfesorDAO;
 import persistencia.UsuarioDAO;
 
 public class GestorLogin {
@@ -14,7 +15,6 @@ public class GestorLogin {
 //	static JefeGabinete jgDAO = new JefeGabineteDAO<JefeGabinete>();
 //	static PersonalVicerrectoradoDAO pvDAO = new PersonalVicerrectoradoDAO<PersonalVicerrectorado>();
 	static UsuarioDAO uDAO = new UsuarioDAO<Usuario>();
-	static ProfesorDAO pDAO = new ProfesorDAO<ProfesorUCLM>();
 	
 	public static String iniciarSesion (String nick, String password) throws Exception {
 		String uID="";
@@ -24,5 +24,20 @@ public class GestorLogin {
 		else
 			throw new Exception ("Usuario o contraseña incorrectos");
 		return uID;
+	}
+	public static String obtenerTipoUsuario (String uID) {
+//		Estudiante e = (Estudiante) uDAO.findById(Estudiante.class, uID);
+		ProfesorUCLM pU = (ProfesorUCLM) uDAO.findById(ProfesorUCLM.class, uID);
+		PersonalVicerrectorado p = (PersonalVicerrectorado) uDAO.findById(PersonalVicerrectorado.class, uID);
+		JefeGabinete jG = (JefeGabinete) uDAO.findById(JefeGabinete.class, uID);
+//		if (e != null)
+//			return "Estudiante";
+		if (pU != null)
+			return "Profesor";
+		if (p != null)
+			return "Vicerrectorado";
+		if (jG != null)
+			return "JefeGabinete";
+		return "";
 	}
 }

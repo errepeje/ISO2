@@ -4,17 +4,27 @@ import java.util.Vector;
 
 
 import entities.Matricula;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 @Table(name="estudiante")
+@PrimaryKeyJoinColumn(name = "dni")
 
 public class Estudiante extends Usuario {
+	@Column(name="dni")
 	private String _dni;
+	@JoinColumn(name="dni",referencedColumnName="dni", insertable=false, updatable=false)
+	@Column(name="nombre")
 	private String _nombre;
+	@Column(name="apellidos")
 	private String _apellidos;
+	@Column(name="titulacion")
 	private String _titulacion;
+	@Column(name="cualificacion")
 	private String _cualificacion;
 	public Vector<Matricula> _matriculas = new Vector<Matricula>();
 	
