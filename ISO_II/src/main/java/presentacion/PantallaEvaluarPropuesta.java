@@ -76,7 +76,7 @@ public class PantallaEvaluarPropuesta extends JFrame {
 	public PantallaEvaluarPropuesta() {
 		setTitle("Edición de un curso");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 455, 678);
+		setBounds(100, 100, 456, 802);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -268,30 +268,33 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		contentPane.add(textFieldSecretario);
 		
 		JButton btnAprobarPropuesta = new JButton("Aprobar");
+		btnAprobarPropuesta.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnAprobarPropuesta.setEnabled(false);
 		btnAprobarPropuesta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GPC.evaluarPropuesta(cp.get_id(),EstadoCurso.VALIDADO); //Curso aceptado
+				GPC.evaluarPropuesta(cp.get_id(),EstadoCurso.VALIDADO, null); //Curso aceptado
 				//¿Feedback?
 			}
 		});
-		btnAprobarPropuesta.setBounds(205, 574, 89, 23);
+		btnAprobarPropuesta.setBounds(10, 729, 199, 23);
 		contentPane.add(btnAprobarPropuesta);
 		
 		
 		JButton btnEnviarComentario = new JButton("Enviar");
+		btnEnviarComentario.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnEnviarComentario.setVisible(false);
 		btnEnviarComentario.setEnabled(false);
 		btnEnviarComentario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GPC.evaluarPropuesta(cp.get_id(),EstadoCurso.PROPUESTA_RECHAZADA); //Curso rechazado
+				GPC.evaluarPropuesta(cp.get_id(),EstadoCurso.PROPUESTA_RECHAZADA, textCommentario.getText().toString()); //Curso rechazado
 			}
 		});
-		btnEnviarComentario.setBounds(320, 574, 89, 23);
+		btnEnviarComentario.setBounds(231, 729, 199, 23);
 		contentPane.add(btnEnviarComentario);
 		
 		
 		JButton btnRechazarPropuesta = new JButton("Rechazar");
+		btnRechazarPropuesta.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnRechazarPropuesta.setEnabled(false);
 		btnRechazarPropuesta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -305,7 +308,7 @@ public class PantallaEvaluarPropuesta extends JFrame {
 				textCommentario.setText("Razon del rechazo:");
 			}
 		});
-		btnRechazarPropuesta.setBounds(320, 574, 89, 23);
+		btnRechazarPropuesta.setBounds(231, 729, 199, 23);
 		contentPane.add(btnRechazarPropuesta);
 		
 		textCommentario = new JTextField();
@@ -313,9 +316,14 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		textCommentario.setEnabled(false);
 		textCommentario.setHorizontalAlignment(SwingConstants.LEFT);
 		textCommentario.setText("");
-		textCommentario.setBounds(10, 547, 166, 77);
+		textCommentario.setBounds(10, 584, 417, 134);
 		contentPane.add(textCommentario);
 		textCommentario.setColumns(10);
+		
+		JLabel lblInformes = new JLabel("Informe de subsanaciones y recomendaciones:");
+		lblInformes.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblInformes.setBounds(10, 552, 415, 32);
+		contentPane.add(lblInformes);
 
 
 		/* ACCIONES */

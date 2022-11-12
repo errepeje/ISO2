@@ -49,9 +49,10 @@ public class GestorPropuestasCursos {
 		cpDAO.update(aCurso);
 	}
 
-	public void evaluarPropuesta(int idCurso, EstadoCurso evaluacion) { 
+	public void evaluarPropuesta(int idCurso, EstadoCurso evaluacion, String informe) { 
 		CursoPropio evaluado = (CursoPropio) cpDAO.findById(CursoPropio.class, idCurso);
 		evaluado.set_estado(evaluacion);
+		evaluado.set_informe(informe);
 		editarPropuestaCurso(evaluado);
 	}
 
