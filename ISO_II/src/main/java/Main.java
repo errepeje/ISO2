@@ -14,7 +14,7 @@ public class Main {
 //		sessionFactory.close();
 		
 		// FUNCIONA con ABSTRACT ENTITY DAO
-		Profesor p = new Profesor("mod", "b", "c", true);
+//		Profesor p = new Profesor("mod", "b", "c", true);
 		
 		
 		

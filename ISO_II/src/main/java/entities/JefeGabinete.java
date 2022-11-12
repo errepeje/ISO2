@@ -10,8 +10,6 @@ import jakarta.persistence.Table;
 @Table(name="jefegabinete")
 @PrimaryKeyJoinColumn(name = "dni")
 public class JefeGabinete extends Usuario {
-//	@Column(name="dni")
-//	private String dni;
 	@JoinColumn(name="dni",referencedColumnName="dni", insertable=false, updatable=false)
 	@Column(name="nombre")
 	private String nombre;

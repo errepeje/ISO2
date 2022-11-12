@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Sat Nov 12 05:09:20 CET 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0184-6a07-181c-00000163dcc8 
+Sat Nov 12 05:47:49 CET 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0184-6a2a-51b8-000001615f30 
 on database directory C:\Users\jonat\OneDrive\Documentos\GitHub\ISO2\ISO_II\iso2_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@579bb367 
 Loaded from file:/C:/Users/jonat/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation

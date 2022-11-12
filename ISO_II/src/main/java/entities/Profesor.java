@@ -5,14 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 @Entity
 @Table(name="profesor")
-@Inheritance(strategy=InheritanceType.JOINED)
+@PrimaryKeyJoinColumn(name = "dni")
 public class Profesor extends Usuario {
-	@Id
-	@Column(name="dni")
-	private String _dni;
 	@Column(name="nombre")
 	private String _nombre;
 	@Column(name="apellidos")
@@ -22,20 +20,13 @@ public class Profesor extends Usuario {
 	
 	public Profesor() {}
 	
-	public Profesor(String _dni, String _nombre, String _apellidos, boolean _doctor) {
+	public Profesor(String _nombre, String _apellidos, boolean _doctor) {
 		super();
-		this._dni = _dni;
 		this._nombre = _nombre;
 		this._apellidos = _apellidos;
 		this._doctor = _doctor;
 	}
 	
-	public String get_dni() {
-		return _dni;
-	}
-	public void set_dni(String _dni) {
-		this._dni = _dni;
-	}
 	public String get_nombre() {
 		return _nombre;
 	}

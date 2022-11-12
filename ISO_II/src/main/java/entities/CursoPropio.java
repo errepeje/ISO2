@@ -75,8 +75,8 @@ public class CursoPropio {
 		this._materias = _materias;
 		this._estado = _estado;
 		this._tipo = _tipo;
-		this.idDirector = _director.get_dni();
-		this.idSecretario = _secretario.get_dni();
+		this.idDirector = _director.getDni();
+		this.idSecretario = _secretario.getDni();
 	}
 
 	public String getNombreCentro() {
