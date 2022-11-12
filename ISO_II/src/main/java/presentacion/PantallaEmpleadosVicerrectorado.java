@@ -1,7 +1,4 @@
 package presentacion;
-//	public void evaluarCurso() {
-//		throw new UnsupportedOperationException();
-//	}
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.SystemColor;

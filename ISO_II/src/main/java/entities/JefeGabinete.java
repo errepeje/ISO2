@@ -7,24 +7,25 @@ import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="personalvicerrectorado")
+@Table(name="jefegabinete")
 @PrimaryKeyJoinColumn(name = "dni")
 public class JefeGabinete extends Usuario {
-	@Column(name="dni")
-	private String dni;
+//	@Column(name="dni")
+//	private String dni;
 	@JoinColumn(name="dni",referencedColumnName="dni", insertable=false, updatable=false)
 	@Column(name="nombre")
 	private String nombre;
 	@Column(name="apellidos")
 	private String apellidos;
 
-	public JefeGabinete(String dni, String nombre, String apellidos) {
+	public JefeGabinete(String nombre, String apellidos) {
 		super();
-		this.dni=dni;
+//		this.dni=dni;
 		this.nombre=nombre;
 		this.apellidos=apellidos;
 	}
-
+	public JefeGabinete() {}
+	
 	public String getNombre() {
 		return nombre;
 	}

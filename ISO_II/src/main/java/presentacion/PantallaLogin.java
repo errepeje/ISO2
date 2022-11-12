@@ -114,6 +114,7 @@ public class PantallaLogin extends JFrame {
 						PantallaDireccionCursos.crearMainFrame();
 					if (typeOfUser.equals("Estudiante"))
 						System.out.println("nice");
+					else { System.out.println(typeOfUser);}
 				}catch (Exception exception) {
 					exception.printStackTrace();
 					lblErrorLogin.setVisible(true);

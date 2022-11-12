@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Sat Nov 12 01:12:00 CET 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0184-692d-ce05-000001267b10 
-on database directory C:\Users\jonat\OneDrive\Documentos\GitHub\ISO2\ISO_II\iso2_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Sat Nov 12 05:09:20 CET 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0184-6a07-181c-00000163dcc8 
+on database directory C:\Users\jonat\OneDrive\Documentos\GitHub\ISO2\ISO_II\iso2_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@579bb367 
 Loaded from file:/C:/Users/jonat/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=18.0.1.1+2-6
+java.runtime.version=16.0.2+7-67
 user.dir=C:\Users\jonat\OneDrive\Documentos\GitHub\ISO2\ISO_II
 os.name=Windows 10
 os.arch=amd64

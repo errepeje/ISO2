@@ -1,6 +1,5 @@
 package controllers;
 
-import entities.CursoPropio;
 import entities.Estudiante;
 import entities.JefeGabinete;
 import entities.PersonalVicerrectorado;
@@ -11,12 +10,9 @@ import persistencia.UsuarioDAO;
 public class GestorLogin {
 	
 	
-//	static EstudianteDAO eDAO = new CursoPropioDAO<Estudiante>();
-//	static JefeGabinete jgDAO = new JefeGabineteDAO<JefeGabinete>();
-//	static PersonalVicerrectoradoDAO pvDAO = new PersonalVicerrectoradoDAO<PersonalVicerrectorado>();
 	static UsuarioDAO uDAO = new UsuarioDAO<Usuario>();
 	
-	public static String iniciarSesion (String nick, String password) throws Exception {
+	public static String iniciarSesion (String nick, String password) throws Exception, NullPointerException {
 		String uID="";
 		Usuario existente = uDAO.obtenerUsuario(nick, password);
 		if (existente.getPassword().equals(password))
@@ -26,18 +22,18 @@ public class GestorLogin {
 		return uID;
 	}
 	public static String obtenerTipoUsuario (String uID) {
-//		Estudiante e = (Estudiante) uDAO.findById(Estudiante.class, uID);
-		ProfesorUCLM pU = (ProfesorUCLM) uDAO.findById(ProfesorUCLM.class, uID);
+		Estudiante e = (Estudiante) uDAO.findById(Estudiante.class, uID);
+//		ProfesorUCLM pU = (ProfesorUCLM) uDAO.findById(ProfesorUCLM.class, uID);
 		PersonalVicerrectorado p = (PersonalVicerrectorado) uDAO.findById(PersonalVicerrectorado.class, uID);
 		JefeGabinete jG = (JefeGabinete) uDAO.findById(JefeGabinete.class, uID);
-//		if (e != null)
-//			return "Estudiante";
-		if (pU != null)
-			return "Profesor";
+		if (e != null)
+			return "Estudiante";
+//		if (pU != null)
+//			return "Profesor";
 		if (p != null)
 			return "Vicerrectorado";
 		if (jG != null)
 			return "JefeGabinete";
-		return "";
+		return "no paso";
 	}
 }
