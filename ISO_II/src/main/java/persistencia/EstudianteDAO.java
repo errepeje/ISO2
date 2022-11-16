@@ -1,6 +1,10 @@
 package persistencia;
 
-public class EstudianteDAO {
+public class EstudianteDAO<E> extends AbstractEntityDAO<E> {
+	
+	public EstudianteDAO() {}
+	
+	
 	
 //	public void insertar(Estudiante e) {
 //	     SessionFactory sf = HibernateUtil.getSessionFactory();

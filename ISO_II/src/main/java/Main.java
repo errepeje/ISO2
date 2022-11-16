@@ -1,7 +1,15 @@
+import entities.CursoPropio;
+import entities.Matricula;
 import entities.Profesor;
 import entities.ProfesorUCLM;
+import persistencia.MatriculaDAO;
 
 public class Main {
+
+	
+	static MatriculaDAO mDAO = new MatriculaDAO<Matricula>();
+	private static Matricula matricula = new Matricula();
+	private CursoPropio curso = new CursoPropio();
 
 	public static void main(String[] args) {
 		
@@ -14,8 +22,13 @@ public class Main {
 //		sessionFactory.close();
 		
 		// FUNCIONA con ABSTRACT ENTITY DAO
-		Profesor p = new Profesor("mod", "b", "c", true);
+//		Profesor p = new Profesor("mod", "b", "c", true);
+		int cursopropio = 601;
+		String estudiante = "";
 		
+		if(mDAO.findMatricula(matricula.getClass(), cursopropio, estudiante)) {
+			System.out.println("Funciona");
+		}
 		
 		
 //		Session s = p.get_profesorDAO().openSession(p.getClass());

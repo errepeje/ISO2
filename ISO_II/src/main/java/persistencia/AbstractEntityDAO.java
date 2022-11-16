@@ -13,7 +13,7 @@ import jakarta.persistence.Query;
 
 public abstract class AbstractEntityDAO<E> {
 	
-	private Session session;
+	protected Session session;
 	private SessionFactory sessionFactory;
 	
 	public Session openSession(Class clase) {
