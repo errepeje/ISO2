@@ -15,8 +15,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		
+		<sonar.projectKey>errepeje_ISO2</sonar.projectKey>
 		<sonar.organization>iso2</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  		<sonar.login>8a2127dc3eb33df1f596ce0bbe88c00737f6e8db</sonar.login>
 	</properties>
 
 	<dependencies>
