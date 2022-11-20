@@ -49,6 +49,8 @@ public class CursoPropio {
 	public EstadoCurso _estado;
 	@Column(name="tipoCurso")
 	public TipoCurso _tipo;
+	@Column(name="informe")
+	public String informe;
 	@Transient
 	public Vector<Matricula> _matriculas = new Vector<Matricula>();
 	@Transient
@@ -77,6 +79,7 @@ public class CursoPropio {
 		this._tipo = _tipo;
 		this.idDirector = _director.get_dni();
 		this.idSecretario = _secretario.get_dni();
+		this.informe = "";
 	}
 
 	public String getNombreCentro() {
@@ -213,5 +216,13 @@ public class CursoPropio {
 
 	public void set_tipo(TipoCurso _tipo) {
 		this._tipo = _tipo;
+	}
+	
+	public String get_informe() {
+		return informe;
+	}
+
+	public void set_informe(String informe) {
+		this.informe = informe;
 	}
 }
