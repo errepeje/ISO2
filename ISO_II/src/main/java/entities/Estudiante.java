@@ -18,6 +18,21 @@ public class Estudiante {
 	private String _cualificacion;
 	public Vector<Matricula> _matriculas = new Vector<Matricula>();
 	
+	public Estudiante(String _dni, String _nombre, String _apellidos, String _titulacion, String _cualificacion,
+			Vector<Matricula> _matriculas) {
+		super();
+		this._dni = _dni;
+		this._nombre = _nombre;
+		this._apellidos = _apellidos;
+		this._titulacion = _titulacion;
+		this._cualificacion = _cualificacion;
+		this._matriculas = _matriculas;
+	}
+	
+	public Estudiante() {
+		super();
+	}
+
 	public String get_dni() {
 		return _dni;
 	}
