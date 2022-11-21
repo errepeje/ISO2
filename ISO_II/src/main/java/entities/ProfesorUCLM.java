@@ -16,8 +16,6 @@ import jakarta.persistence.Transient;
 //@DiscriminatorValue("not null")
 @PrimaryKeyJoinColumn(name="dni")
 public class ProfesorUCLM extends Profesor {
-	@Column(name="dni")
-	private String _dni;
 	@Column(name="categoria")
 	public CategoriaProfesor _categoria;
 	@Column(name="nombreCentro")
@@ -28,25 +26,16 @@ public class ProfesorUCLM extends Profesor {
 	public ProfesorUCLM() {}
 	
 	public ProfesorUCLM(String _dni, String _nombre, String _apellidos, boolean _doctor) {
-		super(_dni, _nombre, _apellidos, _doctor);
+		super(_nombre, _apellidos, _doctor);
 		// TODO Auto-generated constructor stub
 	}
 	
 	
-	public ProfesorUCLM(String _dni, String _centroAdscripcion,
+	public ProfesorUCLM(String _centroAdscripcion,
 			CategoriaProfesor _categoria) {
 		super();
-		this._dni = _dni;
 		this.nombreCentro = _centroAdscripcion;
 		this._categoria = _categoria;
-	}
-
-	public String get_dni() {
-		return _dni;
-	}
-
-	public void set_dni(String _dni) {
-		this._dni = _dni;
 	}
 
 	public CategoriaProfesor get_categoria() {

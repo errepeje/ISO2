@@ -4,26 +4,40 @@ import java.util.Vector;
 
 
 import entities.Matricula;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 @Table(name="estudiante")
+@PrimaryKeyJoinColumn(name = "dni")
 
-public class Estudiante {
-	private String _dni;
+public class Estudiante extends Usuario {
+//	@Column(name="dni")
+//	private String _dni;
+	@Column(name="nombre")
 	private String _nombre;
+	@Column(name="apellidos")
 	private String _apellidos;
+	@Column(name="titulacion")
 	private String _titulacion;
+	@Column(name="cualificacion")
 	private String _cualificacion;
-	public Vector<Matricula> _matriculas = new Vector<Matricula>();
+	@Transient
+	public Vector<Matricula> _matriculas ;
+
+	public Estudiante(String nombre, String apellidos, String titulacion, String cualificacion) {
+		_nombre=nombre;
+		_apellidos=apellidos;
+		_titulacion=titulacion;
+		_cualificacion=cualificacion;
+		_matriculas=new Vector<Matricula>();
+	}
+	public Estudiante() {}
 	
-	public String get_dni() {
-		return _dni;
-	}
-	public void set_dni(String _dni) {
-		this._dni = _dni;
-	}
 	public String get_nombre() {
 		return _nombre;
 	}

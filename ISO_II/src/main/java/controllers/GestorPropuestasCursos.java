@@ -75,7 +75,7 @@ public class GestorPropuestasCursos {
 		String[] id = new String[profesores.size()];
 		
 		for(ProfesorUCLM p: profesores) {
-			id[i] = p.get_dni();
+			id[i] = p.getDni();
 			i++;
 		}
 		
