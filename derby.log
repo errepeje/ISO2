@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Thu Nov 24 14:02:50 CET 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0184-a9bb-d503-000000a43df8 
+Thu Nov 24 14:06:04 CET 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0184-a9be-ccef-000000a18328 
 on database directory C:\Users\loren\Documents\GitHub\ISO2\iso2_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@22d8cfe0 
 Loaded from file:/C:/Users/loren/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Eclipse Adoptium
