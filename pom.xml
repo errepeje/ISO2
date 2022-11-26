@@ -20,6 +20,8 @@
 		<sonar.organization>iso2</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
   		<sonar.login>8a2127dc3eb33df1f596ce0bbe88c00737f6e8db</sonar.login>
+  		<sonar.sources>src/main/java</sonar.sources>
+		<sonar.scm.exclusions.disabled>true</sonar.scm.exclusions.disabled>
 	</properties>
 
 	<dependencies>
