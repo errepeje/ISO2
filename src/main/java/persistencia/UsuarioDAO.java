@@ -11,7 +11,8 @@ public class UsuarioDAO<E> extends AbstractEntityDAO<E> {
 			usuario = (Usuario) session.createQuery("FROM Usuario U WHERE U.nick = :nick").setParameter("nick", nick)
 					.uniqueResult();			
 		} catch(Exception e) {
-			e.printStackTrace();
+			Throwable throwable = new Throwable();
+			throwable.printStackTrace();
 		} finally {
 			closeSession();			
 		}
