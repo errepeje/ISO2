@@ -23,13 +23,8 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaEmpleadosVicerrectorado frame = new PantallaEmpleadosVicerrectorado();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					Throwable throwable = new Throwable();
-					throwable.printStackTrace();
-				}
+				PantallaEmpleadosVicerrectorado frame = new PantallaEmpleadosVicerrectorado();
+				frame.setVisible(true);
 			}
 		});
 	}

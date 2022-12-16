@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -19,14 +18,6 @@ import java.awt.SystemColor;
 public class PantallaDireccionCursos extends JFrame {
 	
 	private static JPanel contentPanel;
-
-	public void altaCurso() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void edicionCurso() {
-		throw new UnsupportedOperationException();
-	}
 	
 	/**
 	 * @wbp.parser.entryPoint
@@ -39,13 +30,6 @@ public class PantallaDireccionCursos extends JFrame {
                 frame.setResizable(false);
                 frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 frame.setVisible(true);
-                
-                try  {
-                   UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                } catch (Exception e) {
-                	Throwable throwable = new Throwable();
-        			throwable.printStackTrace();
-                }
                 
                 frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         		frame.setBounds(100, 100, 299, 194);
@@ -61,7 +45,6 @@ public class PantallaDireccionCursos extends JFrame {
         		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 17));
         		lblTitulo.setBounds(0, 0, 280, 36);
         		frame.getContentPane().add(lblTitulo);
-        		
         		
         		JButton btnRealizarPropuesta = new JButton("REALIZAR PROPUESTA");
         		btnRealizarPropuesta.setBounds(67, 47, 153, 23);

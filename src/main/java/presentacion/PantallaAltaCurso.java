@@ -49,13 +49,8 @@ public class PantallaAltaCurso extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaAltaCurso frame = new PantallaAltaCurso();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					Throwable throwable = new Throwable();
-					throwable.printStackTrace();
-				}
+				PantallaAltaCurso frame = new PantallaAltaCurso();
+				frame.setVisible(true);
 			}
 		});
 	}

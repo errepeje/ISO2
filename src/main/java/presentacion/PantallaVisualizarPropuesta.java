@@ -47,13 +47,8 @@ public class PantallaVisualizarPropuesta extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaVisualizarPropuesta frame = new PantallaVisualizarPropuesta();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					Throwable throwable = new Throwable();
-					throwable.printStackTrace();
-				}
+				PantallaVisualizarPropuesta frame = new PantallaVisualizarPropuesta();
+				frame.setVisible(true);
 			}
 		});
 	}

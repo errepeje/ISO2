@@ -46,13 +46,8 @@ public class PantallaEditarCurso extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaEditarCurso frame = new PantallaEditarCurso();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					Throwable throwable = new Throwable();
-					throwable.printStackTrace();
-				}
+				PantallaEditarCurso frame = new PantallaEditarCurso();
+				frame.setVisible(true);
 			}
 		});
 	}

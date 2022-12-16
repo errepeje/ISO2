@@ -52,13 +52,8 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaConsultarRechazadoAceptado frame = new PantallaConsultarRechazadoAceptado();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					Throwable throwable = new Throwable();
-					throwable.printStackTrace();
-				}
+				PantallaConsultarRechazadoAceptado frame = new PantallaConsultarRechazadoAceptado();
+				frame.setVisible(true);
 			}
 		});
 	}

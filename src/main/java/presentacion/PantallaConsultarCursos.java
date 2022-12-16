@@ -20,13 +20,8 @@ public class PantallaConsultarCursos extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaConsultarCursos frame = new PantallaConsultarCursos();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					Throwable throwable = new Throwable();
-					throwable.printStackTrace();
-				}
+				PantallaConsultarCursos frame = new PantallaConsultarCursos();
+				frame.setVisible(true);
 			}
 		});
 	}

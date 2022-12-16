@@ -24,13 +24,8 @@ public class PantallaLogin extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaLogin frame = new PantallaLogin();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					Throwable throwable = new Throwable();
-					throwable.printStackTrace();
-				}
+				PantallaLogin frame = new PantallaLogin();
+				frame.setVisible(true);
 			}
 		});
 	}
