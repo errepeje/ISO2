@@ -337,7 +337,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 IngresosCursos = GC.obtenerIngresos();
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j]== "MASTER"){
+						if (TipoCursos[j].equals("MASTER")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							
@@ -361,7 +361,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 IngresosCursos = GC.obtenerIngresos();
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j]== "EXPERTO"){
+						if (TipoCursos[j].equals("EXPERTO")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							
@@ -385,7 +385,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 IngresosCursos = GC.obtenerIngresos();
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j]== "ESPECIALISTA"){
+						if (TipoCursos[j].equals("ESPECIALISTA")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							
@@ -409,7 +409,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 IngresosCursos = GC.obtenerIngresos();
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j]== "FORMACION_AVANZADA"){
+						if (TipoCursos[j].equals("FORMACION_AVANZADA")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							
@@ -432,7 +432,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 IngresosCursos = GC.obtenerIngresos();
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j]== "FORMACION_CONTINUA"){
+						if (TipoCursos[j].equals("FORMACION_CONTINUA")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							
@@ -455,7 +455,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 IngresosCursos = GC.obtenerIngresos();
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j]== "MICROCREDENCIALES"){
+						if (TipoCursos[j].equals("MICROCREDENCIALES")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							
@@ -480,7 +480,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 IngresosCursos = GC.obtenerIngresos();
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j]== "CORTA_DURACION"){
+						if (TipoCursos[j].equals("CORTA_DURACION")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							
@@ -501,7 +501,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 				 IngresosCursos = GC.obtenerIngresos();
 				 TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j]== "VERANO_Y_EXTENSION"){
+						if (TipoCursos[j].equals("VERANO_Y_EXTENSION")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
 							
@@ -516,20 +516,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		}
 
 		}
-	});
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	});	
 		
 		listCursos.addListSelectionListener(new ListSelectionListener() {
 			@Override
@@ -551,7 +538,6 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					textFieldSecretario.setText(cp.idSecretario.toString());
 					textFieldTipoCurso.setText(cp.get_tipo().toString());
 					textFieldEstadoCurso.setText(cp.get_estado().toString());
-					//txtprueba.setText(Integer.toString(cp.get_edicion()));
 					
 					textFieldDiaInicio.setText(solI[0]);
 					textFieldMesInicio.setText(Integer.toString(cp.get_fechaInicio().getMonth() + 1));

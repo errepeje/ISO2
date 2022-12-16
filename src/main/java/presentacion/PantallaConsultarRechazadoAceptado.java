@@ -292,12 +292,6 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 		lblEstadoDeCurso.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblEstadoDeCurso.setBounds(10, 11, 279, 19);
 		panel.add(lblEstadoDeCurso);
-		
-
-		
-
-		
-		
 
 		/* ACCIONES */
 		EstadosBox.addItemListener(new ItemListener() {
@@ -324,7 +318,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 				 idCursos = GC.obtenerCursos();
 				 estadoCursos = GC.obtenerEstado();
 					for(int j=0; j<estadoCursos.length; j++) {
-						if (estadoCursos[j]== "PROPUESTO"){
+						if (estadoCursos[j].equals("PROPUESTO")){
 							listModel.addElement(idCursos[j]);
 						
 				}
@@ -342,7 +336,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 				idCursos = GC.obtenerCursos();
 				estadoCursos = GC.obtenerEstado();
 					for(int j=0; j<estadoCursos.length; j++) {
-						if (estadoCursos[j]== "VALIDADO"){
+						if (estadoCursos[j].equals("VALIDADO")){
 							listModel.addElement(idCursos[j]);
 						
 				}
@@ -356,7 +350,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 				idCursos = GC.obtenerCursos();
 				estadoCursos = GC.obtenerEstado();
 					for(int j=0; j<estadoCursos.length; j++) {
-						if (estadoCursos[j]== "PROPUESTA_RECHAZADA"){
+						if (estadoCursos[j].equals("PROPUESTA_RECHAZADA")){
 							listModel.addElement(idCursos[j]);
 						
 				}
@@ -372,7 +366,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 				idCursos = GC.obtenerCursos();
 				estadoCursos = GC.obtenerEstado();
 					for(int j=0; j<estadoCursos.length; j++) {
-						if (estadoCursos[j]== "EN_MATRICULACIÓN"){
+						if (estadoCursos[j].equals("EN_MATRICULACIÓN")){
 							listModel.addElement(idCursos[j]);
 						
 				}
@@ -387,7 +381,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 				idCursos = GC.obtenerCursos();
 				estadoCursos = GC.obtenerEstado();
 					for(int j=0; j<estadoCursos.length; j++) {
-						if (estadoCursos[j]== "EN_IMPARTICIÓN"){
+						if (estadoCursos[j].equals("EN_IMPARTICIÓN")){
 							listModel.addElement(idCursos[j]);
 						
 				}
@@ -402,7 +396,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 				idCursos = GC.obtenerCursos();
 				estadoCursos = GC.obtenerEstado();
 					for(int j=0; j<estadoCursos.length; j++) {
-						if (estadoCursos[j]== "TERMINADO"){
+						if (estadoCursos[j].equals("TERMINADO")){
 							listModel.addElement(idCursos[j]);
 						
 				}
@@ -415,19 +409,6 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 
 		}
 	});
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		listCursos.addListSelectionListener(new ListSelectionListener() {
 			@Override
@@ -465,6 +446,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 		 
 		
 	}
+	
 	public Date darFormatoFecha(String cadena) {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 		Date fecha = null;
