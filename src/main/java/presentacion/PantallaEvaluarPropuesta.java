@@ -23,6 +23,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
@@ -360,7 +361,8 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		try {
 			fecha = formato.parse(cadena);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
+			logger.log(null, "Error Fecha");
 		}
 
 		return fecha;

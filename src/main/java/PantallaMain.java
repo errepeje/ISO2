@@ -22,13 +22,8 @@ public class PantallaMain extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaMain frame = new PantallaMain();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					Throwable throwable = new Throwable();
-					throwable.printStackTrace();
-				}
+				PantallaMain frame = new PantallaMain();
+				frame.setVisible(true);
 			}
 		});
 	}

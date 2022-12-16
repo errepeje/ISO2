@@ -1,11 +1,14 @@
 package persistencia;
 
 import java.util.List;
+import java.util.logging.Logger;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import controllers.GestorPropuestasCursos;
 import jakarta.persistence.Query;
 
 public abstract class AbstractEntityDAO<E> {
@@ -61,7 +64,8 @@ public abstract class AbstractEntityDAO<E> {
             objects = ((org.hibernate.query.Query) query).list();
             closeSession();
         } catch (HibernateException e) {
-        	e.printStackTrace();
+        	Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
+			logger.log(null, "Error Abstract Entity");
         }
         
         return objects;

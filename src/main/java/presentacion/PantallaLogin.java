@@ -8,8 +8,11 @@ import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import controllers.GestorLogin;
+import controllers.GestorPropuestasCursos;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -38,11 +41,6 @@ public class PantallaLogin extends JFrame {
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setVisible(true);
 
-		try  {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		setBounds(100, 100, 334, 289);
 		contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -102,7 +100,8 @@ public class PantallaLogin extends JFrame {
 						PantallaDireccionCursos.crearMainFrame();
 						
 				} catch(Exception exception) {
-					exception.printStackTrace();
+					Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
+					logger.log(null, "Error Login");
 					lblErrorLogin.setVisible(true);
 				}
 			}

@@ -10,6 +10,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import controllers.GestorConsultas;
+import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
 
 import javax.swing.JTextField;
@@ -24,6 +25,8 @@ import java.awt.event.ItemListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Logger;
+
 import javax.swing.JLabel;
 
 
@@ -476,7 +479,8 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		try {
 			fecha = formato.parse(cadena);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
+			logger.log(null, "Error Fecha");
 		}
 
 		return fecha;

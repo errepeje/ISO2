@@ -2,9 +2,9 @@ package controllers;
 
 import java.util.Date;
 import java.util.List;
-
 import entities.*;
 import persistencia.*;
+import java.util.logging.Logger;
 
 public class GestorPropuestasCursos {
 	
@@ -40,7 +40,8 @@ public class GestorPropuestasCursos {
 
 			cpDAO.persist(cursoPropio);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
+			logger.log(null, "Error Gestor Propuesta");
 		}
 		
 		return cursoPropio;

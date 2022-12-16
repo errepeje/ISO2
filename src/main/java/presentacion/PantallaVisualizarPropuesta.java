@@ -20,6 +20,8 @@ import javax.swing.DefaultListModel;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Logger;
+
 import javax.swing.JLabel;
 
 public class PantallaVisualizarPropuesta extends JFrame {
@@ -291,7 +293,8 @@ public class PantallaVisualizarPropuesta extends JFrame {
 		try {
 			fecha = formato.parse(cadena);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
+			logger.log(null, "Error Fecha");
 		}
 
 		return fecha;

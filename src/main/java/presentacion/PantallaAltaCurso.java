@@ -19,6 +19,7 @@ import java.awt.event.ItemListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Logger;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
@@ -275,7 +276,8 @@ public class PantallaAltaCurso extends JFrame {
 		try {
 			fecha = formato.parse(cadena);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
+			logger.log(null, "Error Fecha");
 		}
 
 		return fecha;
