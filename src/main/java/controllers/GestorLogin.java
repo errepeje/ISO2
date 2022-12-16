@@ -12,7 +12,7 @@ public class GestorLogin {
 	
 	public static String iniciarSesion (String nick, String password) throws Exception, NullPointerException {
 		String uID="";
-		Usuario existente = uDAO.obtenerUsuario(nick, password);
+		Usuario existente = uDAO.obtenerUsuario(nick);
 		if (existente.getPassword().equals(password))
 			uID=existente.getDni();
 		else

@@ -19,28 +19,29 @@ public class GestorPropuestasCursos {
 		Centro centro = null;
 		Profesor director = null;
 		Profesor secretario = null;
+		CursoPropio cursoPropio = null;
 		
 		try {
 			centro = obtenerCentro(nombreCentro);
 			director = obtenerProfesor(idDirector);
 			secretario = obtenerProfesor(idSecretario);
+			ProfesorUCLM p1 = (ProfesorUCLM) director;
+			ProfesorUCLM p2 = (ProfesorUCLM) secretario;
+			
+			p1.setcategoria(CategoriaProfesor.CATEDRATICO);
+			p1.setNombreCentro("ESI");
+			
+			p2.setcategoria(CategoriaProfesor.CATEDRATICO);
+			p2.setNombreCentro("ESI");
+
+			cursoPropio = new CursoPropio(1, nombre, ECTS, fechaInicio, fechaFin,
+					tasaMatricula, edicion, null, centro, p1, p2, null,
+					EstadoCurso.PROPUESTO, tipoCurso);
+
+			cpDAO.persist(cursoPropio);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		ProfesorUCLM p1 = (ProfesorUCLM) director;
-		p1.setcategoria(CategoriaProfesor.CATEDRATICO);
-		p1.setNombreCentro("ESI");
-		
-		ProfesorUCLM p2 = (ProfesorUCLM) secretario;
-		p2.setcategoria(CategoriaProfesor.CATEDRATICO);
-		p2.setNombreCentro("ESI");
-		
-		CursoPropio cursoPropio = new CursoPropio(1, nombre, ECTS, fechaInicio, fechaFin,
-				tasaMatricula, edicion, null, centro, p1, p2, null,
-				EstadoCurso.PROPUESTO, tipoCurso);
-		
-		cpDAO.persist(cursoPropio);
 		
 		return cursoPropio;
 	}

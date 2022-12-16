@@ -60,7 +60,9 @@ public abstract class AbstractEntityDAO<E> {
             Query query = session.createQuery("from " + clase.getName());
             objects = ((org.hibernate.query.Query) query).list();
             closeSession();
-        } catch (HibernateException e) {}
+        } catch (HibernateException e) {
+        	e.printStackTrace();
+        }
         
         return objects;
     }
