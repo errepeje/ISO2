@@ -5,6 +5,7 @@ on:
       - main
       - develop
       - config-sonar
+      - mantenimiento
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
