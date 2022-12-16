@@ -3,7 +3,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
@@ -49,10 +48,6 @@ public class PantallaLogin extends JFrame {
 
 
 		JButton btnRegister = new JButton("Register");
-		btnRegister.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnRegister.setBounds(174, 171, 100, 23);
 		getContentPane().add(btnRegister);
 
