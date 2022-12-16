@@ -35,6 +35,7 @@ public abstract class AbstractEntityDAO<E> {
 	
 	/* Operaciones CRUD */
 	// Create
+	@SuppressWarnings("deprecation")
 	public void persist(E entity) {
 		openSession(entity.getClass());
 		getSession().save(entity);
@@ -56,8 +57,9 @@ public abstract class AbstractEntityDAO<E> {
         return obj; 
     }
 
-	public List findAll(Class clase) {
-        List objects = null;
+	@SuppressWarnings({ "deprecation", "rawtypes" })
+	public List<E> findAll(Class clase) {
+        List<E> objects = null;
         try {
         	openSession(clase);
             Query query = session.createQuery("from " + clase.getName());
@@ -72,6 +74,7 @@ public abstract class AbstractEntityDAO<E> {
     }
 	
 	// Update
+	@SuppressWarnings("deprecation")
 	public void update(E entity) {
 		openSession(entity.getClass());
         getSession().update(entity);
@@ -79,6 +82,7 @@ public abstract class AbstractEntityDAO<E> {
     }
 	
 	// Delete
+	@SuppressWarnings("deprecation")
 	public void delete(E entity) {
 		openSession(entity.getClass());
         getSession().delete(entity);

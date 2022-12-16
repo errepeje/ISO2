@@ -21,7 +21,7 @@ public class Centro {
 	@Transient
 	public Vector<ProfesorUCLM> plantilla = new Vector<>();
 	@Transient
-	private CentroDAO<Centro> centroDAO = new CentroDAO();
+	private CentroDAO centroDAO = new CentroDAO();
 	
 
 	public Centro() {}
