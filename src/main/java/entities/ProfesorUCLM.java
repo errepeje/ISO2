@@ -8,37 +8,35 @@ import jakarta.persistence.Transient;
 
 @Entity
 @Table(name="profesorUCLM")
-//@DiscriminatorValue("not null")
 @PrimaryKeyJoinColumn(name="dni")
 public class ProfesorUCLM extends Profesor {
 	@Column(name="categoria")
-	public CategoriaProfesor _categoria;
+	public CategoriaProfesor categoria;
 	@Column(name="nombreCentro")
 	public String nombreCentro;
 	@Transient
-	public Centro _centroAdscripcion;
+	public Centro centroAdscripcion;
 	
 	public ProfesorUCLM() {}
 	
-	public ProfesorUCLM(String _dni, String _nombre, String _apellidos, boolean _doctor) {
-		super(_nombre, _apellidos, _doctor);
-		// TODO Auto-generated constructor stub
+	public ProfesorUCLM(String dni, String nombre, String apellidos, boolean doctor) {
+		super(nombre, apellidos, doctor);
 	}
 	
 	
-	public ProfesorUCLM(String _centroAdscripcion,
-			CategoriaProfesor _categoria) {
+	public ProfesorUCLM(String centroAdscripcion,
+			CategoriaProfesor categoria) {
 		super();
-		this.nombreCentro = _centroAdscripcion;
-		this._categoria = _categoria;
+		this.nombreCentro = centroAdscripcion;
+		this.categoria = categoria;
 	}
 
-	public CategoriaProfesor get_categoria() {
-		return _categoria;
+	public CategoriaProfesor getcategoria() {
+		return categoria;
 	}
 
-	public void set_categoria(CategoriaProfesor _categoria) {
-		this._categoria = _categoria;
+	public void setcategoria(CategoriaProfesor categoria) {
+		this.categoria = categoria;
 	}
 
 	public String getNombreCentro() {
@@ -49,11 +47,11 @@ public class ProfesorUCLM extends Profesor {
 		this.nombreCentro = nombreCentro;
 	}
 
-	public Centro get_centroAdscripcion() {
-		return _centroAdscripcion;
+	public Centro getcentroAdscripcion() {
+		return centroAdscripcion;
 	}
 
-	public void set_centroAdscripcion(Centro _centroAdscripcion) {
-		this._centroAdscripcion = _centroAdscripcion;
+	public void setcentroAdscripcion(Centro centroAdscripcion) {
+		this.centroAdscripcion = centroAdscripcion;
 	}
 }

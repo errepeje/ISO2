@@ -24,6 +24,7 @@ import java.util.Date;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 
 public class PantallaEditarCurso extends JFrame {
 
@@ -61,7 +62,7 @@ public class PantallaEditarCurso extends JFrame {
 	 */
 	public PantallaEditarCurso() {
 		setTitle("Edición de un curso");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 465, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -137,22 +138,22 @@ public class PantallaEditarCurso extends JFrame {
 		textFieldDiaFin.setBounds(186, 89, 66, 20);
 		contentPane.add(textFieldDiaFin);
 
-		JLabel lblg1_1 = new JLabel("-");
-		lblg1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblg1_1.setBounds(253, 92, 16, 14);
-		contentPane.add(lblg1_1);
+		JLabel lblg11 = new JLabel("-");
+		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg11.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg11.setBounds(253, 92, 16, 14);
+		contentPane.add(lblg11);
 
 		textFieldMesFin = new JTextField();
 		textFieldMesFin.setColumns(10);
 		textFieldMesFin.setBounds(273, 89, 66, 20);
 		contentPane.add(textFieldMesFin);
 
-		JLabel lblg2_1 = new JLabel("-");
-		lblg2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblg2_1.setBounds(338, 89, 22, 20);
-		contentPane.add(lblg2_1);
+		JLabel lblg21 = new JLabel("-");
+		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg21.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg21.setBounds(338, 89, 22, 20);
+		contentPane.add(lblg21);
 
 		textFieldAnyoFin = new JTextField();
 		textFieldAnyoFin.setColumns(10);
@@ -175,31 +176,31 @@ public class PantallaEditarCurso extends JFrame {
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
 					cp = GPC.obtenerCurso(Integer.parseInt(listCursos.getSelectedValue().toString()));
-					textFieldTasa.setText(Integer.toString(cp.get_tasaMatricula()));
-					textFieldECTS.setText(Integer.toString(cp.get_eCTS()));
+					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
+					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
 					
-					String[] resultInicio = cp.get_fechaInicio().toString().split("-");
+					String[] resultInicio = cp.getfechaInicio().toString().split("-");
 					String[] solI = resultInicio[2].split(" ");
-					String[] resultFin = cp.get_fechaFin().toString().split("-");
+					String[] resultFin = cp.getfechaFin().toString().split("-");
 					String[] solF = resultFin[2].split(" ");
 					
 					textFieldDiaInicio.setText(solI[0]);
-					textFieldMesInicio.setText(Integer.toString(cp.get_fechaInicio().getMonth() + 1));
-					textFieldAnyoInicio.setText(Integer.toString(cp.get_fechaInicio().getYear() + 1900));
+					textFieldMesInicio.setText(Integer.toString(cp.getfechaInicio().getMonth() + 1));
+					textFieldAnyoInicio.setText(Integer.toString(cp.getfechaInicio().getYear() + 1900));
 					
 					textFieldDiaFin.setText(solF[0]);
-					textFieldMesFin.setText(Integer.toString(cp.get_fechaFin().getMonth() + 1));
-					textFieldAnyoFin.setText(Integer.toString(cp.get_fechaFin().getYear() + 1900));
+					textFieldMesFin.setText(Integer.toString(cp.getfechaFin().getMonth() + 1));
+					textFieldAnyoFin.setText(Integer.toString(cp.getfechaFin().getYear() + 1900));
 				}
 			}
 		});
 		
 		btnCambios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cp.set_eCTS(Integer.parseInt(textFieldECTS.getText().toString()));
-				cp.set_tasaMatricula(Integer.parseInt(textFieldTasa.getText().toString()));
-				cp.set_fechaInicio(darFormatoFecha(textFieldDiaInicio.getText().toString() + "/" + textFieldMesInicio.getText().toString() + "/" + textFieldAnyoInicio.getText().toString()));
-				cp.set_fechaFin(darFormatoFecha(textFieldDiaFin.getText().toString() + "/" + textFieldMesFin.getText().toString() + "/" + textFieldAnyoFin.getText().toString()));
+				cp.seteCTS(Integer.parseInt(textFieldECTS.getText()));
+				cp.settasaMatricula(Integer.parseInt(textFieldTasa.getText()));
+				cp.setfechaInicio(darFormatoFecha(textFieldDiaInicio.getText() + "/" + textFieldMesInicio.getText() + "/" + textFieldAnyoInicio.getText()));
+				cp.setfechaFin(darFormatoFecha(textFieldDiaFin.getText() + "/" + textFieldMesFin.getText() + "/" + textFieldAnyoFin.getText()));
 				
 				GPC.editarPropuestaCurso(cp);
 			}	

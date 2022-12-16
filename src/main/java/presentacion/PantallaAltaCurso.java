@@ -26,6 +26,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 
 public class PantallaAltaCurso extends JFrame {
 
@@ -64,7 +65,7 @@ public class PantallaAltaCurso extends JFrame {
 	 */
 	public PantallaAltaCurso() {
 		setTitle("Alta curso");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 675, 436);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -88,10 +89,10 @@ public class PantallaAltaCurso extends JFrame {
 		rdbtnFP.setBounds(16, 128, 295, 23);
 		contentPane.add(rdbtnFP);
 
-		JRadioButton rdbtnEnseñanzasPropias = new JRadioButton("Enseñanzas propias");
-		buttonGroup.add(rdbtnEnseñanzasPropias);
-		rdbtnEnseñanzasPropias.setBounds(16, 154, 174, 23);
-		contentPane.add(rdbtnEnseñanzasPropias);
+		JRadioButton rdbtnEP = new JRadioButton("Enseñanzas propias");
+		buttonGroup.add(rdbtnEP);
+		rdbtnEP.setBounds(16, 154, 174, 23);
+		contentPane.add(rdbtnEP);
 
 		JLabel lblTipoCurso = new JLabel("Selecciona el tipo de curso:");
 		lblTipoCurso.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -249,7 +250,7 @@ public class PantallaAltaCurso extends JFrame {
 			}
 		});
 
-		rdbtnEnseñanzasPropias.addActionListener(new ActionListener() {
+		rdbtnEP.addActionListener(new ActionListener() {
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			public void actionPerformed(ActionEvent e) {
 				comboBoxTipoCurso.setModel(new DefaultComboBoxModel(new String[] {"MICROCREDENCIALES", "CORTA_DURACION", "VERANO_Y_EXTENSION", "MAYORES"}));
@@ -259,11 +260,11 @@ public class PantallaAltaCurso extends JFrame {
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GPC.realizarPropuestaCurso(
-						textFieldNombre.getText().toString(),
-						Integer.parseInt(textFieldNumECTS.getText().toString()),
-						darFormatoFecha(textFieldDiaInicio.getText().toString() + "/" + textFieldMesInicio.getText().toString() + "/" + textFieldAnyoInicio.getText().toString()),
-						darFormatoFecha(textFieldDiaFin.getText().toString() + "/" + textFieldMesFin.getText().toString() + "/" + textFieldAnyoFin.getText().toString()),
-						Integer.parseInt(textFieldTasa.getText().toString()),
+						textFieldNombre.getText(),
+						Integer.parseInt(textFieldNumECTS.getText()),
+						darFormatoFecha(textFieldDiaInicio.getText() + "/" + textFieldMesInicio.getText() + "/" + textFieldAnyoInicio.getText()),
+						darFormatoFecha(textFieldDiaFin.getText() + "/" + textFieldMesFin.getText() + "/" + textFieldAnyoFin.getText()),
+						Integer.parseInt(textFieldTasa.getText()),
 						1,
 						comboBoxCentro.getSelectedItem().toString(),
 						"abs",

@@ -10,11 +10,11 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import controllers.GestorConsultas;
-import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -26,7 +26,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
 public class PantallaConsultarCursos_Ediciones extends JFrame {
-
 	private JPanel panel;
 	private JTextField textFieldDiaInicio;
 	private JTextField textFieldMesInicio;
@@ -69,7 +68,7 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 	@SuppressWarnings("deprecation")
 	public PantallaConsultarCursos_Ediciones() {
 		setTitle("Edición de un curso");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 728, 597);
 		panel = new JPanel();
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -78,15 +77,6 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		panel.setLayout(null);
 
 		DefaultListModel listModel = new DefaultListModel();
-
-		/*int[] idCursosDenegados = GPC.obtenerCursosDenegados();
-		for(int i=0; i<idCursosDenegados.length; i++) {
-
-
-			listModel.addElement(idCursosDenegados[i]);
-			}
-		 */
-
 
 		JList listCursos = new JList(listModel);
 		listCursos.setBounds(10, 94, 166, 442);
@@ -150,11 +140,11 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		textFieldDiaFin.setBounds(186, 276, 66, 20);
 		panel.add(textFieldDiaFin);
 
-		JLabel lblg1_1 = new JLabel("-");
-		lblg1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblg1_1.setBounds(253, 279, 16, 14);
-		panel.add(lblg1_1);
+		JLabel lblg11 = new JLabel("-");
+		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg11.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg11.setBounds(253, 279, 16, 14);
+		panel.add(lblg11);
 
 		textFieldMesFin = new JTextField();
 		textFieldMesFin.setEditable(false);
@@ -162,11 +152,11 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		textFieldMesFin.setBounds(273, 276, 66, 20);
 		panel.add(textFieldMesFin);
 
-		JLabel lblg2_1 = new JLabel("-");
-		lblg2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblg2_1.setBounds(338, 276, 22, 20);
-		panel.add(lblg2_1);
+		JLabel lblg21 = new JLabel("-");
+		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg21.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg21.setBounds(338, 276, 22, 20);
+		panel.add(lblg21);
 
 		textFieldAnyoFin = new JTextField();
 		textFieldAnyoFin.setEditable(false);
@@ -301,29 +291,29 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
 					cp = GC.obtenerCursos(Integer.parseInt(listCursos.getSelectedValue().toString()));
-					textFieldTasa.setText(Integer.toString(cp.get_tasaMatricula()));
-					textFieldECTS.setText(Integer.toString(cp.get_eCTS()));
+					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
+					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
 
-					String[] resultInicio = cp.get_fechaInicio().toString().split("-");
+					String[] resultInicio = cp.getfechaInicio().toString().split("-");
 					String[] solI = resultInicio[2].split(" ");
-					String[] resultFin = cp.get_fechaFin().toString().split("-");
+					String[] resultFin = cp.getfechaFin().toString().split("-");
 					String[] solF = resultFin[2].split(" ");
 
-					textFieldNombre.setText(cp.get_nombre().toString());
-					textFieldEdicion.setText(Integer.toString(cp.get_edicion()));
-					textNombreCentro.setText(cp.getNombreCentro().toString());
-					textDirector.setText(cp.getIdDirector().toString());
-					textFieldSecretario.setText(cp.idSecretario.toString());
-					textFieldTipoCurso.setText(cp.get_tipo().toString());
-					textFieldEstadoCurso.setText(cp.get_estado().toString());
+					textFieldNombre.setText(cp.getnombre());
+					textFieldEdicion.setText(Integer.toString(cp.getedicion()));
+					textNombreCentro.setText(cp.getNombreCentro());
+					textDirector.setText(cp.getIdDirector());
+					textFieldSecretario.setText(cp.idSecretario);
+					textFieldTipoCurso.setText(cp.gettipo().toString());
+					textFieldEstadoCurso.setText(cp.getestado().toString());
 
 					textFieldDiaInicio.setText(solI[0]);
-					textFieldMesInicio.setText(Integer.toString(cp.get_fechaInicio().getMonth() + 1));
-					textFieldAnyoInicio.setText(Integer.toString(cp.get_fechaInicio().getYear() + 1900));
+					textFieldMesInicio.setText(Integer.toString(cp.getfechaInicio().getMonth() + 1));
+					textFieldAnyoInicio.setText(Integer.toString(cp.getfechaInicio().getYear() + 1900));
 
 					textFieldDiaFin.setText(solF[0]);
-					textFieldMesFin.setText(Integer.toString(cp.get_fechaFin().getMonth() + 1));
-					textFieldAnyoFin.setText(Integer.toString(cp.get_fechaFin().getYear() + 1900));
+					textFieldMesFin.setText(Integer.toString(cp.getfechaFin().getMonth() + 1));
+					textFieldAnyoFin.setText(Integer.toString(cp.getfechaFin().getYear() + 1900));
 				}
 			}
 		});

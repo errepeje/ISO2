@@ -14,9 +14,9 @@ import entities.ProfesorUCLM;
 
 public class GestorConsultas {
 
-	static CursoPropioDAO cpDAO = new CursoPropioDAO<CursoPropio>();
-	static CentroDAO cDAO = new CentroDAO<Centro>();
-	static ProfesorDAO pDAO = new ProfesorDAO<ProfesorUCLM>();
+	static CursoPropioDAO<CursoPropio> cpDAO = new CursoPropioDAO<>();
+	static CentroDAO<Centro> cDAO = new CentroDAO<>();
+	static ProfesorDAO<ProfesorUCLM> pDAO = new ProfesorDAO<>();
 
 	public List<CursoPropio> consultarIngresos(TipoCurso aTipo, Date aFechaInicio, Date aFechaFin) {
 		throw new UnsupportedOperationException();
@@ -38,7 +38,7 @@ public class GestorConsultas {
 		int[] id = new int[cursos.size()];
 
 		for(CursoPropio c: cursos) {
-			id[i] = c.get_id();
+			id[i] = c.getid();
 			i++;
 		}
 
@@ -51,14 +51,14 @@ public class GestorConsultas {
 		int i = 0;
 
 		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
-		int[] Edicion = new int[cursos.size()];
+		int[] edicion = new int[cursos.size()];
 
 		for(CursoPropio c: cursos) {
-			Edicion[i] = c.get_edicion();
+			edicion[i] = c.getedicion();
 			i++;
 		}
 
-		return Edicion;
+		return edicion;
 	}
 
 	public static String[] obtenerEstado() {
@@ -67,14 +67,14 @@ public class GestorConsultas {
 		int i = 0;
 
 		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
-		String[] Estado = new String[cursos.size()];
+		String[] estado = new String[cursos.size()];
 
 		for(CursoPropio c: cursos) {
-			Estado[i] = c.get_estado().toString();
+			estado[i] = c.getestado().toString();
 			i++;
 		}
 
-		return Estado;
+		return estado;
 	}
 
 	public static String[] obtenerTipoCurso() {
@@ -83,14 +83,14 @@ public class GestorConsultas {
 		int i = 0;
 
 		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
-		String[] TipoCurso = new String[cursos.size()];
+		String[] tipoCurso = new String[cursos.size()];
 
 		for(CursoPropio c: cursos) {
-			TipoCurso[i] = c.get_tipo().toString();
+			tipoCurso[i] = c.gettipo().toString();
 			i++;
 		}
 
-		return TipoCurso;
+		return tipoCurso;
 	}
 
 	public static int[] obtenerIngresos() {
@@ -99,14 +99,14 @@ public class GestorConsultas {
 		int i = 0;
 
 		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
-		int[] Ingresos = new int[cursos.size()];
+		int[] ingresos = new int[cursos.size()];
 
 		for(CursoPropio c: cursos) {
-			Ingresos[i] = c.get_tasaMatricula();
+			ingresos[i] = c.gettasaMatricula();
 			i++;
 		}
 
-		return Ingresos;
+		return ingresos;
 	}
 
 	public static CursoPropio obtenerCursos(int id) {

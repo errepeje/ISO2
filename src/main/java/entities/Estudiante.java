@@ -14,53 +14,53 @@ import jakarta.persistence.Transient;
 @PrimaryKeyJoinColumn(name = "dni")
 public class Estudiante extends Usuario {
 	@Column(name="nombre")
-	private String _nombre;
+	private String nombre;
 	@Column(name="apellidos")
-	private String _apellidos;
+	private String apellidos;
 	@Column(name="titulacion")
-	private String _titulacion;
+	private String titulacion;
 	@Column(name="cualificacion")
-	private String _cualificacion;
+	private String cualificacion;
 	@Transient
-	public Vector<Matricula> _matriculas ;
+	public Vector<Matricula> matriculas ;
 
 	public Estudiante(String nombre, String apellidos, String titulacion, String cualificacion) {
-		_nombre=nombre;
-		_apellidos=apellidos;
-		_titulacion=titulacion;
-		_cualificacion=cualificacion;
-		_matriculas=new Vector<Matricula>();
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.titulacion = titulacion;
+		this.cualificacion = cualificacion;
+		matriculas = new Vector<Matricula>();
 	}
 	public Estudiante() {}
 	
-	public String get_nombre() {
-		return _nombre;
+	public String getnombre() {
+		return nombre;
 	}
-	public void set_nombre(String _nombre) {
-		this._nombre = _nombre;
+	public void setnombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public String get_apellidos() {
-		return _apellidos;
+	public String getapellidos() {
+		return apellidos;
 	}
-	public void set_apellidos(String _apellidos) {
-		this._apellidos = _apellidos;
+	public void setapellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
-	public String get_titulacion() {
-		return _titulacion;
+	public String gettitulacion() {
+		return titulacion;
 	}
-	public void set_titulacion(String _titulacion) {
-		this._titulacion = _titulacion;
+	public void settitulacion(String titulacion) {
+		this.titulacion = titulacion;
 	}
-	public String get_cualificacion() {
-		return _cualificacion;
+	public String getcualificacion() {
+		return cualificacion;
 	}
-	public void set_cualificacion(String _cualificacion) {
-		this._cualificacion = _cualificacion;
+	public void setcualificacion(String cualificacion) {
+		this.cualificacion = cualificacion;
 	}
-	public Vector<Matricula> get_matriculas() {
-		return _matriculas;
+	public Vector<Matricula> getmatriculas() {
+		return matriculas;
 	}
-	public void set_matriculas(Vector<Matricula> _matriculas) {
-		this._matriculas = _matriculas;
+	public void setmatriculas(Vector<Matricula> matriculas) {
+		this.matriculas = matriculas;
 	}
 }

@@ -13,61 +13,61 @@ import persistencia.CentroDAO;
 public class Centro {
 	@Id
 	@Column(name="nombre")
-	private String _nombre;
+	private String nombre;
 	@Column(name="localizacion")
-	private String _localizacion;
+	private String localizacion;
 	@Transient
-	public Vector<CursoPropio> _cursoPropios = new Vector<CursoPropio>();
+	public Vector<CursoPropio> cursoPropios = new Vector<>();
 	@Transient
-	public Vector<ProfesorUCLM> _plantilla = new Vector<ProfesorUCLM>();
+	public Vector<ProfesorUCLM> plantilla = new Vector<>();
 	@Transient
-	private CentroDAO _centroDAO = new CentroDAO();
+	private CentroDAO<Centro> centroDAO = new CentroDAO();
 	
 
 	public Centro() {}
 	
-	public Centro(String _nombre, String _localizacion, Vector<CursoPropio> _cursoPropios,
-			Vector<ProfesorUCLM> _plantilla) {
+	public Centro(String nombre, String localizacion, Vector<CursoPropio> cursoPropios,
+			Vector<ProfesorUCLM> plantilla) {
 		super();
-		this._nombre = _nombre;
-		this._localizacion = _localizacion;
-		this._cursoPropios = _cursoPropios;
-		this._plantilla = _plantilla;
+		this.nombre = nombre;
+		this.localizacion = localizacion;
+		this.cursoPropios = cursoPropios;
+		this.plantilla = plantilla;
 	}
 
-	public String get_nombre() {
-		return _nombre;
+	public String getnombre() {
+		return nombre;
 	}
 
-	public void set_nombre(String _nombre) {
-		this._nombre = _nombre;
+	public void setnombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public String get_localizacion() {
-		return _localizacion;
+	public String getlocalizacion() {
+		return localizacion;
 	}
 
-	public void set_localizacion(String _localizacion) {
-		this._localizacion = _localizacion;
+	public void setlocalizacion(String localizacion) {
+		this.localizacion = localizacion;
 	}
 
-	public Vector<CursoPropio> get_cursoPropios() {
-		return _cursoPropios;
+	public Vector<CursoPropio> getcursoPropios() {
+		return cursoPropios;
 	}
 
-	public void set_cursoPropios(Vector<CursoPropio> _cursoPropios) {
-		this._cursoPropios = _cursoPropios;
+	public void setcursoPropios(Vector<CursoPropio> cursoPropios) {
+		this.cursoPropios = cursoPropios;
 	}
 
-	public Vector<ProfesorUCLM> get_plantilla() {
-		return _plantilla;
+	public Vector<ProfesorUCLM> getplantilla() {
+		return plantilla;
 	}
 
-	public void set_plantilla(Vector<ProfesorUCLM> _plantilla) {
-		this._plantilla = _plantilla;
+	public void setplantilla(Vector<ProfesorUCLM> plantilla) {
+		this.plantilla = plantilla;
 	}
 
-	public CentroDAO get_centroDAO() {
-		return _centroDAO;
+	public CentroDAO<Centro> getcentroDAO() {
+		return centroDAO;
 	}
 }

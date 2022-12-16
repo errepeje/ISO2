@@ -8,8 +8,7 @@ import entities.Usuario;
 import persistencia.UsuarioDAO;
 
 public class GestorLogin {
-	
-	static UsuarioDAO uDAO = new UsuarioDAO<Usuario>();
+	private static UsuarioDAO<Usuario> uDAO = new UsuarioDAO<>();
 	
 	public static String iniciarSesion (String nick, String password) throws Exception, NullPointerException {
 		String uID="";
@@ -17,7 +16,7 @@ public class GestorLogin {
 		if (existente.getPassword().equals(password))
 			uID=existente.getDni();
 		else
-			throw new Exception ("Usuario o contraseña incorrectos");
+			throw new Exception("Usuario o contraseña incorrectos");
 		return uID;
 	}
 	public static String obtenerTipoUsuario (String uID) {

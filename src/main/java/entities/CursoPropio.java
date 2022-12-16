@@ -17,65 +17,65 @@ public class CursoPropio {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private int _id;
+	private int id;
 	@Column(name="nombre")
-	private String _nombre;
+	private String nombre;
 	@Column(name="ects")
-	private int _eCTS;
+	private int eCTS;
 	@Column(name="fechaInicio")
-	private Date _fechaInicio;
+	private Date fechaInicio;
 	@Column(name="fechaFin")
-	private Date _fechaFin;
+	private Date fechaFin;
 	@Column(name="tasaMatricula")
-	private int _tasaMatricula;
+	private int tasaMatricula;
 	@Column(name="edicion")
-	private int _edicion;
+	private int edicion;
 	@Column(name="nombreCentro")
 	public String nombreCentro;
 	@Transient
-	public Centro _centro;
+	public Centro centro;
 	@Transient
-	public ProfesorUCLM _director;
+	public ProfesorUCLM director;
 	@Column(name="director")
 	public String idDirector;
 	@Transient
-	public ProfesorUCLM _secretario;
+	public ProfesorUCLM secretario;
 	@Column(name="secretario")
 	public String idSecretario;
 	@Column(name="estadoCurso")
-	public EstadoCurso _estado;
+	public EstadoCurso estado;
 	@Column(name="tipoCurso")
-	public TipoCurso _tipo;
+	public TipoCurso tipo;
 	@Column(name="informe")
 	public String informe;
 	@Transient
-	public Vector<Matricula> _matriculas = new Vector<Matricula>();
+	public Vector<Matricula> matriculas = new Vector<>();
 	@Transient
-	public Vector<Materia> _materias = new Vector<Materia>();
+	public Vector<Materia> materias = new Vector<>();
 	
 	public CursoPropio() {}
 	
-	public CursoPropio(int _id, String _nombre, int _eCTS, Date _fechaInicio, Date _fechaFin, int _tasaMatricula,
-			int _edicion, Vector<Matricula> _matriculas, Centro _centro, ProfesorUCLM _director,
-			ProfesorUCLM _secretario, Vector<Materia> _materias, EstadoCurso _estado, TipoCurso _tipo) {
+	public CursoPropio(int id, String nombre, int eCTS, Date fechaInicio, Date fechaFin, int tasaMatricula,
+			int edicion, Vector<Matricula> matriculas, Centro centro, ProfesorUCLM director,
+			ProfesorUCLM secretario, Vector<Materia> materias, EstadoCurso estado, TipoCurso tipo) {
 		super();
-		this._id = _id;
-		this._nombre = _nombre;
-		this._eCTS = _eCTS;
-		this._fechaInicio = _fechaInicio;
-		this._fechaFin = _fechaFin;
-		this._tasaMatricula = _tasaMatricula;
-		this._edicion = _edicion;
-		this._matriculas = _matriculas;
-		this._centro = _centro;
-		this.nombreCentro = _centro.get_nombre();
-		this._director = _director;
-		this._secretario = _secretario;
-		this._materias = _materias;
-		this._estado = _estado;
-		this._tipo = _tipo;
-		this.idDirector = _director.getDni();
-		this.idSecretario = _secretario.getDni();
+		this.id = id;
+		this.nombre = nombre;
+		this.eCTS = eCTS;
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+		this.tasaMatricula = tasaMatricula;
+		this.edicion = edicion;
+		this.matriculas = matriculas;
+		this.centro = centro;
+		this.nombreCentro = centro.getnombre();
+		this.director = director;
+		this.secretario = secretario;
+		this.materias = materias;
+		this.estado = estado;
+		this.tipo = tipo;
+		this.idDirector = director.getDni();
+		this.idSecretario = secretario.getDni();
 		this.informe = "";
 	}
 
@@ -103,123 +103,123 @@ public class CursoPropio {
 		this.idSecretario = idSecretario;
 	}
 
-	public int get_id() {
-		return _id;
+	public int getid() {
+		return id;
 	}
 
-	public void set_id(int _id) {
-		this._id = _id;
+	public void setid(int id) {
+		this.id = id;
 	}
 
-	public String get_nombre() {
-		return _nombre;
+	public String getnombre() {
+		return nombre;
 	}
 
-	public void set_nombre(String _nombre) {
-		this._nombre = _nombre;
+	public void setnombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public int get_eCTS() {
-		return _eCTS;
+	public int geteCTS() {
+		return eCTS;
 	}
 
-	public void set_eCTS(int _eCTS) {
-		this._eCTS = _eCTS;
+	public void seteCTS(int eCTS) {
+		this.eCTS = eCTS;
 	}
 
-	public Date get_fechaInicio() {
-		return _fechaInicio;
+	public Date getfechaInicio() {
+		return fechaInicio;
 	}
 
-	public void set_fechaInicio(Date _fechaInicio) {
-		this._fechaInicio = _fechaInicio;
+	public void setfechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
 	}
 
-	public Date get_fechaFin() {
-		return _fechaFin;
+	public Date getfechaFin() {
+		return fechaFin;
 	}
 
-	public void set_fechaFin(Date _fechaFin) {
-		this._fechaFin = _fechaFin;
+	public void setfechaFin(Date fechaFin) {
+		this.fechaFin = fechaFin;
 	}
 
-	public int get_tasaMatricula() {
-		return _tasaMatricula;
+	public int gettasaMatricula() {
+		return tasaMatricula;
 	}
 
-	public void set_tasaMatricula(int _tasaMatricula) {
-		this._tasaMatricula = _tasaMatricula;
+	public void settasaMatricula(int tasaMatricula) {
+		this.tasaMatricula = tasaMatricula;
 	}
 
-	public int get_edicion() {
-		return _edicion;
+	public int getedicion() {
+		return edicion;
 	}
 
-	public void set_edicion(int _edicion) {
-		this._edicion = _edicion;
+	public void setedicion(int edicion) {
+		this.edicion = edicion;
 	}
 
-	public Vector<Matricula> get_matriculas() {
-		return _matriculas;
+	public Vector<Matricula> getmatriculas() {
+		return matriculas;
 	}
 
-	public void set_matriculas(Vector<Matricula> _matriculas) {
-		this._matriculas = _matriculas;
+	public void setmatriculas(Vector<Matricula> matriculas) {
+		this.matriculas = matriculas;
 	}
 
-	public Centro get_centro() {
-		return _centro;
+	public Centro getcentro() {
+		return centro;
 	}
 
-	public void set_centro(Centro _centro) {
-		this._centro = _centro;
+	public void setcentro(Centro centro) {
+		this.centro = centro;
 	}
 
-	public ProfesorUCLM get_director() {
-		return _director;
+	public ProfesorUCLM getdirector() {
+		return director;
 	}
 
-	public void set_director(ProfesorUCLM _director) {
-		this._director = _director;
+	public void setdirector(ProfesorUCLM director) {
+		this.director = director;
 	}
 
-	public ProfesorUCLM get_secretario() {
-		return _secretario;
+	public ProfesorUCLM getsecretario() {
+		return secretario;
 	}
 
-	public void set_secretario(ProfesorUCLM _secretario) {
-		this._secretario = _secretario;
+	public void setsecretario(ProfesorUCLM secretario) {
+		this.secretario = secretario;
 	}
 
-	public Vector<Materia> get_materias() {
-		return _materias;
+	public Vector<Materia> getmaterias() {
+		return materias;
 	}
 
-	public void set_materias(Vector<Materia> _materias) {
-		this._materias = _materias;
+	public void setmaterias(Vector<Materia> materias) {
+		this.materias = materias;
 	}
 
-	public EstadoCurso get_estado() {
-		return _estado;
+	public EstadoCurso getestado() {
+		return estado;
 	}
 
-	public void set_estado(EstadoCurso _estado) {
-		this._estado = _estado;
+	public void setestado(EstadoCurso estado) {
+		this.estado = estado;
 	}
 
-	public TipoCurso get_tipo() {
-		return _tipo;
+	public TipoCurso gettipo() {
+		return tipo;
 	}
 
-	public void set_tipo(TipoCurso _tipo) {
-		this._tipo = _tipo;
+	public void settipo(TipoCurso tipo) {
+		this.tipo = tipo;
 	}
 	
-	public String get_informe() {
+	public String getinforme() {
 		return informe;
 	}
 
-	public void set_informe(String informe) {
+	public void setinforme(String informe) {
 		this.informe = informe;
 	}
 }

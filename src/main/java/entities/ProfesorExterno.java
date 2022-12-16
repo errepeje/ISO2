@@ -1,21 +1,20 @@
 package entities;
 
 public class ProfesorExterno extends Profesor {
-	private String _titulacion;
+	private String titulacion;
 	
 	public ProfesorExterno() {}
 	
-	public ProfesorExterno(String _dni, String _nombre, String _apellidos, boolean _doctor) {
-		super(_nombre, _apellidos, _doctor);
-		// TODO Auto-generated constructor stub
+	public ProfesorExterno(String dni, String nombre, String apellidos, boolean doctor) {
+		super(nombre, apellidos, doctor);
 	}
 
-	public String get_titulacion() {
-		return _titulacion;
+	public String gettitulacion() {
+		return titulacion;
 	}
 
-	public void set_titulacion(String _titulacion) {
-		this._titulacion = _titulacion;
+	public void settitulacion(String titulacion) {
+		this.titulacion = titulacion;
 	}
 
 }

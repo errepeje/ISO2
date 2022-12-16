@@ -3,61 +3,61 @@ package entities;
 import java.util.Date;
 
 public class Matricula {
-	private Date _fecha;
-	private boolean _pagado;
-	public Estudiante _estudiante;
-	public CursoPropio _titulo;
-	public ModoPago _tipoPago;
+	private Date fecha;
+	private boolean pagado;
+	private Estudiante estudiante;
+	private CursoPropio titulo;
+	private ModoPago tipoPago;
 	
 	public Matricula() {}
 	
-	public Matricula(Date _fecha, boolean _pagado, Estudiante _estudiante, CursoPropio _titulo,
-			ModoPago _tipoPago) {
+	public Matricula(Date fecha, boolean pagado, Estudiante estudiante, CursoPropio titulo,
+			ModoPago tipoPago) {
 		super();
-		this._fecha = _fecha;
-		this._pagado = _pagado;
-		this._estudiante = _estudiante;
-		this._titulo = _titulo;
-		this._tipoPago = _tipoPago;
+		this.fecha = fecha;
+		this.pagado = pagado;
+		this.estudiante = estudiante;
+		this.titulo = titulo;
+		this.tipoPago = tipoPago;
 	}
 
-	public Date get_fecha() {
-		return _fecha;
+	public Date getfecha() {
+		return fecha;
 	}
 
-	public void set_fecha(Date _fecha) {
-		this._fecha = _fecha;
+	public void setfecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
-	public boolean is_pagado() {
-		return _pagado;
+	public boolean ispagado() {
+		return pagado;
 	}
 
-	public void set_pagado(boolean _pagado) {
-		this._pagado = _pagado;
+	public void setpagado(boolean pagado) {
+		this.pagado = pagado;
 	}
 
-	public Estudiante get_estudiante() {
-		return _estudiante;
+	public Estudiante getestudiante() {
+		return estudiante;
 	}
 
-	public void set_estudiante(Estudiante _estudiante) {
-		this._estudiante = _estudiante;
+	public void setestudiante(Estudiante estudiante) {
+		this.estudiante = estudiante;
 	}
 
-	public CursoPropio get_titulo() {
-		return _titulo;
+	public CursoPropio gettitulo() {
+		return titulo;
 	}
 
-	public void set_titulo(CursoPropio _titulo) {
-		this._titulo = _titulo;
+	public void settitulo(CursoPropio titulo) {
+		this.titulo = titulo;
 	}
 
-	public ModoPago get_tipoPago() {
-		return _tipoPago;
+	public ModoPago gettipoPago() {
+		return tipoPago;
 	}
 
-	public void set_tipoPago(ModoPago _tipoPago) {
-		this._tipoPago = _tipoPago;
+	public void settipoPago(ModoPago tipoPago) {
+		this.tipoPago = tipoPago;
 	}
 }

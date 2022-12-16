@@ -9,13 +9,14 @@ import javax.swing.border.EmptyBorder;
 
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
 public class PantallaEmpleadosVicerrectorado extends JFrame {
-	private static JPanel contentPanel;
+	private JPanel contentPanel;
 	/**
 	 * Launch the application.
 	 */
@@ -38,7 +39,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 	 */
 	public PantallaEmpleadosVicerrectorado() {
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setVisible(true);
 
 		try  {
@@ -76,9 +77,5 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		JButton btnVisualizar = new JButton("OP3");
 		btnVisualizar.setBounds(67, 115, 153, 23);
 		getContentPane().add(btnVisualizar);
-		btnEditarCurso.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 	}
 }

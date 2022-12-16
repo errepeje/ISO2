@@ -8,9 +8,9 @@ import persistencia.*;
 
 public class GestorPropuestasCursos {
 	
-	static CursoPropioDAO cpDAO = new CursoPropioDAO<CursoPropio>();
-	static CentroDAO cDAO = new CentroDAO<Centro>();
-	static ProfesorDAO pDAO = new ProfesorDAO<ProfesorUCLM>();
+	static CursoPropioDAO<CursoPropio> cpDAO = new CursoPropioDAO<>();
+	static CentroDAO<Centro> cDAO = new CentroDAO<>();
+	static ProfesorDAO<ProfesorUCLM> pDAO = new ProfesorDAO<>();
 
 	public CursoPropio realizarPropuestaCurso(String nombre, int ECTS, Date fechaInicio,
 			Date fechaFin, int tasaMatricula, int edicion, String nombreCentro, String idDirector,
@@ -29,11 +29,11 @@ public class GestorPropuestasCursos {
 		}
 		
 		ProfesorUCLM p1 = (ProfesorUCLM) director;
-		p1.set_categoria(CategoriaProfesor.CATEDRATICO);
+		p1.setcategoria(CategoriaProfesor.CATEDRATICO);
 		p1.setNombreCentro("ESI");
 		
 		ProfesorUCLM p2 = (ProfesorUCLM) secretario;
-		p2.set_categoria(CategoriaProfesor.CATEDRATICO);
+		p2.setcategoria(CategoriaProfesor.CATEDRATICO);
 		p2.setNombreCentro("ESI");
 		
 		CursoPropio cursoPropio = new CursoPropio(1, nombre, ECTS, fechaInicio, fechaFin,
@@ -51,8 +51,8 @@ public class GestorPropuestasCursos {
 
 	public void evaluarPropuesta(int idCurso, EstadoCurso evaluacion, String informe) { 
 		CursoPropio evaluado = (CursoPropio) cpDAO.findById(CursoPropio.class, idCurso);
-		evaluado.set_estado(evaluacion);
-		evaluado.set_informe(informe);
+		evaluado.setestado(evaluacion);
+		evaluado.setinforme(informe);
 		editarPropuestaCurso(evaluado);
 	}
 
@@ -89,7 +89,7 @@ public class GestorPropuestasCursos {
 		String[] id = new String[centros.size()];
 		
 		for(Centro c: centros) {
-			id[i] = c.get_nombre();
+			id[i] = c.getnombre();
 			i++;
 		}
 		
@@ -105,7 +105,7 @@ public class GestorPropuestasCursos {
 		int[] id = new int[cursos.size()];
 		
 		for(CursoPropio c: cursos) {
-			id[i] = c.get_id();
+			id[i] = c.getid();
 			i++;
 		}
 		

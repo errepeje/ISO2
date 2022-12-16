@@ -15,6 +15,7 @@ import entities.EstadoCurso;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -67,8 +68,8 @@ public class PantallaEvaluarPropuesta extends JFrame {
 	 */
 	@SuppressWarnings("deprecation")
 	public PantallaEvaluarPropuesta() {
-		setTitle("Edición de un curso");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setTitle("Evaluar propuesta");
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 456, 802);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -143,11 +144,11 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		textFieldDiaFin.setBounds(186, 276, 66, 20);
 		contentPane.add(textFieldDiaFin);
 
-		JLabel lblg1_1 = new JLabel("-");
-		lblg1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblg1_1.setBounds(253, 279, 16, 14);
-		contentPane.add(lblg1_1);
+		JLabel lblg11 = new JLabel("-");
+		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg11.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg11.setBounds(253, 279, 16, 14);
+		contentPane.add(lblg11);
 
 		textFieldMesFin = new JTextField();
 		textFieldMesFin.setEditable(false);
@@ -155,11 +156,11 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		textFieldMesFin.setBounds(273, 276, 66, 20);
 		contentPane.add(textFieldMesFin);
 
-		JLabel lblg2_1 = new JLabel("-");
-		lblg2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblg2_1.setBounds(338, 276, 22, 20);
-		contentPane.add(lblg2_1);
+		JLabel lblg21 = new JLabel("-");
+		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg21.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg21.setBounds(338, 276, 22, 20);
+		contentPane.add(lblg21);
 
 		textFieldAnyoFin = new JTextField();
 		textFieldAnyoFin.setEditable(false);
@@ -265,12 +266,11 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		btnAprobarPropuesta.setEnabled(false);
 		btnAprobarPropuesta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GPC.evaluarPropuesta(cp.get_id(),EstadoCurso.VALIDADO, null); //Curso aceptado
+				GPC.evaluarPropuesta(cp.getid(),EstadoCurso.VALIDADO, null); //Curso aceptado
 			}
 		});
 		btnAprobarPropuesta.setBounds(10, 729, 199, 23);
 		contentPane.add(btnAprobarPropuesta);
-		
 		
 		JButton btnEnviarComentario = new JButton("Enviar");
 		btnEnviarComentario.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -278,7 +278,7 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		btnEnviarComentario.setEnabled(false);
 		btnEnviarComentario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GPC.evaluarPropuesta(cp.get_id(),EstadoCurso.PROPUESTA_RECHAZADA, textCommentario.getText().toString()); //Curso rechazado
+				GPC.evaluarPropuesta(cp.getid(),EstadoCurso.PROPUESTA_RECHAZADA, textCommentario.getText()); //Curso rechazado
 			}
 		});
 		btnEnviarComentario.setBounds(231, 729, 199, 23);
@@ -323,29 +323,29 @@ public class PantallaEvaluarPropuesta extends JFrame {
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
 					cp = GPC.obtenerCurso(Integer.parseInt(listCursos.getSelectedValue().toString()));
-					textFieldTasa.setText(Integer.toString(cp.get_tasaMatricula()));
-					textFieldECTS.setText(Integer.toString(cp.get_eCTS()));
+					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
+					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
 
-					String[] resultInicio = cp.get_fechaInicio().toString().split("-");
+					String[] resultInicio = cp.getfechaInicio().toString().split("-");
 					String[] solI = resultInicio[2].split(" ");
-					String[] resultFin = cp.get_fechaFin().toString().split("-");
+					String[] resultFin = cp.getfechaFin().toString().split("-");
 					String[] solF = resultFin[2].split(" ");
 					
-					textFieldNombre.setText(cp.get_nombre().toString());
-					textFieldEdicion.setText(Integer.toString(cp.get_edicion()));
-					textNombreCentro.setText(cp.getNombreCentro().toString());
-					textDirector.setText(cp.getIdDirector().toString());
-					textFieldSecretario.setText(cp.idSecretario.toString());
-					textFieldTipoCurso.setText(cp.get_tipo().toString());
-					textFieldEstadoCurso.setText(cp.get_estado().toString());
+					textFieldNombre.setText(cp.getnombre());
+					textFieldEdicion.setText(Integer.toString(cp.getedicion()));
+					textNombreCentro.setText(cp.getNombreCentro());
+					textDirector.setText(cp.getIdDirector());
+					textFieldSecretario.setText(cp.idSecretario);
+					textFieldTipoCurso.setText(cp.gettipo().toString());
+					textFieldEstadoCurso.setText(cp.getestado().toString());
 					
 					textFieldDiaInicio.setText(solI[0]);
-					textFieldMesInicio.setText(Integer.toString(cp.get_fechaInicio().getMonth() + 1));
-					textFieldAnyoInicio.setText(Integer.toString(cp.get_fechaInicio().getYear() + 1900));
+					textFieldMesInicio.setText(Integer.toString(cp.getfechaInicio().getMonth() + 1));
+					textFieldAnyoInicio.setText(Integer.toString(cp.getfechaInicio().getYear() + 1900));
 
 					textFieldDiaFin.setText(solF[0]);
-					textFieldMesFin.setText(Integer.toString(cp.get_fechaFin().getMonth() + 1));
-					textFieldAnyoFin.setText(Integer.toString(cp.get_fechaFin().getYear() + 1900));
+					textFieldMesFin.setText(Integer.toString(cp.getfechaFin().getMonth() + 1));
+					textFieldAnyoFin.setText(Integer.toString(cp.getfechaFin().getYear() + 1900));
 					//Activamos los botones de Aprobar y Rechazar propuesta
 					btnAprobarPropuesta.setEnabled(true);
 					btnRechazarPropuesta.setEnabled(true);

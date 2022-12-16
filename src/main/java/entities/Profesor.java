@@ -9,37 +9,37 @@ import jakarta.persistence.Table;
 @PrimaryKeyJoinColumn(name = "dni")
 public class Profesor extends Usuario {
 	@Column(name="nombre")
-	private String _nombre;
+	private String nombre;
 	@Column(name="apellidos")
-	private String _apellidos;
+	private String apellidos;
 	@Column(name="doctor")
-	private boolean _doctor;
+	private boolean doctor;
 	
 	public Profesor() {}
 	
-	public Profesor(String _nombre, String _apellidos, boolean _doctor) {
+	public Profesor(String nombre, String apellidos, boolean doctor) {
 		super();
-		this._nombre = _nombre;
-		this._apellidos = _apellidos;
-		this._doctor = _doctor;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.doctor = doctor;
 	}
 	
-	public String get_nombre() {
-		return _nombre;
+	public String getnombre() {
+		return nombre;
 	}
-	public void set_nombre(String _nombre) {
-		this._nombre = _nombre;
+	public void setnombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public String get_apellidos() {
-		return _apellidos;
+	public String getapellidos() {
+		return apellidos;
 	}
-	public void set_apellidos(String _apellidos) {
-		this._apellidos = _apellidos;
+	public void setapellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
-	public boolean is_doctor() {
-		return _doctor;
+	public boolean isdoctor() {
+		return doctor;
 	}
-	public void set_doctor(boolean _doctor) {
-		this._doctor = _doctor;
+	public void setdoctor(boolean doctor) {
+		this.doctor = doctor;
 	}
 }

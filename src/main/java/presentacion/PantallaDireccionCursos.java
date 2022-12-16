@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -36,7 +37,7 @@ public class PantallaDireccionCursos extends JFrame {
             public void run() {
                 JFrame frame = new JFrame("Dirección Cursos");
                 frame.setResizable(false);
-                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 frame.setVisible(true);
                 
                 try  {
@@ -46,12 +47,12 @@ public class PantallaDireccionCursos extends JFrame {
         			throwable.printStackTrace();
                 }
                 
-                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         		frame.setBounds(100, 100, 299, 194);
         		contentPanel = new JPanel();
         		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
                 
-                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         		frame.getContentPane().setLayout(null);
         		
         		JLabel lblTitulo = new JLabel("¿QUÉ DESEA HACER?");
@@ -78,7 +79,6 @@ public class PantallaDireccionCursos extends JFrame {
         		JButton btnVisualizar = new JButton("VISUALIZAR PROPUESTA");
         		btnVisualizar.addActionListener(new ActionListener() {
         			public void actionPerformed(ActionEvent arg0) {
-        				
         				visualizarPropuesta();
         			}
         		});

@@ -10,11 +10,11 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import controllers.GestorConsultas;
-import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
@@ -70,7 +70,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 	@SuppressWarnings("deprecation")
 	public PantallaConsultarCursos_Ingresos() {
 		setTitle("Seleccion cursos estados");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 728, 597);
 		panel = new JPanel();
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -142,11 +142,11 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		textFieldDiaFin.setBounds(186, 276, 66, 20);
 		panel.add(textFieldDiaFin);
 
-		JLabel lblg1_1 = new JLabel("-");
-		lblg1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblg1_1.setBounds(253, 279, 16, 14);
-		panel.add(lblg1_1);
+		JLabel lblg11 = new JLabel("-");
+		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg11.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg11.setBounds(253, 279, 16, 14);
+		panel.add(lblg11);
 
 		textFieldMesFin = new JTextField();
 		textFieldMesFin.setEditable(false);
@@ -154,11 +154,11 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		textFieldMesFin.setBounds(273, 276, 66, 20);
 		panel.add(textFieldMesFin);
 
-		JLabel lblg2_1 = new JLabel("-");
-		lblg2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblg2_1.setBounds(338, 276, 22, 20);
-		panel.add(lblg2_1);
+		JLabel lblg21 = new JLabel("-");
+		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg21.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg21.setBounds(338, 276, 22, 20);
+		panel.add(lblg21);
 
 		textFieldAnyoFin = new JTextField();
 		textFieldAnyoFin.setEditable(false);
@@ -263,22 +263,22 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 
 
 
-		JComboBox TiposBox = new JComboBox();
-		TiposBox.setBounds(10, 28, 166, 21);
-		panel.add(TiposBox);
-		String [] AllEstados = {"NINGUN CURSO", "MASTER", "EXPERTO", "ESPECIALISTA", "FORMACION_AVANZADA", "FORMACION_CONTINUA", "MICROCREDENCIALES", "CORTA_DURACION","VERANO_Y_EXTENSION"};
-		for(int i=0; i<AllEstados.length; i++)
-			TiposBox.addItem(AllEstados[i]);
+		JComboBox tiposBox = new JComboBox();
+		tiposBox.setBounds(10, 28, 166, 21);
+		panel.add(tiposBox);
+		String [] allEstados = {"NINGUN CURSO", "MASTER", "EXPERTO", "ESPECIALISTA", "FORMACION_AVANZADA", "FORMACION_CONTINUA", "MICROCREDENCIALES", "CORTA_DURACION","VERANO_Y_EXTENSION"};
+		for(int i=0; i<allEstados.length; i++)
+			tiposBox.addItem(allEstados[i]);
 
 		txtIngresos = new JTextField();
 		txtIngresos.setBounds(10, 82, 96, 19);
 		panel.add(txtIngresos);
 		txtIngresos.setColumns(10);
 
-		JLabel lblTipoDeCurso_1 = new JLabel("Tipo de curso:");
-		lblTipoDeCurso_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblTipoDeCurso_1.setBounds(10, 11, 279, 19);
-		panel.add(lblTipoDeCurso_1);
+		JLabel lblTipoDeCurso1 = new JLabel("Tipo de curso:");
+		lblTipoDeCurso1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTipoDeCurso1.setBounds(10, 11, 279, 19);
+		panel.add(lblTipoDeCurso1);
 
 		JLabel lblIngresosTotales = new JLabel("Ingresos totales:");
 		lblIngresosTotales.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -286,14 +286,15 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		panel.add(lblIngresosTotales);
 
 
-		TiposBox.addItemListener(new ItemListener() {
+		tiposBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent itemEvent) {
-				String opcion = TiposBox.getSelectedItem().toString();
+				String opcion = tiposBox.getSelectedItem().toString();
 				int ingresosTotales;
 
-				int[] idCursos = GC.obtenerCursos();
-				int[] IngresosCursos = GC.obtenerIngresos();
-				String[] TipoCursos = GC.obtenerTipoCurso();
+				int[] idCursos;
+				int[] ingresosCursos;
+				String[] tipoCursos;
+				
 				switch(opcion) {						
 				case "NINGUN CURSO":
 					listModel.removeAllElements();
@@ -305,12 +306,12 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					ingresosTotales=0;
 
 					idCursos = GC.obtenerCursos();
-					IngresosCursos = GC.obtenerIngresos();
-					TipoCursos = GC.obtenerTipoCurso();
-					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j].equals("MASTER")){
+					ingresosCursos = GC.obtenerIngresos();
+					tipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<ingresosCursos.length; j++) {
+						if (tipoCursos[j].equals("MASTER")){
 							listModel.addElement(idCursos[j]);
-							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							ingresosTotales= ingresosTotales + ingresosCursos[j];
 						}
 					}
 					txtIngresos.setText(Integer.toString(ingresosTotales));	
@@ -322,12 +323,12 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					ingresosTotales=0;
 
 					idCursos = GC.obtenerCursos();
-					IngresosCursos = GC.obtenerIngresos();
-					TipoCursos = GC.obtenerTipoCurso();
-					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j].equals("EXPERTO")){
+					ingresosCursos = GC.obtenerIngresos();
+					tipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<ingresosCursos.length; j++) {
+						if (tipoCursos[j].equals("EXPERTO")){
 							listModel.addElement(idCursos[j]);
-							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							ingresosTotales= ingresosTotales + ingresosCursos[j];
 						}
 					}
 					txtIngresos.setText(Integer.toString(ingresosTotales));	
@@ -339,12 +340,12 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					ingresosTotales=0;
 
 					idCursos = GC.obtenerCursos();
-					IngresosCursos = GC.obtenerIngresos();
-					TipoCursos = GC.obtenerTipoCurso();
-					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j].equals("ESPECIALISTA")){
+					ingresosCursos = GC.obtenerIngresos();
+					tipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<ingresosCursos.length; j++) {
+						if (tipoCursos[j].equals("ESPECIALISTA")){
 							listModel.addElement(idCursos[j]);
-							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							ingresosTotales= ingresosTotales + ingresosCursos[j];
 						}
 					}
 					txtIngresos.setText(Integer.toString(ingresosTotales));	
@@ -356,12 +357,12 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					ingresosTotales=0;
 
 					idCursos = GC.obtenerCursos();
-					IngresosCursos = GC.obtenerIngresos();
-					TipoCursos = GC.obtenerTipoCurso();
-					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j].equals("FORMACION_AVANZADA")){
+					ingresosCursos = GC.obtenerIngresos();
+					tipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<ingresosCursos.length; j++) {
+						if (tipoCursos[j].equals("FORMACION_AVANZADA")){
 							listModel.addElement(idCursos[j]);
-							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							ingresosTotales= ingresosTotales + ingresosCursos[j];
 						}
 					}
 					txtIngresos.setText(Integer.toString(ingresosTotales));	
@@ -373,12 +374,12 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					ingresosTotales=0;
 
 					idCursos = GC.obtenerCursos();
-					IngresosCursos = GC.obtenerIngresos();
-					TipoCursos = GC.obtenerTipoCurso();
-					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j].equals("FORMACION_CONTINUA")){
+					ingresosCursos = GC.obtenerIngresos();
+					tipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<ingresosCursos.length; j++) {
+						if (tipoCursos[j].equals("FORMACION_CONTINUA")){
 							listModel.addElement(idCursos[j]);
-							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							ingresosTotales= ingresosTotales + ingresosCursos[j];
 						}
 					}
 					txtIngresos.setText(Integer.toString(ingresosTotales));	
@@ -390,12 +391,12 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					ingresosTotales=0;
 
 					idCursos = GC.obtenerCursos();
-					IngresosCursos = GC.obtenerIngresos();
-					TipoCursos = GC.obtenerTipoCurso();
-					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j].equals("MICROCREDENCIALES")){
+					ingresosCursos = GC.obtenerIngresos();
+					tipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<ingresosCursos.length; j++) {
+						if (tipoCursos[j].equals("MICROCREDENCIALES")){
 							listModel.addElement(idCursos[j]);
-							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							ingresosTotales= ingresosTotales + ingresosCursos[j];
 						}
 					}
 					txtIngresos.setText(Integer.toString(ingresosTotales));	
@@ -407,12 +408,12 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					ingresosTotales=0;
 
 					idCursos = GC.obtenerCursos();
-					IngresosCursos = GC.obtenerIngresos();
-					TipoCursos = GC.obtenerTipoCurso();
-					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j].equals("CORTA_DURACION")){
+					ingresosCursos = GC.obtenerIngresos();
+					tipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<ingresosCursos.length; j++) {
+						if (tipoCursos[j].equals("CORTA_DURACION")){
 							listModel.addElement(idCursos[j]);
-							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							ingresosTotales= ingresosTotales + ingresosCursos[j];
 						}
 					}
 					txtIngresos.setText(Integer.toString(ingresosTotales));	
@@ -424,16 +425,19 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					ingresosTotales=0;
 
 					idCursos = GC.obtenerCursos();
-					IngresosCursos = GC.obtenerIngresos();
-					TipoCursos = GC.obtenerTipoCurso();
-					for(int j=0; j<IngresosCursos.length; j++) {
-						if (TipoCursos[j].equals("VERANO_Y_EXTENSION")){
+					ingresosCursos = GC.obtenerIngresos();
+					tipoCursos = GC.obtenerTipoCurso();
+					for(int j=0; j<ingresosCursos.length; j++) {
+						if (tipoCursos[j].equals("VERANO_Y_EXTENSION")){
 							listModel.addElement(idCursos[j]);
-							ingresosTotales= ingresosTotales + IngresosCursos[j];
+							ingresosTotales= ingresosTotales + ingresosCursos[j];
 						}
 					}
 					txtIngresos.setText(Integer.toString(ingresosTotales));	
-					break;	
+					break;
+					
+				default:
+					break;
 				}
 			}
 		});	
@@ -443,29 +447,29 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
 					cp = GC.obtenerCursos(Integer.parseInt(listCursos.getSelectedValue().toString()));
-					textFieldTasa.setText(Integer.toString(cp.get_tasaMatricula()));
-					textFieldECTS.setText(Integer.toString(cp.get_eCTS()));
+					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
+					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
 
-					String[] resultInicio = cp.get_fechaInicio().toString().split("-");
+					String[] resultInicio = cp.getfechaInicio().toString().split("-");
 					String[] solI = resultInicio[2].split(" ");
-					String[] resultFin = cp.get_fechaFin().toString().split("-");
+					String[] resultFin = cp.getfechaFin().toString().split("-");
 					String[] solF = resultFin[2].split(" ");
 
-					textFieldNombre.setText(cp.get_nombre().toString());
-					textFieldEdicion.setText(Integer.toString(cp.get_edicion()));
-					textNombreCentro.setText(cp.getNombreCentro().toString());
-					textDirector.setText(cp.getIdDirector().toString());
-					textFieldSecretario.setText(cp.idSecretario.toString());
-					textFieldTipoCurso.setText(cp.get_tipo().toString());
-					textFieldEstadoCurso.setText(cp.get_estado().toString());
+					textFieldNombre.setText(cp.getnombre());
+					textFieldEdicion.setText(Integer.toString(cp.getedicion()));
+					textNombreCentro.setText(cp.getNombreCentro());
+					textDirector.setText(cp.getIdDirector());
+					textFieldSecretario.setText(cp.idSecretario);
+					textFieldTipoCurso.setText(cp.gettipo().toString());
+					textFieldEstadoCurso.setText(cp.getestado().toString());
 
 					textFieldDiaInicio.setText(solI[0]);
-					textFieldMesInicio.setText(Integer.toString(cp.get_fechaInicio().getMonth() + 1));
-					textFieldAnyoInicio.setText(Integer.toString(cp.get_fechaInicio().getYear() + 1900));
+					textFieldMesInicio.setText(Integer.toString(cp.getfechaInicio().getMonth() + 1));
+					textFieldAnyoInicio.setText(Integer.toString(cp.getfechaInicio().getYear() + 1900));
 
 					textFieldDiaFin.setText(solF[0]);
-					textFieldMesFin.setText(Integer.toString(cp.get_fechaFin().getMonth() + 1));
-					textFieldAnyoFin.setText(Integer.toString(cp.get_fechaFin().getYear() + 1900));
+					textFieldMesFin.setText(Integer.toString(cp.getfechaFin().getMonth() + 1));
+					textFieldAnyoFin.setText(Integer.toString(cp.getfechaFin().getYear() + 1900));
 				}
 			}
 		});
