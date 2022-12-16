@@ -18,7 +18,6 @@ public class JefeGabinete extends Usuario {
 
 	public JefeGabinete(String nombre, String apellidos) {
 		super();
-//		this.dni=dni;
 		this.nombre=nombre;
 		this.apellidos=apellidos;
 	}
@@ -39,7 +38,4 @@ public class JefeGabinete extends Usuario {
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-	
-	
-
 }

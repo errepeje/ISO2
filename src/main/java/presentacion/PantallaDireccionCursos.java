@@ -13,7 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.SystemColor;
-import javax.swing.JCheckBox;
 
 @SuppressWarnings("serial")
 public class PantallaDireccionCursos extends JFrame {

@@ -9,7 +9,6 @@ import persistencia.UsuarioDAO;
 
 public class GestorLogin {
 	
-	
 	static UsuarioDAO uDAO = new UsuarioDAO<Usuario>();
 	
 	public static String iniciarSesion (String nick, String password) throws Exception, NullPointerException {

@@ -13,24 +13,15 @@ import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
 
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Component;
 import javax.swing.JLabel;
 
-
 public class PantallaVisualizarPropuesta extends JFrame {
-
 	private JPanel contentPane;
 	private JTextField textFieldDiaInicio;
 	private JTextField textFieldMesInicio;
@@ -263,7 +254,6 @@ public class PantallaVisualizarPropuesta extends JFrame {
 		textFieldSecretario.setBounds(186, 516, 239, 20);
 		contentPane.add(textFieldSecretario);
 
-
 		/* ACCIONES */
 		listCursos.addListSelectionListener(new ListSelectionListener() {
 			@Override
@@ -293,11 +283,11 @@ public class PantallaVisualizarPropuesta extends JFrame {
 					textFieldDiaFin.setText(solF[0]);
 					textFieldMesFin.setText(Integer.toString(cp.get_fechaFin().getMonth() + 1));
 					textFieldAnyoFin.setText(Integer.toString(cp.get_fechaFin().getYear() + 1900));
-
 				}
 			}
 		});
 	}
+	
 	public Date darFormatoFecha(String cadena) {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 		Date fecha = null;

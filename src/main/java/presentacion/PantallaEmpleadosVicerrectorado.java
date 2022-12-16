@@ -6,30 +6,13 @@ import java.awt.SystemColor;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
-import controllers.GestorPropuestasCursos;
-import entities.CursoPropio;
-import entities.EstadoCurso;
-
-import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
-import javax.swing.JList;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Enumeration;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Component;
 import javax.swing.JLabel;
-
 
 public class PantallaEmpleadosVicerrectorado extends JFrame {
 	private static JPanel contentPanel;
@@ -52,7 +35,6 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	@SuppressWarnings("deprecation")
 	public PantallaEmpleadosVicerrectorado() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -97,7 +79,5 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-
-
 	}
 }

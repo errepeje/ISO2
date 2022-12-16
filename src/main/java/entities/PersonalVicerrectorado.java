@@ -40,6 +40,4 @@ public class PersonalVicerrectorado extends Usuario {
 		this.apellidos = apellidos;
 	}
 	
-	
-
 }

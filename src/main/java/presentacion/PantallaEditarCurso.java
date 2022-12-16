@@ -8,13 +8,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.w3c.dom.Node;
-
 import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
-import entities.TipoCurso;
 
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
@@ -24,7 +20,6 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.StringTokenizer;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;

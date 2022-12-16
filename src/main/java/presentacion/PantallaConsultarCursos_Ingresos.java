@@ -14,30 +14,20 @@ import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
 
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 
-import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Component;
 import javax.swing.JLabel;
-import javax.swing.JTextPane;
 
 
 public class PantallaConsultarCursos_Ingresos extends JFrame {
-
-
 	private JPanel panel;
 	private JTextField textFieldDiaInicio;
 	private JTextField textFieldMesInicio;
@@ -47,7 +37,6 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 	private JTextField textFieldAnyoFin;
 	private JTextField textFieldTasa;
 	private JTextField textFieldECTS;
-	private GestorPropuestasCursos GPC = new GestorPropuestasCursos();
 	private GestorConsultas GC = new GestorConsultas();
 	private CursoPropio cp;
 	private JTextField textFieldNombre;
@@ -89,16 +78,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		panel.setLayout(null);
 
 		DefaultListModel listModel = new DefaultListModel();
-	
-		/*int[] idCursosDenegados = GPC.obtenerCursosDenegados();
-		for(int i=0; i<idCursosDenegados.length; i++) {
-			
-				
-			listModel.addElement(idCursosDenegados[i]);
-			}
-	*/
-		
-		
+
 		JList listCursos = new JList(listModel);
 		listCursos.setBounds(10, 109, 166, 427);
 		panel.add(listCursos);
@@ -278,246 +258,185 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 		textFieldSecretario.setBounds(186, 516, 239, 20);
 		panel.add(textFieldSecretario);
 		textFieldTasa.setEditable(false);
-		
-		
-		
-		
+
+
+
+
 		JComboBox TiposBox = new JComboBox();
 		TiposBox.setBounds(10, 28, 166, 21);
 		panel.add(TiposBox);
 		String [] AllEstados = {"NINGUN CURSO", "MASTER", "EXPERTO", "ESPECIALISTA", "FORMACION_AVANZADA", "FORMACION_CONTINUA", "MICROCREDENCIALES", "CORTA_DURACION","VERANO_Y_EXTENSION"};
 		for(int i=0; i<AllEstados.length; i++)
 			TiposBox.addItem(AllEstados[i]);
-		
+
 		txtIngresos = new JTextField();
 		txtIngresos.setBounds(10, 82, 96, 19);
 		panel.add(txtIngresos);
 		txtIngresos.setColumns(10);
-		
+
 		JLabel lblTipoDeCurso_1 = new JLabel("Tipo de curso:");
 		lblTipoDeCurso_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblTipoDeCurso_1.setBounds(10, 11, 279, 19);
 		panel.add(lblTipoDeCurso_1);
-		
+
 		JLabel lblIngresosTotales = new JLabel("Ingresos totales:");
 		lblIngresosTotales.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblIngresosTotales.setBounds(10, 59, 279, 19);
 		panel.add(lblIngresosTotales);
-		
 
-		
 
-		
-		
-
-		/* ACCIONES */
 		TiposBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent itemEvent) {
 				String opcion = TiposBox.getSelectedItem().toString();
 				int ingresosTotales;
-		
+
 				int[] idCursos = GC.obtenerCursos();
 				int[] IngresosCursos = GC.obtenerIngresos();
 				String[] TipoCursos = GC.obtenerTipoCurso();
-		switch(opcion) {						
-			
-		
-			case "NINGUN CURSO":
+				switch(opcion) {						
+				case "NINGUN CURSO":
+					listModel.removeAllElements();
+					break;
 
-				listModel.removeAllElements();
-	
-			break;
-		
-			case "MASTER":
-				txtIngresos.setText(null);
-				listModel.removeAllElements();
-				ingresosTotales=0;
-				
-				 idCursos = GC.obtenerCursos();
-				 IngresosCursos = GC.obtenerIngresos();
-				 TipoCursos = GC.obtenerTipoCurso();
+				case "MASTER":
+					txtIngresos.setText(null);
+					listModel.removeAllElements();
+					ingresosTotales=0;
+
+					idCursos = GC.obtenerCursos();
+					IngresosCursos = GC.obtenerIngresos();
+					TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j].equals("MASTER")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
-							
-						
-				}
+						}
+					}
+					txtIngresos.setText(Integer.toString(ingresosTotales));	
+					break;
 					
-				}
-				
-				txtIngresos.setText(Integer.toString(ingresosTotales));	
+				case "EXPERTO":
+					txtIngresos.setText(null);
+					listModel.removeAllElements();
+					ingresosTotales=0;
 
-				
-				
-				break;
-			case "EXPERTO":
-				
-				txtIngresos.setText(null);
-				listModel.removeAllElements();
-				ingresosTotales=0;
-				
-				 idCursos = GC.obtenerCursos();
-				 IngresosCursos = GC.obtenerIngresos();
-				 TipoCursos = GC.obtenerTipoCurso();
+					idCursos = GC.obtenerCursos();
+					IngresosCursos = GC.obtenerIngresos();
+					TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j].equals("EXPERTO")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
-							
-						
-				}
+						}
+					}
+					txtIngresos.setText(Integer.toString(ingresosTotales));	
+					break;
 					
-				}
-				
-				txtIngresos.setText(Integer.toString(ingresosTotales));	
+				case "ESPECIALISTA":
+					txtIngresos.setText(null);
+					listModel.removeAllElements();
+					ingresosTotales=0;
 
-				
-			
-				
-				break;
-			case "ESPECIALISTA":
-				txtIngresos.setText(null);
-				listModel.removeAllElements();
-				ingresosTotales=0;
-				
-				 idCursos = GC.obtenerCursos();
-				 IngresosCursos = GC.obtenerIngresos();
-				 TipoCursos = GC.obtenerTipoCurso();
+					idCursos = GC.obtenerCursos();
+					IngresosCursos = GC.obtenerIngresos();
+					TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j].equals("ESPECIALISTA")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
-							
-						
-				}
-					
-				}
-				
-				txtIngresos.setText(Integer.toString(ingresosTotales));	
+						}
+					}
+					txtIngresos.setText(Integer.toString(ingresosTotales));	
+					break;
 
-				
-				break;
-				
-	
-			case "FORMACION_AVANZADA":
-				txtIngresos.setText(null);
-				listModel.removeAllElements();
-				ingresosTotales=0;
-				
-				 idCursos = GC.obtenerCursos();
-				 IngresosCursos = GC.obtenerIngresos();
-				 TipoCursos = GC.obtenerTipoCurso();
+				case "FORMACION_AVANZADA":
+					txtIngresos.setText(null);
+					listModel.removeAllElements();
+					ingresosTotales=0;
+
+					idCursos = GC.obtenerCursos();
+					IngresosCursos = GC.obtenerIngresos();
+					TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j].equals("FORMACION_AVANZADA")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
-							
-						
-				}
-					
-				}
-				
-				txtIngresos.setText(Integer.toString(ingresosTotales));	
+						}
+					}
+					txtIngresos.setText(Integer.toString(ingresosTotales));	
+					break;
 
-				break;
-				
-				
-			case "FORMACION_CONTINUA":
-				txtIngresos.setText(null);
-				listModel.removeAllElements();
-				ingresosTotales=0;
-				
-				 idCursos = GC.obtenerCursos();
-				 IngresosCursos = GC.obtenerIngresos();
-				 TipoCursos = GC.obtenerTipoCurso();
+				case "FORMACION_CONTINUA":
+					txtIngresos.setText(null);
+					listModel.removeAllElements();
+					ingresosTotales=0;
+
+					idCursos = GC.obtenerCursos();
+					IngresosCursos = GC.obtenerIngresos();
+					TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j].equals("FORMACION_CONTINUA")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
-							
-						
-				}
-					
-				}
-				
-				txtIngresos.setText(Integer.toString(ingresosTotales));	
+						}
+					}
+					txtIngresos.setText(Integer.toString(ingresosTotales));	
+					break;
 
-				break;
-				
-				
-			case "MICROCREDENCIALES":
-				txtIngresos.setText(null);
-				listModel.removeAllElements();
-				ingresosTotales=0;
-				
-				 idCursos = GC.obtenerCursos();
-				 IngresosCursos = GC.obtenerIngresos();
-				 TipoCursos = GC.obtenerTipoCurso();
+				case "MICROCREDENCIALES":
+					txtIngresos.setText(null);
+					listModel.removeAllElements();
+					ingresosTotales=0;
+
+					idCursos = GC.obtenerCursos();
+					IngresosCursos = GC.obtenerIngresos();
+					TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j].equals("MICROCREDENCIALES")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
-							
-						
-				}
-					
-				}
-				
-				txtIngresos.setText(Integer.toString(ingresosTotales));	
+						}
+					}
+					txtIngresos.setText(Integer.toString(ingresosTotales));	
+					break;	
 
-					
-				break;	
-				
-				
-				
-			case "CORTA_DURACION":
-				txtIngresos.setText(null);
-				listModel.removeAllElements();
-				ingresosTotales=0;
-				
-				 idCursos = GC.obtenerCursos();
-				 IngresosCursos = GC.obtenerIngresos();
-				 TipoCursos = GC.obtenerTipoCurso();
+				case "CORTA_DURACION":
+					txtIngresos.setText(null);
+					listModel.removeAllElements();
+					ingresosTotales=0;
+
+					idCursos = GC.obtenerCursos();
+					IngresosCursos = GC.obtenerIngresos();
+					TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j].equals("CORTA_DURACION")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
-							
-						
-				}
+						}
+					}
+					txtIngresos.setText(Integer.toString(ingresosTotales));	
+					break;
 					
-				}
-				
-				txtIngresos.setText(Integer.toString(ingresosTotales));	
+				case "VERANO_Y_EXTENSION":
+					txtIngresos.setText(null);
+					listModel.removeAllElements();
+					ingresosTotales=0;
 
-				break;	
-			case "VERANO_Y_EXTENSION":
-				txtIngresos.setText(null);
-				listModel.removeAllElements();
-				ingresosTotales=0;
-				
-				 idCursos = GC.obtenerCursos();
-				 IngresosCursos = GC.obtenerIngresos();
-				 TipoCursos = GC.obtenerTipoCurso();
+					idCursos = GC.obtenerCursos();
+					IngresosCursos = GC.obtenerIngresos();
+					TipoCursos = GC.obtenerTipoCurso();
 					for(int j=0; j<IngresosCursos.length; j++) {
 						if (TipoCursos[j].equals("VERANO_Y_EXTENSION")){
 							listModel.addElement(idCursos[j]);
 							ingresosTotales= ingresosTotales + IngresosCursos[j];
-							
-						
+						}
+					}
+					txtIngresos.setText(Integer.toString(ingresosTotales));	
+					break;	
 				}
-					
-				}
-				
-				txtIngresos.setText(Integer.toString(ingresosTotales));	
+			}
+		});	
 
-				break;	
-		}
-
-		}
-	});	
-		
 		listCursos.addListSelectionListener(new ListSelectionListener() {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
@@ -530,7 +449,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					String[] solI = resultInicio[2].split(" ");
 					String[] resultFin = cp.get_fechaFin().toString().split("-");
 					String[] solF = resultFin[2].split(" ");
-					
+
 					textFieldNombre.setText(cp.get_nombre().toString());
 					textFieldEdicion.setText(Integer.toString(cp.get_edicion()));
 					textNombreCentro.setText(cp.getNombreCentro().toString());
@@ -538,7 +457,7 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					textFieldSecretario.setText(cp.idSecretario.toString());
 					textFieldTipoCurso.setText(cp.get_tipo().toString());
 					textFieldEstadoCurso.setText(cp.get_estado().toString());
-					
+
 					textFieldDiaInicio.setText(solI[0]);
 					textFieldMesInicio.setText(Integer.toString(cp.get_fechaInicio().getMonth() + 1));
 					textFieldAnyoInicio.setText(Integer.toString(cp.get_fechaInicio().getYear() + 1900));
@@ -546,13 +465,11 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					textFieldDiaFin.setText(solF[0]);
 					textFieldMesFin.setText(Integer.toString(cp.get_fechaFin().getMonth() + 1));
 					textFieldAnyoFin.setText(Integer.toString(cp.get_fechaFin().getYear() + 1900));
-
 				}
 			}
 		});
-		 
-		
 	}
+	
 	public Date darFormatoFecha(String cadena) {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 		Date fecha = null;

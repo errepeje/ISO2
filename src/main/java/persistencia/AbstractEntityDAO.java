@@ -1,9 +1,6 @@
 package persistencia;
 
 import java.util.List;
-import java.util.Optional;
-
-import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

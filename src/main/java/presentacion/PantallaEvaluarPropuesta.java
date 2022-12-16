@@ -1,7 +1,5 @@
 package presentacion;
-//	public void evaluarCurso() {
-//		throw new UnsupportedOperationException();
-//	}
+
 import java.awt.EventQueue;
 import java.awt.Font;
 
@@ -16,7 +14,6 @@ import entities.CursoPropio;
 import entities.EstadoCurso;
 
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
@@ -25,15 +22,10 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Component;
 import javax.swing.JLabel;
 
-
 public class PantallaEvaluarPropuesta extends JFrame {
-
 	private JPanel contentPane;
 	private JTextField textFieldDiaInicio;
 	private JTextField textFieldMesInicio;
@@ -273,7 +265,6 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		btnAprobarPropuesta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GPC.evaluarPropuesta(cp.get_id(),EstadoCurso.VALIDADO, null); //Curso aceptado
-				//¿Feedback?
 			}
 		});
 		btnAprobarPropuesta.setBounds(10, 729, 199, 23);
@@ -325,7 +316,6 @@ public class PantallaEvaluarPropuesta extends JFrame {
 		lblInformes.setBounds(10, 552, 415, 32);
 		contentPane.add(lblInformes);
 
-
 		/* ACCIONES */
 		listCursos.addListSelectionListener(new ListSelectionListener() {
 			@Override
@@ -363,12 +353,11 @@ public class PantallaEvaluarPropuesta extends JFrame {
 					btnEnviarComentario.setVisible(false);
 					btnEnviarComentario.setEnabled(false);
 					textCommentario.setEnabled(false);
-					
-
 				}
 			}
 		});
 	}
+	
 	public Date darFormatoFecha(String cadena) {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 		Date fecha = null;

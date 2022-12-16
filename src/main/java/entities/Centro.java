@@ -1,8 +1,6 @@
 package entities;
 
 import java.util.Vector;
-import entities.CursoPropio;
-import entities.ProfesorUCLM;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

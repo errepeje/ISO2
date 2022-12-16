@@ -14,7 +14,6 @@ import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
 
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
@@ -23,12 +22,8 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Component;
 import javax.swing.JLabel;
-import javax.swing.JTextPane;
 
 public class PantallaConsultarCursos_Ediciones extends JFrame {
 
@@ -41,7 +36,6 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 	private JTextField textFieldAnyoFin;
 	private JTextField textFieldTasa;
 	private JTextField textFieldECTS;
-	private GestorPropuestasCursos GPC = new GestorPropuestasCursos();
 	private GestorConsultas GC = new GestorConsultas();
 	private CursoPropio cp;
 	private JTextField textFieldNombre;
@@ -83,16 +77,16 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		panel.setLayout(null);
 
 		DefaultListModel listModel = new DefaultListModel();
-	
+
 		/*int[] idCursosDenegados = GPC.obtenerCursosDenegados();
 		for(int i=0; i<idCursosDenegados.length; i++) {
-			
-				
+
+
 			listModel.addElement(idCursosDenegados[i]);
 			}
-	*/
-		
-		
+		 */
+
+
 		JList listCursos = new JList(listModel);
 		listCursos.setBounds(10, 94, 166, 442);
 		panel.add(listCursos);
@@ -272,48 +266,33 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 		textFieldSecretario.setBounds(186, 516, 239, 20);
 		panel.add(textFieldSecretario);
 		textFieldTasa.setEditable(false);
-		
-		
+
 		JButton btnprueba = new JButton("Buscar");
 		btnprueba.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				listModel.removeAllElements();
-		
-				
-				
+
 				int[] idCursos = GC.obtenerCursos();
 				int[] edicionCursos = GC.obtenerEdicion();
-				//for(int i=0; i<idCursos.length; i++) {
-					for(int j=0; j<edicionCursos.length; j++) {
-						if (edicionCursos[j]== Integer.parseInt(prueba2.getText())){
-						
-							listModel.addElement(idCursos[j]);
-				//	}
-						
+				for(int j=0; j<edicionCursos.length; j++) {
+					if (edicionCursos[j]== Integer.parseInt(prueba2.getText())){
+						listModel.addElement(idCursos[j]);
+					}
 				}
-					
-				}
-				
-				
-				
-				
-				
 			}
 		});
 		btnprueba.setBounds(10, 61, 87, 21);
 		panel.add(btnprueba);
-		
+
 		prueba2 = new JTextField();
 		prueba2.setBounds(10, 29, 109, 19);
 		panel.add(prueba2);
 		prueba2.setColumns(10);
-		
+
 		JLabel lblEdicinABuscar = new JLabel("Edición a buscar:");
 		lblEdicinABuscar.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblEdicinABuscar.setBounds(10, 10, 279, 19);
 		panel.add(lblEdicinABuscar);
-		
-	
 
 		/* ACCIONES */
 		listCursos.addListSelectionListener(new ListSelectionListener() {
@@ -328,7 +307,7 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 					String[] solI = resultInicio[2].split(" ");
 					String[] resultFin = cp.get_fechaFin().toString().split("-");
 					String[] solF = resultFin[2].split(" ");
-					
+
 					textFieldNombre.setText(cp.get_nombre().toString());
 					textFieldEdicion.setText(Integer.toString(cp.get_edicion()));
 					textNombreCentro.setText(cp.getNombreCentro().toString());
@@ -336,8 +315,7 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 					textFieldSecretario.setText(cp.idSecretario.toString());
 					textFieldTipoCurso.setText(cp.get_tipo().toString());
 					textFieldEstadoCurso.setText(cp.get_estado().toString());
-					//txtprueba.setText(Integer.toString(cp.get_edicion()));
-					
+
 					textFieldDiaInicio.setText(solI[0]);
 					textFieldMesInicio.setText(Integer.toString(cp.get_fechaInicio().getMonth() + 1));
 					textFieldAnyoInicio.setText(Integer.toString(cp.get_fechaInicio().getYear() + 1900));
@@ -345,13 +323,11 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 					textFieldDiaFin.setText(solF[0]);
 					textFieldMesFin.setText(Integer.toString(cp.get_fechaFin().getMonth() + 1));
 					textFieldAnyoFin.setText(Integer.toString(cp.get_fechaFin().getYear() + 1900));
-
 				}
 			}
 		});
-		 
-		
 	}
+	
 	public Date darFormatoFecha(String cadena) {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 		Date fecha = null;

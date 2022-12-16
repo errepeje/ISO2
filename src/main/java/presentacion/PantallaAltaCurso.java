@@ -5,39 +5,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.text.View;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import controllers.GestorPropuestasCursos;
-import entities.CategoriaProfesor;
-import entities.Centro;
-import entities.CursoPropio;
-import entities.EstadoCurso;
-import entities.Profesor;
-import entities.ProfesorUCLM;
 import entities.TipoCurso;
 
 import javax.swing.JRadioButton;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.List;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
@@ -45,7 +26,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.JFormattedTextField;
 
 public class PantallaAltaCurso extends JFrame {
 
@@ -147,112 +127,112 @@ public class PantallaAltaCurso extends JFrame {
 		textFieldNumECTS.setColumns(10);
 		textFieldNumECTS.setBounds(356, 156, 291, 20);
 		contentPane.add(textFieldNumECTS);
-		
+
 		JLabel lblFechaFin = new JLabel("Introduzca la fecha de finalización(dd-mm-yyyy):");
 		lblFechaFin.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblFechaFin.setBounds(346, 251, 301, 23);
 		contentPane.add(lblFechaFin);
-		
+
 		textFieldMesInicio = new JTextField();
 		textFieldMesInicio.setColumns(10);
 		textFieldMesInicio.setBounds(103, 279, 66, 20);
 		contentPane.add(textFieldMesInicio);
-		
+
 		textFieldAnyoInicio = new JTextField();
 		textFieldAnyoInicio.setColumns(10);
 		textFieldAnyoInicio.setBounds(189, 278, 66, 20);
 		contentPane.add(textFieldAnyoInicio);
-		
+
 		JLabel lblg1 = new JLabel("-");
 		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblg1.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblg1.setBounds(83, 282, 16, 14);
 		contentPane.add(lblg1);
-		
+
 		JLabel lblg2 = new JLabel("-");
 		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblg2.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblg2.setBounds(168, 279, 22, 20);
 		contentPane.add(lblg2);
-		
+
 		textFieldDiaFin = new JTextField();
 		textFieldDiaFin.setToolTipText("");
 		textFieldDiaFin.setColumns(10);
 		textFieldDiaFin.setBounds(356, 279, 66, 20);
 		contentPane.add(textFieldDiaFin);
-		
+
 		JLabel lblg3 = new JLabel("-");
 		lblg3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblg3.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblg3.setBounds(423, 282, 16, 14);
 		contentPane.add(lblg3);
-		
+
 		textFieldMesFin = new JTextField();
 		textFieldMesFin.setColumns(10);
 		textFieldMesFin.setBounds(443, 279, 66, 20);
 		contentPane.add(textFieldMesFin);
-		
+
 		JLabel lblg4 = new JLabel("-");
 		lblg4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblg4.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblg4.setBounds(511, 281, 16, 14);
 		contentPane.add(lblg4);
-		
+
 		textFieldAnyoFin = new JTextField();
 		textFieldAnyoFin.setColumns(10);
 		textFieldAnyoFin.setBounds(529, 278, 66, 20);
 		contentPane.add(textFieldAnyoFin);
-		
+
 		JLabel lblTasa = new JLabel("Introduzca la tasa de la matrícula:");
 		lblTasa.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTasa.setBounds(346, 11, 301, 23);
 		contentPane.add(lblTasa);
-		
+
 		textFieldTasa = new JTextField();
 		textFieldTasa.setToolTipText("Dia");
 		textFieldTasa.setColumns(10);
 		textFieldTasa.setBounds(354, 39, 291, 20);
 		contentPane.add(textFieldTasa);
-		
+
 		JLabel lblCentro = new JLabel("Selecciona el centro:");
 		lblCentro.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblCentro.setBounds(346, 64, 301, 23);
 		contentPane.add(lblCentro);
-		
+
 		JComboBox comboBoxCentro = new JComboBox();
 		comboBoxCentro.setBounds(354, 91, 291, 22);
 		contentPane.add(comboBoxCentro);
 		String[] idCentro = GPC.obtenerCentros();
 		for(int i=0; i<idCentro.length; i++)
 			comboBoxCentro.addItem(idCentro[i]);
-		
+
 		JLabel lblInfo = new JLabel("INFORMACIÓN: ");
 		lblInfo.setBounds(16, 310, 641, 26);
 		contentPane.add(lblInfo);
-		
+
 		textFieldNombre = new JTextField();
 		textFieldNombre.setToolTipText("Dia");
 		textFieldNombre.setColumns(10);
 		textFieldNombre.setBounds(14, 40, 291, 20);
 		contentPane.add(textFieldNombre);
-		
+
 		JLabel lblNombre = new JLabel("Pon un nombre al curso:");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNombre.setBounds(6, 11, 211, 23);
 		contentPane.add(lblNombre);
-		
+
 		JLabel lblSecretario = new JLabel("Selecciona el secretario del curso:");
 		lblSecretario.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblSecretario.setBounds(346, 188, 301, 23);
 		contentPane.add(lblSecretario);
-		
+
 		JComboBox comboBoxSecretario = new JComboBox();
 		comboBoxSecretario.setBounds(356, 218, 291, 22);
 		contentPane.add(comboBoxSecretario);
 		String[] dni = GPC.obtenerSecretarios();
 		for(int i=0; i<dni.length; i++)
 			comboBoxSecretario.addItem(dni[i]);
-		
+
 		/* ACCIONES */
 		rdbtnFPTU.addActionListener(new ActionListener() {
 			@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -275,49 +255,6 @@ public class PantallaAltaCurso extends JFrame {
 			}
 		});
 
-		comboBoxTipoCurso.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent itemEvent) {
-				String opcion = comboBoxTipoCurso.getSelectedItem().toString();
-
-				switch(opcion) {
-				/* Casos de enseñanzas de formacion permanentes */
-					case "Másteres de Formación Permanente":
-//						lblFechaInicio.setText("Introduce el número de cursos:");
-						break;
-					case "Especialistas":
-//						lblFechaInicio.setText("Introduce el número de semestres:");
-						break;
-					case "Expertos":
-//						lblFechaInicio.setText("NO APLICA");
-						break;
-						
-				/* Casos de enseñanzas de formacion permanentes que no requieren titulacion */
-					case "Cursos Universitarios de Formación Avanzada":
-//						lblFechaInicio.setText("Introduce el número de cursos:");
-						break;
-					case "Cursos de Formación Continua":
-//						lblFechaInicio.setText("Introduce el número de semestres:");
-						break;
-						
-				/* Casos de enseñanzas propias */
-					case "Microcredenciales":
-//						lblFechaInicio.setText("NO APLICA");
-						break;
-					case "Actividades formativas de corta duración":
-//						lblFechaInicio.setText("Introduce el número de cursos:");
-						break;
-					case "Cursos de Verano y Extensión Universitaria":
-//						lblFechaInicio.setText("Introduce el número de semestres:");
-						break;
-					case "Formación de Mayores":
-//						lblFechaInicio.setText("NO APLICA");
-						break;
-						
-				}
-
-			}
-		});
-		
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GPC.realizarPropuestaCurso(
@@ -334,17 +271,16 @@ public class PantallaAltaCurso extends JFrame {
 			}	
 		});
 	}
-	
+
 	public Date darFormatoFecha(String cadena) {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 		Date fecha = null;
 		try {
 			fecha = formato.parse(cadena);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return fecha;
 	}
 }

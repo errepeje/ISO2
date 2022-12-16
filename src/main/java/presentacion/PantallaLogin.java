@@ -1,19 +1,12 @@
 package presentacion;
 import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.SystemColor;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import controllers.GestorLogin;
-import presentacion.PantallaDireccionCursos;
-import presentacion.PantallaEmpleadosVicerrectorado;
-
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -21,13 +14,11 @@ import javax.swing.JTextField;
 import java.awt.Color;
 
 public class PantallaLogin extends JFrame {
-
 	private JPanel contentPanel;
 	private JTextField textFieldUser;
 	private JTextField textFieldPass;
 	private GestorLogin gL = new GestorLogin();
 	private String uID;
-
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -112,19 +103,15 @@ public class PantallaLogin extends JFrame {
 						PantallaEmpleadosVicerrectorado.main(null);
 					if (typeOfUser.equals("Profesor"))
 						PantallaDireccionCursos.crearMainFrame();
-//					if (typeOfUser.equals("Estudiante"))
-						//hacer algo con pantalla de estudiante
 						
-				}catch (Exception exception) {
+				} catch(Exception exception) {
 					exception.printStackTrace();
 					lblErrorLogin.setVisible(true);
 				}
-
 			}
-
 		});
+		
 		btnLogin.setBounds(52, 171, 100, 23);
 		getContentPane().add(btnLogin);
-
 	}
 }

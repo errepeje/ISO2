@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import presentacion.PantallaConsultarCursos;
-import presentacion.PantallaConsultarCursos_Ingresos;
 import presentacion.PantallaDireccionCursos;
 import presentacion.PantallaEmpleadosVicerrectorado;
 
