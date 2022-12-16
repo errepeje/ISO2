@@ -56,7 +56,8 @@ public class PantallaConsultarCursos_Ediciones extends JFrame {
 					PantallaConsultarCursos_Ediciones frame = new PantallaConsultarCursos_Ediciones();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});

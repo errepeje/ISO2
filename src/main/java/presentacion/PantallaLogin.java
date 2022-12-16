@@ -27,7 +27,8 @@ public class PantallaLogin extends JFrame {
 					PantallaLogin frame = new PantallaLogin();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});

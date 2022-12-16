@@ -50,7 +50,8 @@ public class PantallaVisualizarPropuesta extends JFrame {
 					PantallaVisualizarPropuesta frame = new PantallaVisualizarPropuesta();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});

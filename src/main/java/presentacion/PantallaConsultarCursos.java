@@ -23,7 +23,8 @@ public class PantallaConsultarCursos extends JFrame {
 					PantallaConsultarCursos frame = new PantallaConsultarCursos();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});

@@ -26,7 +26,8 @@ public class PantallaMain extends JFrame {
 					PantallaMain frame = new PantallaMain();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});

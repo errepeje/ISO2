@@ -26,7 +26,8 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 					PantallaEmpleadosVicerrectorado frame = new PantallaEmpleadosVicerrectorado();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});

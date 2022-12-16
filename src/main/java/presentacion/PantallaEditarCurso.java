@@ -49,7 +49,8 @@ public class PantallaEditarCurso extends JFrame {
 					PantallaEditarCurso frame = new PantallaEditarCurso();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});

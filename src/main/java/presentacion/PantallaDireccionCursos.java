@@ -42,7 +42,8 @@ public class PantallaDireccionCursos extends JFrame {
                 try  {
                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 } catch (Exception e) {
-                   e.printStackTrace();
+                	Throwable throwable = new Throwable();
+        			throwable.printStackTrace();
                 }
                 
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

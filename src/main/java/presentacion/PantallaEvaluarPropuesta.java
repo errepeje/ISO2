@@ -55,7 +55,8 @@ public class PantallaEvaluarPropuesta extends JFrame {
 					PantallaEvaluarPropuesta frame = new PantallaEvaluarPropuesta();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});

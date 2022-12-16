@@ -57,7 +57,8 @@ public class PantallaConsultarCursos_Ingresos extends JFrame {
 					PantallaConsultarCursos_Ingresos frame = new PantallaConsultarCursos_Ingresos();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Throwable throwable = new Throwable();
+					throwable.printStackTrace();
 				}
 			}
 		});
