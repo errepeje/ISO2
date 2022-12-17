@@ -33,7 +33,6 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 	 */
 	@SuppressWarnings("deprecation")
 	public PantallaVisualizarPropuesta() {
-		String fuente = "Tahoma";
 		setTitle("Edición de un curso");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 455, 597);

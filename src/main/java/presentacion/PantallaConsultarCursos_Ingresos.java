@@ -33,7 +33,6 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 
 	@SuppressWarnings("deprecation")
 	public PantallaConsultarCursos_Ingresos() {
-		String fuente = "Tahoma";
 		setTitle("Seleccion cursos estados");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 728, 597);

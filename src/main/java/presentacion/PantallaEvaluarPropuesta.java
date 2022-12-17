@@ -38,7 +38,6 @@ public class PantallaEvaluarPropuesta extends PantallaPadre {
 	 */
 	@SuppressWarnings("deprecation")
 	public PantallaEvaluarPropuesta() {
-		String fuente = "Tahoma";
 		setTitle("Evaluar propuesta");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 456, 802);

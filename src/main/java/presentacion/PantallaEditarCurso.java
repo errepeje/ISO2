@@ -36,7 +36,6 @@ public class PantallaEditarCurso extends PantallaPadre {
 	 * Create the frame.
 	 */
 	public PantallaEditarCurso() {
-		String fuente = "Tahoma";
 		setTitle("Edición de un curso");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 465, 300);

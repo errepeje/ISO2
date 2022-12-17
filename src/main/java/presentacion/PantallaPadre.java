@@ -45,6 +45,8 @@ public class PantallaPadre extends JFrame{
 	protected GestorLogin gl;
 	protected CursoPropio cp;
 	
+	protected String fuente = "Tahoma";
+	
 	public Date darFormatoFecha(String cadena) {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 		Date fecha = null;

@@ -37,7 +37,6 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 	 */
 	@SuppressWarnings("deprecation")
 	public PantallaConsultarCursos_Ediciones() {
-		String fuente = "Tahoma";
 		setTitle("Edición de un curso");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 728, 597);
@@ -46,6 +45,16 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 
 		setContentPane(panel); 
 		panel.setLayout(null);
+		
+		JLabel lblFechaInicio = new JLabel("Fecha de inicio (dd-mm-yyyy): ");
+		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblFechaInicio.setBounds(186, 199, 279, 19);
+		panel.add(lblFechaInicio);
+		
+		JLabel lblFechaFin = new JLabel("Fecha de fin (dd-mm-yyyy): ");
+		lblFechaFin.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblFechaFin.setBounds(186, 252, 279, 19);
+		panel.add(lblFechaFin);
 
 		DefaultListModel listModel = new DefaultListModel();
 
@@ -53,15 +62,6 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		listCursos.setBounds(10, 94, 166, 442);
 		panel.add(listCursos);
 
-		JLabel lblFechaInicio = new JLabel("Fecha de inicio (dd-mm-yyyy): ");
-		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblFechaInicio.setBounds(186, 199, 279, 19);
-		panel.add(lblFechaInicio);
-
-		JLabel lblFechaFin = new JLabel("Fecha de fin (dd-mm-yyyy): ");
-		lblFechaFin.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblFechaFin.setBounds(186, 252, 279, 19);
-		panel.add(lblFechaFin);
 
 		JLabel lblTasaMatricula = new JLabel("Tasa: ");
 		lblTasaMatricula.setFont(new Font(fuente, Font.PLAIN, 15));
@@ -73,6 +73,12 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		lblEditaLosEcts.setBounds(186, 357, 279, 19);
 		panel.add(lblEditaLosEcts);
 
+		JLabel lblg1 = new JLabel("-");
+		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg1.setFont(new Font(fuente, Font.PLAIN, 24));
+		lblg1.setBounds(253, 224, 16, 14);
+		panel.add(lblg1);
+
 		textFieldDiaInicio = new JTextField();
 		textFieldDiaInicio.setEditable(false);
 		textFieldDiaInicio.setToolTipText("");
@@ -80,29 +86,28 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		textFieldDiaInicio.setBounds(186, 221, 66, 20);
 		panel.add(textFieldDiaInicio);
 
-		JLabel lblg1 = new JLabel("-");
-		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1.setFont(new Font(fuente, Font.PLAIN, 24));
-		lblg1.setBounds(253, 224, 16, 14);
-		panel.add(lblg1);
-
-		textFieldMesInicio = new JTextField();
-		textFieldMesInicio.setEditable(false);
-		textFieldMesInicio.setColumns(10);
-		textFieldMesInicio.setBounds(273, 221, 66, 20);
-		panel.add(textFieldMesInicio);
-
 		JLabel lblg2 = new JLabel("-");
 		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblg2.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg2.setBounds(338, 221, 22, 20);
 		panel.add(lblg2);
 
+		textFieldMesInicio = new JTextField();
+		textFieldMesInicio.setEditable(false);
+		textFieldMesInicio.setColumns(10);
+		textFieldMesInicio.setBounds(273, 221, 66, 20);
+		panel.add(textFieldMesInicio);
 		textFieldAnyoInicio = new JTextField();
 		textFieldAnyoInicio.setEditable(false);
 		textFieldAnyoInicio.setColumns(10);
 		textFieldAnyoInicio.setBounds(359, 220, 66, 20);
 		panel.add(textFieldAnyoInicio);
+
+		JLabel lblg11 = new JLabel("-");
+		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
+		lblg11.setBounds(253, 279, 16, 14);
+		panel.add(lblg11);
 
 		textFieldDiaFin = new JTextField();
 		textFieldDiaFin.setEditable(false);
@@ -111,23 +116,17 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		textFieldDiaFin.setBounds(186, 276, 66, 20);
 		panel.add(textFieldDiaFin);
 
-		JLabel lblg11 = new JLabel("-");
-		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
-		lblg11.setBounds(253, 279, 16, 14);
-		panel.add(lblg11);
+		JLabel lblg21 = new JLabel("-");
+		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg21.setFont(new Font(fuente, Font.PLAIN, 24));
+		lblg21.setBounds(338, 276, 22, 20);
+		panel.add(lblg21);
 
 		textFieldMesFin = new JTextField();
 		textFieldMesFin.setEditable(false);
 		textFieldMesFin.setColumns(10);
 		textFieldMesFin.setBounds(273, 276, 66, 20);
 		panel.add(textFieldMesFin);
-
-		JLabel lblg21 = new JLabel("-");
-		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg21.setFont(new Font(fuente, Font.PLAIN, 24));
-		lblg21.setBounds(338, 276, 22, 20);
-		panel.add(lblg21);
 
 		textFieldAnyoFin = new JTextField();
 		textFieldAnyoFin.setEditable(false);
@@ -140,6 +139,33 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		textFieldTasa.setBounds(186, 326, 239, 20);
 		panel.add(textFieldTasa);
 		textFieldTasa.setColumns(10);
+		
+		JLabel lblDirector = new JLabel("Director:");
+		lblDirector.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblDirector.setBounds(184, 452, 279, 19);
+		panel.add(lblDirector);
+
+		textDirector = new JTextField();
+		textDirector.setEditable(false);
+		textDirector.setColumns(10);
+		textDirector.setBounds(186, 473, 239, 20);
+		panel.add(textDirector);
+
+		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblNombre.setBounds(186, 11, 279, 19);
+		panel.add(lblNombre);
+		
+		JLabel lblEstadoCurso = new JLabel("Estado del curso:");
+		lblEstadoCurso.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblEstadoCurso.setBounds(185, 160, 279, 19);
+		panel.add(lblEstadoCurso);
+		textFieldEstadoCurso = new JTextField();
+		textFieldEstadoCurso.setToolTipText("");
+		textFieldEstadoCurso.setEditable(false);
+		textFieldEstadoCurso.setColumns(10);
+		textFieldEstadoCurso.setBounds(185, 178, 239, 20);
+		panel.add(textFieldEstadoCurso);
 
 		textFieldECTS = new JTextField();
 		textFieldECTS.setEditable(false);
@@ -147,10 +173,10 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		textFieldECTS.setBounds(186, 377, 239, 20);
 		panel.add(textFieldECTS);
 
-		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblNombre.setBounds(186, 11, 279, 19);
-		panel.add(lblNombre);
+		JLabel lblEdicion = new JLabel("Edicion:");
+		lblEdicion.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblEdicion.setBounds(186, 60, 279, 19);
+		panel.add(lblEdicion);
 
 		textFieldNombre = new JTextField();
 		textFieldNombre.setToolTipText("");
@@ -159,41 +185,23 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		textFieldNombre.setBounds(186, 29, 239, 20);
 		panel.add(textFieldNombre);
 
+		JLabel lblTipoDeCurso = new JLabel("Tipo de curso:");
+		lblTipoDeCurso.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblTipoDeCurso.setBounds(186, 115, 279, 19);
+		panel.add(lblTipoDeCurso);
+
 		textFieldEdicion = new JTextField();
 		textFieldEdicion.setToolTipText("");
 		textFieldEdicion.setEditable(false);
 		textFieldEdicion.setColumns(10);
 		textFieldEdicion.setBounds(186, 82, 239, 20);
 		panel.add(textFieldEdicion);
-
-		JLabel lblEdicion = new JLabel("Edicion:");
-		lblEdicion.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblEdicion.setBounds(186, 60, 279, 19);
-		panel.add(lblEdicion);
-
-		JLabel lblTipoDeCurso = new JLabel("Tipo de curso:");
-		lblTipoDeCurso.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblTipoDeCurso.setBounds(186, 115, 279, 19);
-		panel.add(lblTipoDeCurso);
-
 		textFieldTipoCurso = new JTextField();
 		textFieldTipoCurso.setToolTipText("");
 		textFieldTipoCurso.setEditable(false);
 		textFieldTipoCurso.setColumns(10);
 		textFieldTipoCurso.setBounds(186, 134, 239, 20);
 		panel.add(textFieldTipoCurso);
-
-		JLabel lblEstadoCurso = new JLabel("Estado del curso:");
-		lblEstadoCurso.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblEstadoCurso.setBounds(185, 160, 279, 19);
-		panel.add(lblEstadoCurso);
-
-		textFieldEstadoCurso = new JTextField();
-		textFieldEstadoCurso.setToolTipText("");
-		textFieldEstadoCurso.setEditable(false);
-		textFieldEstadoCurso.setColumns(10);
-		textFieldEstadoCurso.setBounds(185, 178, 239, 20);
-		panel.add(textFieldEstadoCurso);
 
 		JLabel lblNombreCentro = new JLabel("Nombre del centro:");
 		lblNombreCentro.setFont(new Font(fuente, Font.PLAIN, 15));
@@ -205,17 +213,6 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		textNombreCentro.setColumns(10);
 		textNombreCentro.setBounds(188, 424, 239, 20);
 		panel.add(textNombreCentro);
-
-		JLabel lblDirector = new JLabel("Director:");
-		lblDirector.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblDirector.setBounds(184, 452, 279, 19);
-		panel.add(lblDirector);
-
-		textDirector = new JTextField();
-		textDirector.setEditable(false);
-		textDirector.setColumns(10);
-		textDirector.setBounds(186, 473, 239, 20);
-		panel.add(textDirector);
 
 		JLabel lblSecretario = new JLabel("Secretario:");
 		lblSecretario.setFont(new Font(fuente, Font.PLAIN, 15));
@@ -256,7 +253,6 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		lblEdicinABuscar.setBounds(10, 10, 279, 19);
 		panel.add(lblEdicinABuscar);
 
-		/* ACCIONES */
 		listCursos.addListSelectionListener(new ListSelectionListener() {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
@@ -267,8 +263,14 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 
 					String[] resultInicio = cp.getfechaInicio().toString().split("-");
 					String[] solI = resultInicio[2].split(" ");
+					textFieldDiaInicio.setText(solI[0]);
+					textFieldMesInicio.setText(Integer.toString(cp.getfechaInicio().getMonth() + 1));
+					textFieldAnyoInicio.setText(Integer.toString(cp.getfechaInicio().getYear() + 1900));
 					String[] resultFin = cp.getfechaFin().toString().split("-");
 					String[] solF = resultFin[2].split(" ");
+					textFieldDiaFin.setText(solF[0]);
+					textFieldMesFin.setText(Integer.toString(cp.getfechaFin().getMonth() + 1));
+					textFieldAnyoFin.setText(Integer.toString(cp.getfechaFin().getYear() + 1900));
 
 					textFieldNombre.setText(cp.getnombre());
 					textFieldEdicion.setText(Integer.toString(cp.getedicion()));
@@ -278,13 +280,6 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 					textFieldTipoCurso.setText(cp.gettipo().toString());
 					textFieldEstadoCurso.setText(cp.getestado().toString());
 
-					textFieldDiaInicio.setText(solI[0]);
-					textFieldMesInicio.setText(Integer.toString(cp.getfechaInicio().getMonth() + 1));
-					textFieldAnyoInicio.setText(Integer.toString(cp.getfechaInicio().getYear() + 1900));
-
-					textFieldDiaFin.setText(solF[0]);
-					textFieldMesFin.setText(Integer.toString(cp.getfechaFin().getMonth() + 1));
-					textFieldAnyoFin.setText(Integer.toString(cp.getfechaFin().getYear() + 1900));
 				}
 			}
 		});

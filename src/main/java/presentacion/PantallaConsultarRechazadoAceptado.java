@@ -61,7 +61,6 @@ public class PantallaConsultarRechazadoAceptado extends PantallaPadre {
 	 */
 	@SuppressWarnings("deprecation")
 	public PantallaConsultarRechazadoAceptado() {
-		String fuente = "Tahoma";
 		setTitle("Seleccion cursos estados");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 463, 597);

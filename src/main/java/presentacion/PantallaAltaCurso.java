@@ -37,7 +37,6 @@ public class PantallaAltaCurso extends PantallaPadre {
 	 * Create the frame.
 	 */
 	public PantallaAltaCurso() {
-		String fuente = "Tahoma";
 		setTitle("Alta curso");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 675, 436);
