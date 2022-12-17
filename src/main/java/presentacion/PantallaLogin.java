@@ -41,7 +41,8 @@ public class PantallaLogin extends PantallaPadre {
 		try  {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
+			logger.log(null, "Error Login");
 		}
 
 		setBounds(100, 100, 334, 289);
