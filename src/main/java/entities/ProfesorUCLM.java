@@ -16,14 +16,11 @@ public class ProfesorUCLM extends Profesor {
 	public String nombreCentro;
 	@Transient
 	public Centro centroAdscripcion;
-	@Transient
-	private String dni;
 	
 	public ProfesorUCLM() {}
 	
-	public ProfesorUCLM(String dni, String nombre, String apellidos, boolean doctor) {
-		super(nombre, apellidos, doctor);
-		this.dni = dni;
+	public ProfesorUCLM(String dni, String nick, String password, String nombre, String apellidos, boolean doctor) {
+		super(dni, nick, password, nombre, apellidos, doctor);
 	}
 	
 	

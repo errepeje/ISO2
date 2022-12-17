@@ -16,7 +16,7 @@ import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
 
 public class PantallaPadre extends JFrame{
-	protected JPanel contentPane;
+	protected JPanel contentPane = new JPanel();
 	protected JPanel panel;
 	protected static JPanel contentPanel;
 	protected JTextField textFieldDiaInicio = new JTextField();

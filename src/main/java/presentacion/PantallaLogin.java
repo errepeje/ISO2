@@ -1,12 +1,10 @@
 package presentacion;
 import java.awt.EventQueue;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
-import controllers.GestorLogin;
 import controllers.GestorPropuestasCursos;
 
 import javax.swing.JButton;
@@ -14,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+
 import java.awt.Color;
 
 public class PantallaLogin extends PantallaPadre {
@@ -37,13 +37,18 @@ public class PantallaLogin extends PantallaPadre {
 		setResizable(false);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setVisible(true);
+		
+		try  {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		setBounds(100, 100, 334, 289);
 		contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		getContentPane().setLayout(null);
-
 
 		JButton btnRegister = new JButton("Register");
 		btnRegister.setBounds(174, 171, 100, 23);

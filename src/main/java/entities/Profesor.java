@@ -17,8 +17,8 @@ public class Profesor extends Usuario {
 	
 	public Profesor() {}
 	
-	public Profesor(String nombre, String apellidos, boolean doctor) {
-		super();
+	public Profesor(String dni, String nick, String password, String nombre, String apellidos, boolean doctor) {
+		super(dni, nick, password);
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.doctor = doctor;

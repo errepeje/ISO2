@@ -75,7 +75,6 @@ public class GestorPropuestasCursos {
 		
 		List<ProfesorUCLM> profesores = pDAO.findAll(ProfesorUCLM.class);
 		String[] id = new String[profesores.size()];
-		
 		for(ProfesorUCLM p: profesores) {
 			id[i] = p.getDni();
 			i++;
