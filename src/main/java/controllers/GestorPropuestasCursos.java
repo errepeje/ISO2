@@ -12,7 +12,7 @@ public class GestorPropuestasCursos {
 	static CentroDAO<Centro> cDAO = new CentroDAO<>();
 	static ProfesorDAO<ProfesorUCLM> pDAO = new ProfesorDAO<>();
 
-	public CursoPropio realizarPropuestaCurso(String nombre, int ECTS, Date fechaInicio,
+	public CursoPropio realizarPropuestaCurso(String nombre, int ects, Date fechaInicio,
 			Date fechaFin, int tasaMatricula, int edicion, String nombreCentro, String idDirector,
 			String idSecretario, TipoCurso tipoCurso) {
 		
@@ -34,7 +34,7 @@ public class GestorPropuestasCursos {
 			p2.setcategoria(CategoriaProfesor.CATEDRATICO);
 			p2.setNombreCentro("ESI");
 
-			cursoPropio = new CursoPropio(1, nombre, ECTS, fechaInicio, fechaFin,
+			cursoPropio = new CursoPropio(1, nombre, ects, fechaInicio, fechaFin,
 					tasaMatricula, edicion, null, centro, p1, p2, null,
 					EstadoCurso.PROPUESTO, tipoCurso);
 

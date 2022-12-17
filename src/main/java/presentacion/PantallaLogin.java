@@ -16,11 +16,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import java.awt.Color;
 
-public class PantallaLogin extends JFrame {
-	private JPanel contentPanel;
+public class PantallaLogin extends PantallaPadre {
 	private JTextField textFieldUser;
 	private JTextField textFieldPass;
-	private GestorLogin gL = new GestorLogin();
 	private String uID;
 
 	public static void main(String[] args) {

@@ -2,14 +2,10 @@ package presentacion;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
-import controllers.GestorPropuestasCursos;
-import entities.CursoPropio;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -17,30 +13,13 @@ import javax.swing.JList;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-public class PantallaEditarCurso extends JFrame {
-
-	private JPanel contentPane;
-	private JTextField textFieldDiaInicio;
-	private JTextField textFieldMesInicio;
-	private JTextField textFieldAnyoInicio;
-	private JTextField textFieldDiaFin;
-	private JTextField textFieldMesFin;
-	private JTextField textFieldAnyoFin;
-	private JTextField textFieldTasa;
-	private JTextField textFieldECTS;
-	private GestorPropuestasCursos GPC = new GestorPropuestasCursos();
-	private CursoPropio cp;
-
+public class PantallaEditarCurso extends PantallaPadre {
 	/**
 	 * Launch the application.
 	 */
@@ -57,6 +36,7 @@ public class PantallaEditarCurso extends JFrame {
 	 * Create the frame.
 	 */
 	public PantallaEditarCurso() {
+		String fuente = "Tahoma";
 		setTitle("Edición de un curso");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 465, 300);
@@ -67,7 +47,7 @@ public class PantallaEditarCurso extends JFrame {
 		contentPane.setLayout(null);
 
 		JButton btnCambios = new JButton("Aplicar cambios");
-		btnCambios.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnCambios.setFont(new Font(fuente, Font.PLAIN, 18));
 		btnCambios.setBounds(10, 221, 426, 36);
 		contentPane.add(btnCambios);
 
@@ -81,22 +61,22 @@ public class PantallaEditarCurso extends JFrame {
 		contentPane.add(listCursos);
 
 		JLabel lblFechaInicio = new JLabel("Edita la fecha de inicio (dd-mm-yyyy): ");
-		lblFechaInicio.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaInicio.setBounds(186, 12, 279, 19);
 		contentPane.add(lblFechaInicio);
 
 		JLabel lblFechaFin = new JLabel("Edita la fecha de fin (dd-mm-yyyy): ");
-		lblFechaFin.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFechaFin.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaFin.setBounds(186, 65, 279, 19);
 		contentPane.add(lblFechaFin);
 
 		JLabel lblTasaMatricula = new JLabel("Edita la tasa: ");
-		lblTasaMatricula.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTasaMatricula.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTasaMatricula.setBounds(186, 120, 279, 19);
 		contentPane.add(lblTasaMatricula);
 
 		JLabel lblEditaLosEcts = new JLabel("Edita los ECTS: ");
-		lblEditaLosEcts.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEditaLosEcts.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEditaLosEcts.setBounds(186, 170, 279, 19);
 		contentPane.add(lblEditaLosEcts);
 
@@ -108,7 +88,7 @@ public class PantallaEditarCurso extends JFrame {
 
 		JLabel lblg1 = new JLabel("-");
 		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg1.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg1.setBounds(253, 37, 16, 14);
 		contentPane.add(lblg1);
 
@@ -119,7 +99,7 @@ public class PantallaEditarCurso extends JFrame {
 
 		JLabel lblg2 = new JLabel("-");
 		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg2.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg2.setBounds(338, 34, 22, 20);
 		contentPane.add(lblg2);
 
@@ -136,7 +116,7 @@ public class PantallaEditarCurso extends JFrame {
 
 		JLabel lblg11 = new JLabel("-");
 		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg11.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg11.setBounds(253, 92, 16, 14);
 		contentPane.add(lblg11);
 
@@ -147,7 +127,7 @@ public class PantallaEditarCurso extends JFrame {
 
 		JLabel lblg21 = new JLabel("-");
 		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg21.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg21.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg21.setBounds(338, 89, 22, 20);
 		contentPane.add(lblg21);
 
@@ -201,18 +181,5 @@ public class PantallaEditarCurso extends JFrame {
 				GPC.editarPropuestaCurso(cp);
 			}	
 		});
-	}
-	
-	public Date darFormatoFecha(String cadena) {
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
-		Date fecha = null;
-		try {
-			fecha = formato.parse(cadena);
-		} catch (ParseException e) {
-			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
-			logger.log(null, "Error Fecha");
-		}
-		
-		return fecha;
 	}
 }

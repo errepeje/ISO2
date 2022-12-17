@@ -2,11 +2,9 @@ package presentacion;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controllers.GestorPropuestasCursos;
 import entities.TipoCurso;
 
 import javax.swing.JRadioButton;
@@ -14,12 +12,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Logger;
 
-import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -27,21 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-public class PantallaAltaCurso extends JFrame {
-
-	private JPanel contentPane;
-	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private JTextField textFieldDiaInicio;
-	private JTextField textFieldNumECTS;
-	private JTextField textFieldMesInicio;
-	private JTextField textFieldAnyoInicio;
-	private JTextField textFieldDiaFin;
-	private JTextField textFieldMesFin;
-	private JTextField textFieldAnyoFin;
-	private JTextField textFieldTasa;
-	private JTextField textFieldNombre;
-	private GestorPropuestasCursos GPC = new GestorPropuestasCursos();
-
+public class PantallaAltaCurso extends PantallaPadre {
 	/**
 	 * Launch the application.
 	 */
@@ -118,11 +97,11 @@ public class PantallaAltaCurso extends JFrame {
 		lblNumECTS.setBounds(346, 128, 301, 23);
 		contentPane.add(lblNumECTS);
 
-		textFieldNumECTS = new JTextField();
-		textFieldNumECTS.setToolTipText("Dia");
-		textFieldNumECTS.setColumns(10);
-		textFieldNumECTS.setBounds(356, 156, 291, 20);
-		contentPane.add(textFieldNumECTS);
+		textFieldECTS = new JTextField();
+		textFieldECTS.setToolTipText("Dia");
+		textFieldECTS.setColumns(10);
+		textFieldECTS.setBounds(356, 156, 291, 20);
+		contentPane.add(textFieldECTS);
 
 		JLabel lblFechaFin = new JLabel("Introduzca la fecha de finalización(dd-mm-yyyy):");
 		lblFechaFin.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -255,7 +234,7 @@ public class PantallaAltaCurso extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				GPC.realizarPropuestaCurso(
 						textFieldNombre.getText(),
-						Integer.parseInt(textFieldNumECTS.getText()),
+						Integer.parseInt(textFieldECTS.getText()),
 						darFormatoFecha(textFieldDiaInicio.getText() + "/" + textFieldMesInicio.getText() + "/" + textFieldAnyoInicio.getText()),
 						darFormatoFecha(textFieldDiaFin.getText() + "/" + textFieldMesFin.getText() + "/" + textFieldAnyoFin.getText()),
 						Integer.parseInt(textFieldTasa.getText()),
@@ -266,18 +245,5 @@ public class PantallaAltaCurso extends JFrame {
 						TipoCurso.valueOf(comboBoxTipoCurso.getSelectedItem().toString()));
 			}	
 		});
-	}
-
-	public Date darFormatoFecha(String cadena) {
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
-		Date fecha = null;
-		try {
-			fecha = formato.parse(cadena);
-		} catch (ParseException e) {
-			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
-			logger.log(null, "Error Fecha");
-		}
-
-		return fecha;
 	}
 }

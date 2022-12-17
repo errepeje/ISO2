@@ -3,7 +3,6 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.SystemColor;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -14,8 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class PantallaEmpleadosVicerrectorado extends JFrame {
-	private JPanel contentPanel;
+public class PantallaEmpleadosVicerrectorado extends PantallaPadre {
 	/**
 	 * Launch the application.
 	 */

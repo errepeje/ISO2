@@ -30,8 +30,7 @@ import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 
-
-public class PantallaConsultarRechazadoAceptado extends JFrame {
+public class PantallaConsultarRechazadoAceptado extends PantallaPadre {
 	private JPanel panel;
 	private JTextField textFieldDiaInicio;
 	private JTextField textFieldMesInicio;
@@ -44,14 +43,7 @@ public class PantallaConsultarRechazadoAceptado extends JFrame {
 	
 	private GestorConsultas GC = new GestorConsultas();
 	private CursoPropio cp;
-	
-	private JTextField textFieldNombre;
-	private JTextField textFieldEdicion;
-	private JTextField textFieldTipoCurso;
-	private JTextField textFieldEstadoCurso;
-	private JTextField textNombreCentro;
-	private JTextField textDirector;
-	private JTextField textFieldSecretario;
+
 	/**
 	 * Launch the application.
 	 */

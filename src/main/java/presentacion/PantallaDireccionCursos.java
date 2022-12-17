@@ -15,10 +15,7 @@ import java.awt.Font;
 import java.awt.SystemColor;
 
 @SuppressWarnings("serial")
-public class PantallaDireccionCursos extends JFrame {
-	
-	private static JPanel contentPanel;
-	
+public class PantallaDireccionCursos extends PantallaPadre {
 	/**
 	 * @wbp.parser.entryPoint
 	 */

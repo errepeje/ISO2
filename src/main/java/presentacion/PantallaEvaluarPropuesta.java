@@ -3,14 +3,11 @@ package presentacion;
 import java.awt.EventQueue;
 import java.awt.Font;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import controllers.GestorPropuestasCursos;
-import entities.CursoPropio;
 import entities.EstadoCurso;
 
 import javax.swing.JTextField;
@@ -20,33 +17,10 @@ import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class PantallaEvaluarPropuesta extends JFrame {
-	private JPanel contentPane;
-	private JTextField textFieldDiaInicio;
-	private JTextField textFieldMesInicio;
-	private JTextField textFieldAnyoInicio;
-	private JTextField textFieldDiaFin;
-	private JTextField textFieldMesFin;
-	private JTextField textFieldAnyoFin;
-	private JTextField textFieldTasa;
-	private JTextField textFieldECTS;
-	private GestorPropuestasCursos GPC = new GestorPropuestasCursos();
-	private CursoPropio cp;
-	private JTextField textFieldNombre;
-	private JTextField textFieldEdicion;
-	private JTextField textFieldTipoCurso;
-	private JTextField textFieldEstadoCurso;
-	private JTextField textNombreCentro;
-	private JTextField textDirector;
-	private JTextField textFieldSecretario;
-	private JTextField textCommentario;
+public class PantallaEvaluarPropuesta extends PantallaPadre {
 	/**
 	 * Launch the application.
 	 */
@@ -353,18 +327,5 @@ public class PantallaEvaluarPropuesta extends JFrame {
 				}
 			}
 		});
-	}
-	
-	public Date darFormatoFecha(String cadena) {
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
-		Date fecha = null;
-		try {
-			fecha = formato.parse(cadena);
-		} catch (ParseException e) {
-			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
-			logger.log(null, "Error Fecha");
-		}
-
-		return fecha;
 	}
 }

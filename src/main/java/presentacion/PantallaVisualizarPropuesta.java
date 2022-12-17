@@ -3,47 +3,19 @@ package presentacion;
 import java.awt.EventQueue;
 import java.awt.Font;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
-import controllers.GestorPropuestasCursos;
-import entities.CursoPropio;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 
-public class PantallaVisualizarPropuesta extends JFrame {
-	private JPanel contentPane = new JPanel();
-	private JTextField textFieldNombre = new JTextField();
-	private JTextField textFieldEdicion = new JTextField();
-	private JTextField textFieldTipoCurso = new JTextField();
-	private JTextField textFieldEstadoCurso = new JTextField();
-	private JTextField textFieldDiaInicio = new JTextField();
-	private JTextField textFieldMesInicio = new JTextField();
-	private JTextField textFieldAnyoInicio = new JTextField();
-	private JTextField textFieldDiaFin = new JTextField();
-	private JTextField textFieldMesFin = new JTextField();
-	private JTextField textFieldAnyoFin = new JTextField();
-	private JTextField textFieldTasa = new JTextField();
-	private JTextField textFieldECTS = new JTextField();
-	private JTextField textNombreCentro = new JTextField();
-	private JTextField textDirector = new JTextField();
-	private JTextField textFieldSecretario = new JTextField();
-	
-	private GestorPropuestasCursos GPC = new GestorPropuestasCursos();
-	private CursoPropio cp;
+public class PantallaVisualizarPropuesta extends PantallaPadre {
 	/**
 	 * Launch the application.
 	 */
@@ -251,17 +223,5 @@ public class PantallaVisualizarPropuesta extends JFrame {
 		textFieldSecretario.setColumns(10);
 		textFieldSecretario.setBounds(186, 516, 239, 20);
 		contentPane.add(textFieldSecretario);
-	}
-	
-	public Date darFormatoFecha(String cadena) {
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
-		Date fecha = null;
-		try {
-			fecha = formato.parse(cadena);
-		} catch (ParseException e) {
-			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
-			logger.log(null, "Error Fecha");
-		}
-		return fecha;
 	}
 }
