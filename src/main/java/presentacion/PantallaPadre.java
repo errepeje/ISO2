@@ -40,9 +40,9 @@ public class PantallaPadre extends JFrame{
 	protected final ButtonGroup buttonGroup = new ButtonGroup();
 	protected JTextField prueba2;
 	
-	protected GestorPropuestasCursos GPC = new GestorPropuestasCursos();
-	protected GestorConsultas GC = new GestorConsultas();
-	protected GestorLogin gL = new GestorLogin();
+	protected GestorPropuestasCursos gpc = new GestorPropuestasCursos();
+	protected GestorConsultas gc = new GestorConsultas();
+	protected GestorLogin gl;
 	protected CursoPropio cp;
 	
 	public Date darFormatoFecha(String cadena) {

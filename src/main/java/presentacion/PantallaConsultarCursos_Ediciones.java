@@ -37,6 +37,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 	 */
 	@SuppressWarnings("deprecation")
 	public PantallaConsultarCursos_Ediciones() {
+		String fuente = "Tahoma";
 		setTitle("Edición de un curso");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 728, 597);
@@ -53,22 +54,22 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		panel.add(listCursos);
 
 		JLabel lblFechaInicio = new JLabel("Fecha de inicio (dd-mm-yyyy): ");
-		lblFechaInicio.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaInicio.setBounds(186, 199, 279, 19);
 		panel.add(lblFechaInicio);
 
 		JLabel lblFechaFin = new JLabel("Fecha de fin (dd-mm-yyyy): ");
-		lblFechaFin.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFechaFin.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaFin.setBounds(186, 252, 279, 19);
 		panel.add(lblFechaFin);
 
 		JLabel lblTasaMatricula = new JLabel("Tasa: ");
-		lblTasaMatricula.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTasaMatricula.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTasaMatricula.setBounds(186, 307, 279, 19);
 		panel.add(lblTasaMatricula);
 
 		JLabel lblEditaLosEcts = new JLabel("ECTS: ");
-		lblEditaLosEcts.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEditaLosEcts.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEditaLosEcts.setBounds(186, 357, 279, 19);
 		panel.add(lblEditaLosEcts);
 
@@ -81,7 +82,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 
 		JLabel lblg1 = new JLabel("-");
 		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg1.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg1.setBounds(253, 224, 16, 14);
 		panel.add(lblg1);
 
@@ -93,7 +94,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 
 		JLabel lblg2 = new JLabel("-");
 		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg2.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg2.setBounds(338, 221, 22, 20);
 		panel.add(lblg2);
 
@@ -112,7 +113,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 
 		JLabel lblg11 = new JLabel("-");
 		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg11.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg11.setBounds(253, 279, 16, 14);
 		panel.add(lblg11);
 
@@ -124,7 +125,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 
 		JLabel lblg21 = new JLabel("-");
 		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg21.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg21.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg21.setBounds(338, 276, 22, 20);
 		panel.add(lblg21);
 
@@ -147,7 +148,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		panel.add(textFieldECTS);
 
 		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNombre.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblNombre.setBounds(186, 11, 279, 19);
 		panel.add(lblNombre);
 
@@ -166,12 +167,12 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		panel.add(textFieldEdicion);
 
 		JLabel lblEdicion = new JLabel("Edicion:");
-		lblEdicion.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEdicion.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEdicion.setBounds(186, 60, 279, 19);
 		panel.add(lblEdicion);
 
 		JLabel lblTipoDeCurso = new JLabel("Tipo de curso:");
-		lblTipoDeCurso.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTipoDeCurso.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTipoDeCurso.setBounds(186, 115, 279, 19);
 		panel.add(lblTipoDeCurso);
 
@@ -183,7 +184,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		panel.add(textFieldTipoCurso);
 
 		JLabel lblEstadoCurso = new JLabel("Estado del curso:");
-		lblEstadoCurso.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEstadoCurso.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEstadoCurso.setBounds(185, 160, 279, 19);
 		panel.add(lblEstadoCurso);
 
@@ -195,7 +196,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		panel.add(textFieldEstadoCurso);
 
 		JLabel lblNombreCentro = new JLabel("Nombre del centro:");
-		lblNombreCentro.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNombreCentro.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblNombreCentro.setBounds(185, 402, 279, 19);
 		panel.add(lblNombreCentro);
 
@@ -206,7 +207,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		panel.add(textNombreCentro);
 
 		JLabel lblDirector = new JLabel("Director:");
-		lblDirector.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblDirector.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblDirector.setBounds(184, 452, 279, 19);
 		panel.add(lblDirector);
 
@@ -217,7 +218,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		panel.add(textDirector);
 
 		JLabel lblSecretario = new JLabel("Secretario:");
-		lblSecretario.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSecretario.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblSecretario.setBounds(181, 497, 279, 19);
 		panel.add(lblSecretario);
 
@@ -233,8 +234,8 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 			public void actionPerformed(ActionEvent e) {
 				listModel.removeAllElements();
 
-				int[] idCursos = GC.obtenerCursos();
-				int[] edicionCursos = GC.obtenerEdicion();
+				int[] idCursos = gc.obtenerCursos();
+				int[] edicionCursos = gc.obtenerEdicion();
 				for(int j=0; j<edicionCursos.length; j++) {
 					if (edicionCursos[j]== Integer.parseInt(prueba2.getText())){
 						listModel.addElement(idCursos[j]);
@@ -251,7 +252,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 		prueba2.setColumns(10);
 
 		JLabel lblEdicinABuscar = new JLabel("Edición a buscar:");
-		lblEdicinABuscar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEdicinABuscar.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEdicinABuscar.setBounds(10, 10, 279, 19);
 		panel.add(lblEdicinABuscar);
 
@@ -260,7 +261,7 @@ public class PantallaConsultarCursos_Ediciones extends PantallaPadre {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
-					cp = GC.obtenerCursos(Integer.parseInt(listCursos.getSelectedValue().toString()));
+					cp = gc.obtenerCursos(Integer.parseInt(listCursos.getSelectedValue().toString()));
 					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
 					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
 

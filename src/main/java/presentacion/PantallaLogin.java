@@ -83,8 +83,8 @@ public class PantallaLogin extends PantallaPadre {
 			public void actionPerformed(ActionEvent e) {
 				String typeOfUser = "";
 				try {
-					uID = gL.iniciarSesion(textFieldUser.getText(),textFieldPass.getText());
-					typeOfUser = gL.obtenerTipoUsuario(uID);
+					uID = gl.iniciarSesion(textFieldUser.getText(),textFieldPass.getText());
+					typeOfUser = gl.obtenerTipoUsuario(uID);
 					if (typeOfUser.equals("JefeGabinete")) 
 						PantallaConsultarCursos.main(null);
 					if (typeOfUser.equals("Vicerrectorado")) 

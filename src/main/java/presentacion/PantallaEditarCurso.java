@@ -52,7 +52,7 @@ public class PantallaEditarCurso extends PantallaPadre {
 		contentPane.add(btnCambios);
 
 		DefaultListModel listModel = new DefaultListModel();
-		int[] idCursosDenegados = GPC.obtenerCursosDenegados();
+		int[] idCursosDenegados = gpc.obtenerCursosDenegados();
 		for(int i=0; i<idCursosDenegados.length; i++)
 			listModel.addElement(idCursosDenegados[i]);
 
@@ -151,7 +151,7 @@ public class PantallaEditarCurso extends PantallaPadre {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
-					cp = GPC.obtenerCurso(Integer.parseInt(listCursos.getSelectedValue().toString()));
+					cp = gpc.obtenerCurso(Integer.parseInt(listCursos.getSelectedValue().toString()));
 					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
 					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
 					
@@ -178,7 +178,7 @@ public class PantallaEditarCurso extends PantallaPadre {
 				cp.setfechaInicio(darFormatoFecha(textFieldDiaInicio.getText() + "/" + textFieldMesInicio.getText() + "/" + textFieldAnyoInicio.getText()));
 				cp.setfechaFin(darFormatoFecha(textFieldDiaFin.getText() + "/" + textFieldMesFin.getText() + "/" + textFieldAnyoFin.getText()));
 				
-				GPC.editarPropuestaCurso(cp);
+				gpc.editarPropuestaCurso(cp);
 			}	
 		});
 	}

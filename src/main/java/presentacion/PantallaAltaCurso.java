@@ -37,6 +37,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 	 * Create the frame.
 	 */
 	public PantallaAltaCurso() {
+		String fuente = "Tahoma";
 		setTitle("Alta curso");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 675, 436);
@@ -48,7 +49,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 
 		/* DEFINIMOS ELEMENTOS */
 		JLabel lblCategoriaCurso = new JLabel("Selecciona la categoría de curso:");
-		lblCategoriaCurso.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCategoriaCurso.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblCategoriaCurso.setBounds(6, 72, 301, 23);
 		contentPane.add(lblCategoriaCurso);
 
@@ -68,7 +69,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 		contentPane.add(rdbtnEP);
 
 		JLabel lblTipoCurso = new JLabel("Selecciona el tipo de curso:");
-		lblTipoCurso.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblTipoCurso.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblTipoCurso.setBounds(6, 188, 211, 23);
 		contentPane.add(lblTipoCurso);
 
@@ -77,12 +78,12 @@ public class PantallaAltaCurso extends PantallaPadre {
 		contentPane.add(comboBoxTipoCurso);
 
 		JButton btnAceptar = new JButton("ACEPTAR");
-		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		btnAceptar.setFont(new Font(fuente, Font.PLAIN, 19));
 		btnAceptar.setBounds(6, 347, 641, 39);
 		contentPane.add(btnAceptar);
 
 		JLabel lblFechaInicio = new JLabel("Introduzca la fecha de inicio(dd-mm-yyyy):");
-		lblFechaInicio.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblFechaInicio.setBounds(6, 251, 301, 23);
 		contentPane.add(lblFechaInicio);
 
@@ -93,7 +94,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 		textFieldDiaInicio.setColumns(10);
 
 		JLabel lblNumECTS = new JLabel("Introduzca el número de créditos:");
-		lblNumECTS.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNumECTS.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblNumECTS.setBounds(346, 128, 301, 23);
 		contentPane.add(lblNumECTS);
 
@@ -104,7 +105,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 		contentPane.add(textFieldECTS);
 
 		JLabel lblFechaFin = new JLabel("Introduzca la fecha de finalización(dd-mm-yyyy):");
-		lblFechaFin.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblFechaFin.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblFechaFin.setBounds(346, 251, 301, 23);
 		contentPane.add(lblFechaFin);
 
@@ -120,13 +121,13 @@ public class PantallaAltaCurso extends PantallaPadre {
 
 		JLabel lblg1 = new JLabel("-");
 		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg1.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg1.setBounds(83, 282, 16, 14);
 		contentPane.add(lblg1);
 
 		JLabel lblg2 = new JLabel("-");
 		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg2.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg2.setBounds(168, 279, 22, 20);
 		contentPane.add(lblg2);
 
@@ -138,7 +139,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 
 		JLabel lblg3 = new JLabel("-");
 		lblg3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg3.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg3.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg3.setBounds(423, 282, 16, 14);
 		contentPane.add(lblg3);
 
@@ -149,7 +150,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 
 		JLabel lblg4 = new JLabel("-");
 		lblg4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg4.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg4.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg4.setBounds(511, 281, 16, 14);
 		contentPane.add(lblg4);
 
@@ -159,7 +160,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 		contentPane.add(textFieldAnyoFin);
 
 		JLabel lblTasa = new JLabel("Introduzca la tasa de la matrícula:");
-		lblTasa.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblTasa.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblTasa.setBounds(346, 11, 301, 23);
 		contentPane.add(lblTasa);
 
@@ -170,14 +171,14 @@ public class PantallaAltaCurso extends PantallaPadre {
 		contentPane.add(textFieldTasa);
 
 		JLabel lblCentro = new JLabel("Selecciona el centro:");
-		lblCentro.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCentro.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblCentro.setBounds(346, 64, 301, 23);
 		contentPane.add(lblCentro);
 
 		JComboBox comboBoxCentro = new JComboBox();
 		comboBoxCentro.setBounds(354, 91, 291, 22);
 		contentPane.add(comboBoxCentro);
-		String[] idCentro = GPC.obtenerCentros();
+		String[] idCentro = gpc.obtenerCentros();
 		for(int i=0; i<idCentro.length; i++)
 			comboBoxCentro.addItem(idCentro[i]);
 
@@ -192,19 +193,19 @@ public class PantallaAltaCurso extends PantallaPadre {
 		contentPane.add(textFieldNombre);
 
 		JLabel lblNombre = new JLabel("Pon un nombre al curso:");
-		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNombre.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblNombre.setBounds(6, 11, 211, 23);
 		contentPane.add(lblNombre);
 
 		JLabel lblSecretario = new JLabel("Selecciona el secretario del curso:");
-		lblSecretario.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblSecretario.setFont(new Font(fuente, Font.PLAIN, 14));
 		lblSecretario.setBounds(346, 188, 301, 23);
 		contentPane.add(lblSecretario);
 
 		JComboBox comboBoxSecretario = new JComboBox();
 		comboBoxSecretario.setBounds(356, 218, 291, 22);
 		contentPane.add(comboBoxSecretario);
-		String[] dni = GPC.obtenerSecretarios();
+		String[] dni = gpc.obtenerSecretarios();
 		for(int i=0; i<dni.length; i++)
 			comboBoxSecretario.addItem(dni[i]);
 
@@ -232,7 +233,7 @@ public class PantallaAltaCurso extends PantallaPadre {
 
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GPC.realizarPropuestaCurso(
+				gpc.realizarPropuestaCurso(
 						textFieldNombre.getText(),
 						Integer.parseInt(textFieldECTS.getText()),
 						darFormatoFecha(textFieldDiaInicio.getText() + "/" + textFieldMesInicio.getText() + "/" + textFieldAnyoInicio.getText()),

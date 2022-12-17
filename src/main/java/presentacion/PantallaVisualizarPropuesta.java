@@ -33,6 +33,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 	 */
 	@SuppressWarnings("deprecation")
 	public PantallaVisualizarPropuesta() {
+		String fuente = "Tahoma";
 		setTitle("Edición de un curso");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 455, 597);
@@ -41,7 +42,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.setLayout(null);
 
 		DefaultListModel listModel = new DefaultListModel();
-		int[] idCursosDenegados = GPC.obtenerCursosDenegados();
+		int[] idCursosDenegados = gpc.obtenerCursosDenegados();
 		for(int i=0; i<idCursosDenegados.length; i++)
 			listModel.addElement(idCursosDenegados[i]);
 
@@ -52,7 +53,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
-					cp = GPC.obtenerCurso(Integer.parseInt(listCursos.getSelectedValue().toString()));
+					cp = gpc.obtenerCurso(Integer.parseInt(listCursos.getSelectedValue().toString()));
 					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
 					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
 
@@ -81,7 +82,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		});
 		
 		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNombre.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblNombre.setBounds(186, 11, 279, 19);
 		contentPane.add(lblNombre);
 		textFieldNombre.setToolTipText("");
@@ -91,7 +92,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldNombre);
 		
 		JLabel lblEdicion = new JLabel("Edicion:");
-		lblEdicion.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEdicion.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEdicion.setBounds(186, 60, 279, 19);
 		contentPane.add(lblEdicion);
 		textFieldEdicion.setToolTipText("");
@@ -101,7 +102,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldEdicion);
 
 		JLabel lblTipoDeCurso = new JLabel("Tipo de curso:");
-		lblTipoDeCurso.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTipoDeCurso.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTipoDeCurso.setBounds(186, 115, 279, 19);
 		contentPane.add(lblTipoDeCurso);
 		textFieldTipoCurso.setToolTipText("");
@@ -111,7 +112,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldTipoCurso);
 		
 		JLabel lblEstadoCurso = new JLabel("Estado del curso:");
-		lblEstadoCurso.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEstadoCurso.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEstadoCurso.setBounds(185, 160, 279, 19);
 		contentPane.add(lblEstadoCurso);
 		textFieldEstadoCurso.setToolTipText("");
@@ -121,7 +122,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldEstadoCurso);
 		
 		JLabel lblFechaInicio = new JLabel("Fecha de inicio (dd-mm-yyyy): ");
-		lblFechaInicio.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaInicio.setBounds(186, 199, 279, 19);
 		contentPane.add(lblFechaInicio);
 		textFieldDiaInicio.setEditable(false);
@@ -131,7 +132,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldDiaInicio);
 		JLabel lblg1 = new JLabel("-");
 		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg1.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg1.setBounds(253, 224, 16, 14);
 		contentPane.add(lblg1);
 		textFieldMesInicio.setEditable(false);
@@ -140,7 +141,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldMesInicio);
 		JLabel lblg2 = new JLabel("-");
 		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg2.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg2.setBounds(338, 221, 22, 20);
 		contentPane.add(lblg2);
 		textFieldAnyoInicio.setEditable(false);
@@ -149,7 +150,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldAnyoInicio);
 
 		JLabel lblFechaFin = new JLabel("Fecha de fin (dd-mm-yyyy): ");
-		lblFechaFin.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFechaFin.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaFin.setBounds(186, 252, 279, 19);
 		contentPane.add(lblFechaFin);
 		textFieldDiaFin.setEditable(false);
@@ -159,7 +160,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldDiaFin);
 		JLabel lblg11 = new JLabel("-");
 		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg11.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg11.setBounds(253, 279, 16, 14);
 		contentPane.add(lblg11);
 		textFieldMesFin = new JTextField();
@@ -169,7 +170,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldMesFin);
 		JLabel lblg21 = new JLabel("-");
 		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg21.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg21.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg21.setBounds(338, 276, 22, 20);
 		contentPane.add(lblg21);
 		textFieldAnyoFin.setEditable(false);
@@ -178,7 +179,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldAnyoFin);
 
 		JLabel lblTasaMatricula = new JLabel("Tasa: ");
-		lblTasaMatricula.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTasaMatricula.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTasaMatricula.setBounds(186, 307, 279, 19);
 		contentPane.add(lblTasaMatricula);
 		textFieldTasa = new JTextField();
@@ -188,7 +189,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		textFieldTasa.setColumns(10);
 
 		JLabel lblEditaLosEcts = new JLabel("ECTS: ");
-		lblEditaLosEcts.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEditaLosEcts.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEditaLosEcts.setBounds(186, 357, 279, 19);
 		contentPane.add(lblEditaLosEcts);
 
@@ -199,7 +200,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textFieldECTS);
 
 		JLabel lblNombreCentro = new JLabel("Nombre del centro:");
-		lblNombreCentro.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNombreCentro.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblNombreCentro.setBounds(185, 402, 279, 19);
 		contentPane.add(lblNombreCentro);
 		textNombreCentro.setEditable(false);
@@ -208,7 +209,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		contentPane.add(textNombreCentro);
 
 		JLabel lblDirector = new JLabel("Director:");
-		lblDirector.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblDirector.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblDirector.setBounds(184, 452, 279, 19);
 		contentPane.add(lblDirector);
 		textDirector.setEditable(false);
@@ -216,7 +217,7 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		textDirector.setBounds(186, 473, 239, 20);
 		contentPane.add(textDirector);
 		JLabel lblSecretario = new JLabel("Secretario:");
-		lblSecretario.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSecretario.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblSecretario.setBounds(181, 497, 279, 19);
 		contentPane.add(lblSecretario);
 		textFieldSecretario.setEditable(false);

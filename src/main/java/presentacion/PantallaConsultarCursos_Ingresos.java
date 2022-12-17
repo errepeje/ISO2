@@ -33,6 +33,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 
 	@SuppressWarnings("deprecation")
 	public PantallaConsultarCursos_Ingresos() {
+		String fuente = "Tahoma";
 		setTitle("Seleccion cursos estados");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 728, 597);
@@ -46,7 +47,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(tiposBox);
 		
 		JLabel lblTipoDeCurso1 = new JLabel("Tipo de curso:");
-		lblTipoDeCurso1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTipoDeCurso1.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTipoDeCurso1.setBounds(10, 11, 279, 19);
 		panel.add(lblTipoDeCurso1);
 		
@@ -58,7 +59,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
-					cp = GC.obtenerCursos(Integer.parseInt(listCursos.getSelectedValue().toString()));
+					cp = gc.obtenerCursos(Integer.parseInt(listCursos.getSelectedValue().toString()));
 
 					textFieldNombre.setText(cp.getnombre());
 					textFieldEdicion.setText(Integer.toString(cp.getedicion()));
@@ -87,7 +88,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		});
 		
 		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNombre.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblNombre.setBounds(186, 11, 279, 19);
 		panel.add(lblNombre);
 		textFieldNombre.setToolTipText("");
@@ -97,7 +98,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldNombre);
 
 		JLabel lblEdicion = new JLabel("Edicion:");
-		lblEdicion.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEdicion.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEdicion.setBounds(186, 60, 279, 19);
 		panel.add(lblEdicion);
 		textFieldEdicion.setToolTipText("");
@@ -107,7 +108,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldEdicion);
 
 		JLabel lblTipoDeCurso = new JLabel("Tipo de curso:");
-		lblTipoDeCurso.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTipoDeCurso.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTipoDeCurso.setBounds(186, 115, 279, 19);
 		panel.add(lblTipoDeCurso);
 		textFieldTipoCurso.setToolTipText("");
@@ -117,7 +118,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldTipoCurso);
 		
 		JLabel lblEstadoCurso = new JLabel("Estado del curso:");
-		lblEstadoCurso.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEstadoCurso.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEstadoCurso.setBounds(185, 160, 279, 19);
 		panel.add(lblEstadoCurso);
 		textFieldEstadoCurso.setToolTipText("");
@@ -127,7 +128,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldEstadoCurso);
 		
 		JLabel lblFechaInicio = new JLabel("Fecha de inicio (dd-mm-yyyy): ");
-		lblFechaInicio.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaInicio.setBounds(186, 199, 279, 19);
 		panel.add(lblFechaInicio);
 		textFieldDiaInicio.setEditable(false);
@@ -138,7 +139,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 
 		JLabel lblg1 = new JLabel("-");
 		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg1.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg1.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg1.setBounds(253, 224, 16, 14);
 		panel.add(lblg1);
 		textFieldMesInicio.setEditable(false);
@@ -147,7 +148,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldMesInicio);
 		JLabel lblg2 = new JLabel("-");
 		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg2.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg2.setBounds(338, 221, 22, 20);
 		panel.add(lblg2);
 		textFieldAnyoInicio.setEditable(false);
@@ -156,7 +157,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldAnyoInicio);
 
 		JLabel lblFechaFin = new JLabel("Fecha de fin (dd-mm-yyyy): ");
-		lblFechaFin.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFechaFin.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaFin.setBounds(186, 252, 279, 19);
 		panel.add(lblFechaFin);
 		textFieldDiaFin.setEditable(false);
@@ -166,7 +167,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldDiaFin);
 		JLabel lblg11 = new JLabel("-");
 		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg11.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg11.setBounds(253, 279, 16, 14);
 		panel.add(lblg11);
 		textFieldMesFin.setEditable(false);
@@ -175,7 +176,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldMesFin);
 		JLabel lblg21 = new JLabel("-");
 		lblg21.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg21.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblg21.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg21.setBounds(338, 276, 22, 20);
 		panel.add(lblg21);
 		textFieldAnyoFin.setEditable(false);
@@ -184,7 +185,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldAnyoFin);
 
 		JLabel lblTasaMatricula = new JLabel("Tasa: ");
-		lblTasaMatricula.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTasaMatricula.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTasaMatricula.setBounds(186, 307, 279, 19);
 		panel.add(lblTasaMatricula);
 		textFieldTasa.setEditable(false);
@@ -193,7 +194,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		textFieldTasa.setColumns(10);
 
 		JLabel lblEditaLosEcts = new JLabel("ECTS: ");
-		lblEditaLosEcts.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEditaLosEcts.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblEditaLosEcts.setBounds(186, 357, 279, 19);
 		panel.add(lblEditaLosEcts);
 		textFieldECTS.setEditable(false);
@@ -202,7 +203,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldECTS);
 
 		JLabel lblNombreCentro = new JLabel("Nombre del centro:");
-		lblNombreCentro.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNombreCentro.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblNombreCentro.setBounds(185, 402, 279, 19);
 		panel.add(lblNombreCentro);
 		textNombreCentro.setEditable(false);
@@ -211,7 +212,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textNombreCentro);
 
 		JLabel lblDirector = new JLabel("Director:");
-		lblDirector.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblDirector.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblDirector.setBounds(184, 452, 279, 19);
 		panel.add(lblDirector);
 		textDirector.setEditable(false);
@@ -220,7 +221,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textDirector);
 
 		JLabel lblSecretario = new JLabel("Secretario:");
-		lblSecretario.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSecretario.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblSecretario.setBounds(181, 497, 279, 19);
 		panel.add(lblSecretario);
 		textFieldSecretario.setEditable(false);
@@ -229,7 +230,7 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 		panel.add(textFieldSecretario);
 
 		JLabel lblIngresosTotales = new JLabel("Ingresos totales:");
-		lblIngresosTotales.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblIngresosTotales.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblIngresosTotales.setBounds(10, 59, 279, 19);
 		panel.add(lblIngresosTotales);
 		txtIngresos.setBounds(10, 82, 96, 19);
@@ -242,9 +243,9 @@ public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 				listModel.removeAllElements();
 				int ingresosTotales = 0;
 
-				int[] idCursos = GC.obtenerCursos();
-				int[] ingresosCursos = GC.obtenerIngresos();
-				String[] tipoCursos = GC.obtenerTipoCurso();
+				int[] idCursos = gc.obtenerCursos();
+				int[] ingresosCursos = gc.obtenerIngresos();
+				String[] tipoCursos = gc.obtenerTipoCurso();
 				
 				for(int j=0; j<ingresosCursos.length; j++) {
 					if (tipoCursos[j].equals(tiposBox.getSelectedItem().toString())){
