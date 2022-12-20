@@ -15,5 +15,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/jonat/Downloads/jacococli.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonat/Downloads/jacocoant.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonat/Downloads/org.jacoco.ant-0.8.6.202009150832.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonat/Downloads/org.jacoco.agent-0.8.6.202009150832.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonat/Downloads/jacocoagent.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonat/Downloads/org.jacoco.report-0.8.6.202009150832.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonat/Downloads/org.jacoco.core-0.8.6.202009150832.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

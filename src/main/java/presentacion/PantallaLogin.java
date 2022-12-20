@@ -5,8 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
-import org.junit.Ignore;
-
 import controllers.GestorPropuestasCursos;
 
 import javax.swing.JButton;
@@ -18,7 +16,6 @@ import javax.swing.UIManager;
 
 import java.awt.Color;
 
-@Ignore
 public class PantallaLogin extends PantallaPadre {
 	private JTextField textFieldUser;
 	private JTextField textFieldPass;

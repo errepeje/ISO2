@@ -7,7 +7,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.junit.Ignore;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -21,7 +20,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-@Ignore
 public class PantallaEditarCurso extends PantallaPadre {
 	/**
 	 * Launch the application.

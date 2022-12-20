@@ -3,17 +3,12 @@ package presentacion;
 import java.awt.EventQueue;
 import java.awt.Font;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.junit.Ignore;
-
-import controllers.GestorConsultas;
 import controllers.GestorPropuestasCursos;
-import entities.CursoPropio;
 import entities.EstadoCurso;
 
 import javax.swing.JTextField;
@@ -32,7 +27,6 @@ import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 
-@Ignore
 public class PantallaConsultarRechazadoAceptado extends PantallaPadre {
 	/**
 	 * Launch the application.

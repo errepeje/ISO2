@@ -8,8 +8,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.junit.Ignore;
-
 import entities.EstadoCurso;
 
 import javax.swing.JTextField;
@@ -22,7 +20,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-@Ignore
 public class PantallaEvaluarPropuesta extends PantallaPadre {
 	/**
 	 * Launch the application.
