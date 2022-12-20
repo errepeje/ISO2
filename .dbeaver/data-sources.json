@@ -8,11 +8,10 @@
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
-				"database": "C:\\Users\\loren\\git\\ISO2\\iso2_db",
-				"url": "jdbc:derby:C:\\Users\\loren\\git\\ISO2\\iso2_db",
+				"database": "C:\\Users\\jonat\\OneDrive\\Documentos\\GitHub\\ISO2\\iso2_db",
+				"url": "jdbc:derby:C:\\Users\\jonat\\OneDrive\\Documentos\\GitHub\\ISO2\\iso2_db",
 				"type": "dev",
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
 			}
 		}
 	},
