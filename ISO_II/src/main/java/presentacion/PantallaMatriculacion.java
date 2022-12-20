@@ -189,9 +189,7 @@ public class PantallaMatriculacion extends JFrame {
 					modopago = ModoPago.TRANSFERENCIA;
 				}
 
-
-
-
+				
 				if(GM.realizarMatriculacion(
 						textDni.getText(),
 						textNombre.getText(), 
@@ -200,9 +198,11 @@ public class PantallaMatriculacion extends JFrame {
 						textCualificacion.getText(),
 						darFormatoFecha(textDia.getText().toString() + "/" + textMes.getText().toString() + "/" + textAnio.getText().toString()),
 						pagado,
-						Integer.parseInt(comboBoxCurso.getSelectedItem().toString()),
+						comboBoxCurso.getSelectedItem().toString(),
 						modopago
 						)) {
+					
+					
 
 				}else {
 

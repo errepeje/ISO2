@@ -21,24 +21,25 @@ public class GestorMatriculacion {
 	static CursoPropioDAO cDAO = new CursoPropioDAO<CursoPropio>();
 	private List<CursoPropio> listaCursos;
 	private List<CursoPropio> listaCursosAprobados = new ArrayList<>();
-	private List<Matricula> listaEstudiantes = new ArrayList<>();
-	private Vector<Matricula> matriculas = new Vector<Matricula>();
-	private CursoPropio curso = new CursoPropio();
-	private Estudiante estudiante = new Estudiante();
-	private Matricula matricula = new Matricula();
+	private static List<Matricula> listaMatriculaEstudiantes = new ArrayList<>();
+	private static Vector<Matricula> matriculas = new Vector<Matricula>();
+	private Vector<Estudiante> estudiantesMatriculados = new Vector<Estudiante>();
+	private static  CursoPropio curso = new CursoPropio();
+	private  Estudiante estudiante = new Estudiante();
+	
 
-	public boolean realizarMatriculacion(String dni,String nombre, String apellido,String titulacion,String cualificacion,Date fecha,boolean pagado,int cursopropio,ModoPago modopago) {		
+	public boolean realizarMatriculacion(String dni,String nombre, String apellido,String titulacion,String cualificacion,Date fecha,boolean pagado, String cursopropio,ModoPago modopago) {		
 		
+		boolean matriculacreada = false;
 		
-		
-		Matricula matriculaNueva = new Matricula(fecha,pagado,estudiante,curso,modopago);
+//		Matricula matriculaNueva = new Matricula(fecha,pagado,estudiante,curso,modopago);
 
 		
-		if(!mDAO.findMatricula(matricula.getClass(), cursopropio,dni)) {
+		if(comprobarMatriculas(Matricula.class,cursopropio,dni)) {
 			
-			matriculas = mDAO.encontrarMatriculasDeEstudiantes(matricula.getClass(), dni);
+			//matriculas = mDAO.encontrarMatriculasDeEstudiantes(matricula.getClass(), dni);
 			
-			matriculas.add(matriculaNueva);
+			//matriculas.add(matriculaNueva);
 			
 //			//hacer get del curso que he seleccionado
 //			matriculas = (Vector<Matricula>) eDAO.findAll(matriculas.getClass());
@@ -57,17 +58,54 @@ public class GestorMatriculacion {
 //			
 //			Estudiante estudianteMatriculado = new Estudiante(dni,nombre,apellido,titulacion,cualificacion,matriculas);
 //			mDAO.persist(matricula);
-//		}else{
+			matriculacreada = false;
+		}else{
 //			return false;
-			
 			Estudiante estudianteMatriculado = new Estudiante(dni,nombre,apellido,titulacion,cualificacion,matriculas);
-			mDAO.persist(matricula);
+			Matricula matriculaNueva = new Matricula(0, fecha, pagado, modopago, dni, cursopropio);
+			matriculas.add(matriculaNueva);
+			
+			mDAO.persist(matriculaNueva);
+			matriculacreada = true;
+			
 		};
-		return true;
+		return matriculacreada;
 		
 	}
 	
-	
+	@SuppressWarnings("unlikely-arg-type")
+	public static boolean comprobarMatriculas (Class clase, String idCurso,String idEstudiante) {
+		int idCursoAnterior;
+		idEstudiante = "01223334A"; 
+		boolean existeMatricula = false;
+		String cursoActual = ""; 
+		
+//		estudiante = eDAO.findById(clase.getName(), idEstudiante);
+		listaMatriculaEstudiantes = mDAO.findAll(Matricula.class);
+		
+		for(int i=0;i<listaMatriculaEstudiantes.size();i++) {
+			
+			if(listaMatriculaEstudiantes.get(i).get_idEstudiante().equals(idEstudiante)) {
+				cursoActual = listaMatriculaEstudiantes.get(i).get_idCursoPropio();
+			}
+		}
+		
+		if(cursoActual.equals(idCurso)) {
+			existeMatricula = true;
+		}
+		
+//		for(int i =0;(i<estudianteActual._matriculas.size()) && (existeMatricula == false ) ;i++) {
+//			curso = estudianteActual._matriculas.get(i)._titulo;
+//			 idCursoAnterior = curso.get_id();
+//			
+//			if(idCurso.equals(idCursoAnterior)) {
+//				existeMatricula = true;
+//			}
+//				
+//		}
+		
+		return existeMatricula;
+	}
 	
 	public List<CursoPropio> recogerCursos() {
 		listaCursos = cDAO.findAll(curso.getClass());

@@ -8,7 +8,7 @@ public class Main {
 
 	
 	static MatriculaDAO mDAO = new MatriculaDAO<Matricula>();
-	private static Matricula matricula = new Matricula();
+//	private static Matricula matricula = new Matricula();
 	private CursoPropio curso = new CursoPropio();
 
 	public static void main(String[] args) {
@@ -23,12 +23,12 @@ public class Main {
 		
 		// FUNCIONA con ABSTRACT ENTITY DAO
 //		Profesor p = new Profesor("mod", "b", "c", true);
-		int cursopropio = 601;
+		String cursopropio = "601";
 		String estudiante = "";
 		
-		if(mDAO.findMatricula(matricula.getClass(), cursopropio, estudiante)) {
-			System.out.println("Funciona");
-		}
+//		if(mDAO.findMatricula(matricula.getClass(), cursopropio, estudiante)) {
+//			System.out.println("Funciona");
+//		}
 		
 		
 //		Session s = p.get_profesorDAO().openSession(p.getClass());
