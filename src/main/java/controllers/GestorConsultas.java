@@ -95,4 +95,8 @@ public class GestorConsultas {
 
 		return ingresos;
 	}
+	
+	public static CursoPropio obtenerCursos(int id) {
+        return (CursoPropio) cpDAO.findById(CursoPropio.class, id);
+    }
 }
