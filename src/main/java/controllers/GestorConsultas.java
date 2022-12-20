@@ -1,12 +1,15 @@
 package controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import entities.Centro;
 import entities.CursoPropio;
+import entities.TipoCurso;
 import persistencia.CentroDAO;
 import persistencia.CursoPropioDAO;
 import persistencia.ProfesorDAO;
+import entities.EstadoCurso;
 import entities.ProfesorUCLM;
 
 public class GestorConsultas {
@@ -78,6 +81,8 @@ public class GestorConsultas {
 	}
 
 	public static int[] obtenerIngresos() {
+		/*Ahora muestra todos los cursos -> hay q cambiarlo
+		 * para que muestre unicamente los denegados*/
 		int i = 0;
 
 		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
@@ -90,8 +95,4 @@ public class GestorConsultas {
 
 		return ingresos;
 	}
-	
-	public static CursoPropio obtenerCursos(int id) {
-        return (CursoPropio) cpDAO.findById(CursoPropio.class, id);
-    }
 }
