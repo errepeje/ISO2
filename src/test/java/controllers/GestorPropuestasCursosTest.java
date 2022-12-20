@@ -1,10 +1,8 @@
 package controllers;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
@@ -23,8 +21,6 @@ public class GestorPropuestasCursosTest {
 		int propuestasAntes = gestorPropuestasCursos.obtenerCursosDenegados().length;
 		CursoPropio cursoPropio = gestorPropuestasCursos.realizarPropuestaCurso("C4", 10, new Date(2022,12,12), new Date(2023,12,12), 400, 1, "ESI", "87423456", "87423456", TipoCurso.EXPERTO);	
 		int propuestasDespues = gestorPropuestasCursos.obtenerCursosDenegados().length;
-		
-		
 		
 		assertTrue(propuestasDespues - propuestasAntes == 1);
 	}

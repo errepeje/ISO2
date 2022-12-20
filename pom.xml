@@ -139,7 +139,7 @@
 							</goals>
 							<configuration>
 								<excludes>
-									<exclude>*/Pantalla</exclude>
+									<exclude>**/Pantalla*</exclude>
 								</excludes>
 								<rules>
 									<!-- implementation is needed only for Maven 2 -->
