@@ -18,18 +18,6 @@ public class GestorConsultas {
 	static CentroDAO<Centro> cDAO = new CentroDAO<>();
 	static ProfesorDAO<ProfesorUCLM> pDAO = new ProfesorDAO<>();
 
-	public List<CursoPropio> consultarIngresos(TipoCurso aTipo, Date aFechaInicio, Date aFechaFin) {
-		throw new UnsupportedOperationException();
-	}
-
-	public List<CursoPropio> consultarEstadoCursos(EstadoCurso aEstadoCurso, Date aFechaInicio, Date aFechaFin) {
-		throw new UnsupportedOperationException();
-	}
-
-	public List<CursoPropio> listarEdicionesCursos(Date aFechaInicio, Date aFechaFin) {
-		throw new UnsupportedOperationException();
-	}
-
 	public static int[] obtenerCursos() {
 
 		int i = 0;
@@ -41,7 +29,6 @@ public class GestorConsultas {
 			id[i] = c.getid();
 			i++;
 		}
-
 		return id;
 	}
 
@@ -107,9 +94,5 @@ public class GestorConsultas {
 		}
 
 		return ingresos;
-	}
-
-	public static CursoPropio obtenerCursos(int id) {
-		return (CursoPropio) cpDAO.findById(CursoPropio.class, id);
 	}
 }
