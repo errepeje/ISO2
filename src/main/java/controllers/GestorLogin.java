@@ -19,6 +19,7 @@ public class GestorLogin {
 			throw new Exception("Usuario o contraseña incorrectos");
 		return uID;
 	}
+	
 	public static String obtenerTipoUsuario (String uID) {
 		Estudiante e = (Estudiante) uDAO.findById(Estudiante.class, uID);
 		ProfesorUCLM pU = (ProfesorUCLM) uDAO.findById(ProfesorUCLM.class, uID);

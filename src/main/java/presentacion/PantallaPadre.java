@@ -10,11 +10,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import org.junit.Ignore;
+
 import controllers.GestorConsultas;
 import controllers.GestorLogin;
 import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
 
+@Ignore
 public class PantallaPadre extends JFrame{
 	protected JPanel contentPane = new JPanel();
 	protected JPanel panel;

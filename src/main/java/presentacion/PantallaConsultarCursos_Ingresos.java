@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import org.junit.Ignore;
+
 import entities.TipoCurso;
 
 import javax.swing.SwingConstants;
@@ -21,6 +23,7 @@ import java.awt.event.ItemListener;
 
 import javax.swing.JLabel;
 
+@Ignore
 public class PantallaConsultarCursos_Ingresos extends PantallaPadre {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

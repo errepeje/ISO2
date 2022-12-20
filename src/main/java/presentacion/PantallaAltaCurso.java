@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.junit.Ignore;
+
 import entities.TipoCurso;
 
 import javax.swing.JRadioButton;
@@ -20,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
+@Ignore
 public class PantallaAltaCurso extends PantallaPadre {
 	/**
 	 * Launch the application.

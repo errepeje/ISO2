@@ -51,15 +51,15 @@ public class GestorPropuestasCursos {
 		cpDAO.update(aCurso);
 	}
 
-	public void evaluarPropuesta(int idCurso, EstadoCurso evaluacion, String informe) { 
-		CursoPropio evaluado = (CursoPropio) cpDAO.findById(CursoPropio.class, idCurso);
+	public CursoPropio evaluarPropuesta(int idCurso, EstadoCurso evaluacion, String informe) { 
+		CursoPropio evaluado = null;
+		
+		evaluado = (CursoPropio) cpDAO.findById(CursoPropio.class, idCurso);
 		evaluado.setestado(evaluacion);
 		evaluado.setinforme(informe);
-		editarPropuestaCurso(evaluado);
-	}
-
-	public void altaCursoAprobado(CursoPropio aCurso) {
-		throw new UnsupportedOperationException();
+		editarPropuestaCurso(evaluado);	
+		
+		return evaluado;
 	}
 	
 	public static Centro obtenerCentro(String nombre) {
@@ -98,8 +98,6 @@ public class GestorPropuestasCursos {
 	}
 	
 	public static int[] obtenerCursosDenegados() {
-		/*Ahora muestra todos los cursos -> hay q cambiarlo
-		 * para que muestre unicamente los denegados*/
 		int i = 0;
 		
 		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);

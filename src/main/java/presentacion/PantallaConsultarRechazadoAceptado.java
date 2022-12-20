@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import org.junit.Ignore;
+
 import controllers.GestorConsultas;
 import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
@@ -30,20 +32,8 @@ import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 
+@Ignore
 public class PantallaConsultarRechazadoAceptado extends PantallaPadre {
-	private JPanel panel;
-	private JTextField textFieldDiaInicio;
-	private JTextField textFieldMesInicio;
-	private JTextField textFieldAnyoInicio;
-	private JTextField textFieldDiaFin;
-	private JTextField textFieldMesFin;
-	private JTextField textFieldAnyoFin;
-	private JTextField textFieldTasa;
-	private JTextField textFieldECTS;
-	
-	private GestorConsultas GC = new GestorConsultas();
-	private CursoPropio cp;
-
 	/**
 	 * Launch the application.
 	 */
@@ -242,8 +232,8 @@ public class PantallaConsultarRechazadoAceptado extends PantallaPadre {
 		estadosBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent itemEvent) {
 				listModel.removeAllElements();
-				int[] idCursos = GC.obtenerCursos();
-				String[] estadoCursos = GC.obtenerEstado();
+				int[] idCursos = gc.obtenerCursos();
+				String[] estadoCursos = gc.obtenerEstado();
 				
 				for(int j=0; j<estadoCursos.length; j++) {
 					if (estadoCursos[j].equals(estadosBox.getSelectedItem().toString())) {
@@ -262,7 +252,7 @@ public class PantallaConsultarRechazadoAceptado extends PantallaPadre {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				if (listCursos.getSelectedValue() != null) {
-					cp = GC.obtenerCursos(Integer.parseInt(listCursos.getSelectedValue().toString()));
+					cp = gc.obtenerCursos(Integer.parseInt(listCursos.getSelectedValue().toString()));
 					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
 					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
 

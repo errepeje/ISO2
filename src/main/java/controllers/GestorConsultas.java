@@ -1,15 +1,12 @@
 package controllers;
 
-import java.util.Date;
 import java.util.List;
 
 import entities.Centro;
 import entities.CursoPropio;
-import entities.TipoCurso;
 import persistencia.CentroDAO;
 import persistencia.CursoPropioDAO;
 import persistencia.ProfesorDAO;
-import entities.EstadoCurso;
 import entities.ProfesorUCLM;
 
 public class GestorConsultas {
@@ -17,18 +14,6 @@ public class GestorConsultas {
 	static CursoPropioDAO<CursoPropio> cpDAO = new CursoPropioDAO<>();
 	static CentroDAO<Centro> cDAO = new CentroDAO<>();
 	static ProfesorDAO<ProfesorUCLM> pDAO = new ProfesorDAO<>();
-
-	public List<CursoPropio> consultarIngresos(TipoCurso aTipo, Date aFechaInicio, Date aFechaFin) {
-		throw new UnsupportedOperationException();
-	}
-
-	public List<CursoPropio> consultarEstadoCursos(EstadoCurso aEstadoCurso, Date aFechaInicio, Date aFechaFin) {
-		throw new UnsupportedOperationException();
-	}
-
-	public List<CursoPropio> listarEdicionesCursos(Date aFechaInicio, Date aFechaFin) {
-		throw new UnsupportedOperationException();
-	}
 
 	public static int[] obtenerCursos() {
 
@@ -41,7 +26,6 @@ public class GestorConsultas {
 			id[i] = c.getid();
 			i++;
 		}
-
 		return id;
 	}
 
@@ -94,8 +78,6 @@ public class GestorConsultas {
 	}
 
 	public static int[] obtenerIngresos() {
-		/*Ahora muestra todos los cursos -> hay q cambiarlo
-		 * para que muestre unicamente los denegados*/
 		int i = 0;
 
 		List<CursoPropio> cursos = cpDAO.findAll(CursoPropio.class);
@@ -108,8 +90,8 @@ public class GestorConsultas {
 
 		return ingresos;
 	}
-
+	
 	public static CursoPropio obtenerCursos(int id) {
-		return (CursoPropio) cpDAO.findById(CursoPropio.class, id);
-	}
+        return (CursoPropio) cpDAO.findById(CursoPropio.class, id);
+    }
 }
