@@ -26,7 +26,7 @@
  Para la gestión del mantenimiento de nuestro programa hemos utilizado esencialmente SonarCloud donde observábamos un análisis detallado de lo que contenía nuestro código.  
  El primer análisis realizado el día  nos muestra lo siguiente:     
  
-![](/imagenes/PrimerAnalisis.png)
+![](Memoria/Imagenes/PrimerAnalisis.png)
 
 
  Uno de los mayores  problemas que pudimos observar era la gran cantidad de código duplicado que ascendía hasta el 39.8% y que supone un problema con respecto a la calidad de nuestro código, según SonarCloud el código duplicado idóneo no debería superar el 3% de todo el código.
