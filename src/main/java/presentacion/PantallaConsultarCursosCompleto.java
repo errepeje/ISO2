@@ -3,18 +3,12 @@ package presentacion;
 import java.awt.EventQueue;
 import java.awt.Font;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import controllers.GestorConsultas;
-import controllers.GestorPropuestasCursos;
-import entities.CursoPropio;
-
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.JList;
@@ -23,17 +17,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Enumeration;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Component;
 import javax.swing.JLabel;
-import javax.swing.JTextPane;
 
 
 public class PantallaConsultarCursosCompleto extends PantallaPadre {
@@ -44,12 +29,8 @@ public class PantallaConsultarCursosCompleto extends PantallaPadre {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					PantallaConsultarCursosCompleto frame = new PantallaConsultarCursosCompleto();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				PantallaConsultarCursosCompleto frame = new PantallaConsultarCursosCompleto();
+				frame.setVisible(true);
 			}
 		});
 	}

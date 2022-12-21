@@ -58,14 +58,15 @@ public class PantallaEditarCurso extends PantallaPadre {
 		for(int i=0; i<idCursosDenegados.length; i++)
 			listModel.addElement(idCursosDenegados[i]);
 
-		JList listCursos = new JList(listModel);
-		listCursos.setBounds(10, 11, 166, 199);
-		contentPane.add(listCursos);
 
 		JLabel lblFechaInicio = new JLabel("Edita la fecha de inicio (dd-mm-yyyy): ");
 		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaInicio.setBounds(186, 12, 279, 19);
 		contentPane.add(lblFechaInicio);
+
+		JList listCursos = new JList(listModel);
+		listCursos.setBounds(10, 11, 166, 199);
+		contentPane.add(listCursos);
 
 		JLabel lblFechaFin = new JLabel("Edita la fecha de fin (dd-mm-yyyy): ");
 		lblFechaFin.setFont(new Font(fuente, Font.PLAIN, 15));
@@ -76,17 +77,22 @@ public class PantallaEditarCurso extends PantallaPadre {
 		lblTasaMatricula.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblTasaMatricula.setBounds(186, 120, 279, 19);
 		contentPane.add(lblTasaMatricula);
-
-		JLabel lblEditaLosEcts = new JLabel("Edita los ECTS: ");
-		lblEditaLosEcts.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblEditaLosEcts.setBounds(186, 170, 279, 19);
-		contentPane.add(lblEditaLosEcts);
-
 		textFieldDiaInicio = new JTextField();
 		textFieldDiaInicio.setToolTipText("");
 		textFieldDiaInicio.setColumns(10);
 		textFieldDiaInicio.setBounds(186, 34, 66, 20);
 		contentPane.add(textFieldDiaInicio);
+
+		JLabel lblEditaLosEcts = new JLabel("Edita los ECTS: ");
+		lblEditaLosEcts.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblEditaLosEcts.setBounds(186, 170, 279, 19);
+		contentPane.add(lblEditaLosEcts);
+		JLabel lblg2 = new JLabel("-");
+		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg2.setFont(new Font(fuente, Font.PLAIN, 24));
+		lblg2.setBounds(338, 34, 22, 20);
+		contentPane.add(lblg2);
+
 
 		JLabel lblg1 = new JLabel("-");
 		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -99,16 +105,20 @@ public class PantallaEditarCurso extends PantallaPadre {
 		textFieldMesInicio.setBounds(273, 34, 66, 20);
 		contentPane.add(textFieldMesInicio);
 
-		JLabel lblg2 = new JLabel("-");
-		lblg2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg2.setFont(new Font(fuente, Font.PLAIN, 24));
-		lblg2.setBounds(338, 34, 22, 20);
-		contentPane.add(lblg2);
 
 		textFieldAnyoInicio = new JTextField();
 		textFieldAnyoInicio.setColumns(10);
 		textFieldAnyoInicio.setBounds(359, 33, 66, 20);
 		contentPane.add(textFieldAnyoInicio);
+		JLabel lblg11 = new JLabel("-");
+		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
+		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
+		lblg11.setBounds(253, 92, 16, 14);
+		contentPane.add(lblg11);
+		textFieldTasa = new JTextField();
+		textFieldTasa.setBounds(186, 139, 239, 20);
+		contentPane.add(textFieldTasa);
+		textFieldTasa.setColumns(10);
 
 		textFieldDiaFin = new JTextField();
 		textFieldDiaFin.setToolTipText("");
@@ -116,11 +126,6 @@ public class PantallaEditarCurso extends PantallaPadre {
 		textFieldDiaFin.setBounds(186, 89, 66, 20);
 		contentPane.add(textFieldDiaFin);
 
-		JLabel lblg11 = new JLabel("-");
-		lblg11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
-		lblg11.setBounds(253, 92, 16, 14);
-		contentPane.add(lblg11);
 
 		textFieldMesFin = new JTextField();
 		textFieldMesFin.setColumns(10);
@@ -138,10 +143,6 @@ public class PantallaEditarCurso extends PantallaPadre {
 		textFieldAnyoFin.setBounds(359, 88, 66, 20);
 		contentPane.add(textFieldAnyoFin);
 
-		textFieldTasa = new JTextField();
-		textFieldTasa.setBounds(186, 139, 239, 20);
-		contentPane.add(textFieldTasa);
-		textFieldTasa.setColumns(10);
 
 		textFieldECTS = new JTextField();
 		textFieldECTS.setColumns(10);
