@@ -8,8 +8,8 @@
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
-				"database": "C:\\Users\\Mario\\git\\ISO2\\ISO_II\\iso2_db",
-				"url": "jdbc:derby:C:\\Users\\Mario\\git\\ISO2\\ISO_II\\iso2_db",
+				"database": "C:\\Users\\gonza\\git\\ISO2\\ISO_II\\iso2_db",
+				"url": "jdbc:derby:C:\\Users\\gonza\\git\\ISO2\\ISO_II\\iso2_db",
 				"type": "dev",
 				"auth-model": "native"
 			}

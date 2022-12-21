@@ -198,7 +198,7 @@ public class PantallaMatriculacion extends JFrame {
 						textCualificacion.getText(),
 						darFormatoFecha(textDia.getText().toString() + "/" + textMes.getText().toString() + "/" + textAnio.getText().toString()),
 						pagado,
-						comboBoxCurso.getSelectedItem().toString(),
+						Integer.valueOf(comboBoxCurso.getSelectedItem().toString()),
 						modopago
 						)) {
 					

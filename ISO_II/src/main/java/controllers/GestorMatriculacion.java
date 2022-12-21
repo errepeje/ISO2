@@ -28,7 +28,7 @@ public class GestorMatriculacion {
 	private  Estudiante estudiante = new Estudiante();
 	
 
-	public boolean realizarMatriculacion(String dni,String nombre, String apellido,String titulacion,String cualificacion,Date fecha,boolean pagado, String cursopropio,ModoPago modopago) {		
+	public boolean realizarMatriculacion(String dni,String nombre, String apellido,String titulacion,String cualificacion,Date fecha,boolean pagado, int cursopropio,ModoPago modopago) {		
 		
 		boolean matriculacreada = false;
 		
@@ -74,11 +74,11 @@ public class GestorMatriculacion {
 	}
 	
 	@SuppressWarnings("unlikely-arg-type")
-	public static boolean comprobarMatriculas (Class clase, String idCurso,String idEstudiante) {
+	public static boolean comprobarMatriculas (Class clase, int idCurso,String idEstudiante) {
 		int idCursoAnterior;
 		idEstudiante = "01223334A"; 
 		boolean existeMatricula = false;
-		String cursoActual = ""; 
+		int cursoActual=0 ; 
 		
 //		estudiante = eDAO.findById(clase.getName(), idEstudiante);
 		listaMatriculaEstudiantes = mDAO.findAll(Matricula.class);
@@ -90,7 +90,7 @@ public class GestorMatriculacion {
 			}
 		}
 		
-		if(cursoActual.equals(idCurso)) {
+		if(cursoActual==idCurso) {
 			existeMatricula = true;
 		}
 		

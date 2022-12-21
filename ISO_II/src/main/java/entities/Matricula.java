@@ -33,20 +33,20 @@ public class Matricula {
 		@Transient
 		private CursoPropio _cursoCursoPropio;
 		@Column(name = "cursopropio")
-		private String _idCursoPropio;
+		private int _idCursoPropio;
 		@Transient 
 		public Vector<Estudiante> _estudiantes = new Vector<Estudiante>();
 		@Transient 
 		public Vector<CursoPropio> _cursospropios = new Vector<CursoPropio>();
 		public Matricula(int _id, Date _fecha, boolean _pagado, ModoPago _tipoPago, String idEstudiante,
-				String idCursoPropio) {
+				int idCursoPropio) {
 			super();
 			this._id = _id;
 			this._fecha = _fecha;
 			this._pagado = _pagado;
 			this._tipoPago = _tipoPago;
 			this._idEstudiante = _estudiante.get_dni();
-			this._idCursoPropio = String.valueOf(_cursoCursoPropio.get_id());
+			this._idCursoPropio =  _cursoCursoPropio.get_id();
 		}
 		public int get_id() {
 			return _id;
@@ -78,10 +78,10 @@ public class Matricula {
 		public void set_idEstudiante(String _idEstudiante) {
 			this._idEstudiante = _idEstudiante;
 		}
-		public String get_idCursoPropio() {
+		public int get_idCursoPropio() {
 			return _idCursoPropio;
 		}
-		public void set_idCursoPropio(String _idCursoPropio) {
+		public void set_idCursoPropio(int _idCursoPropio) {
 			this._idCursoPropio = _idCursoPropio;
 		}
 	}
