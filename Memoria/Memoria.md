@@ -41,7 +41,7 @@ Otro de los problemas encontrados es la gran cantidad de *CodeSemlls* encontrado
 
 También teníamos 2 Vulnerabilidades y 23 bugs que finalmente pudimos solucionar y tener 0 vulnerabilidades y 0 bugs y además para mejorar el análisis de sonar en nuestro programa editamos algunas de las reglas establecidas.
 
-Para mejorar la covertura de nuestro programa comenzamos a realizar distintos test en los gestores como GestorLogin en el que conseguimos una covertura del 90% tras implementar test en los métodos utilizados en estos gestores.
+Para mejorar la cobertura de nuestro programa comenzamos a realizar distintos test en los gestores como GestorLogin en el que conseguimos una covertura del 90% tras implementar test en los métodos utilizados en estos gestores.
 
 Finalmente este sería el estado final de nuestro sistema:
 
