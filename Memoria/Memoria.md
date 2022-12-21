@@ -26,7 +26,7 @@
  Para la gestión del mantenimiento de nuestro programa hemos utilizado esencialmente SonarCloud donde observábamos un análisis detallado de lo que contenía nuestro código.  
  El primer análisis realizado el día  nos muestra lo siguiente:     
  
-![](Memoria/Imagenes/PrimerAnalisis.png)
+![](Imagenes/PrimerAnalisis.png)
 
 
  Uno de los mayores  problemas que pudimos observar era la gran cantidad de código duplicado que ascendía hasta el 39.8% y que supone un problema con respecto a la calidad de nuestro código, según SonarCloud el código duplicado idóneo no debería superar el 3% de todo el código.
@@ -48,26 +48,43 @@ Para mejorar la covertura de nuestro programa comenzamos a realizar distintos te
 - **Tablas de GestorLoginTest**
 
 
-    ------Inserta tabla GestorLoginTest--
+   ![](Imagenes/GestorLoginTestpng.png)
 
 - **Tabla de GestorPropuestaCurso**
     - **Tabla realizarPropuesta**
+   ![](Imagenes/GestorPropuestaCurso1.png)
 
     - **Tabla de ObtenerCurso**
+    - ![](Imagenes/ObtenerCurso.png)
 
     - **Tabla de ObtenerCursosDenegados**
+    - ![](Imagenes/ObtenerCursosDenegados.png)
 
     - **Tabla de ObtenerCentros**
+    - ![](Imagenes/ObtenerCentros.png)
 
     - **Tabla de ObtenerSecretarios**
+    - ![](Imagenes/ObtenerSecretarios.png)
 
     - **Tabla de ObtenerProfesor**
+    - ![](Imagenes/ObtenerProfesor.png)
 
     - **Tabla de ObtenerCentro**
+    - ![](Imagenes/ObtenerCentro.png)
 
     - **Tabla de EvaluarPropuesta**
-
-
+    - ![](Imagenes/EvaluarPropuesta.png)
+- **Tabla de GestorConsultas**
+    - **Tabla de ObtenerCursos**
+    - ![](Imagenes/ObtenerCursos.png)
+    - **Tabla de obtenerEdicion**
+    - ![](Imagenes/obtenerEdicion.png)
+    - **Tabla de ObtenerEstado**
+    - ![](Imagenes/obtenerEstado.png)
+    - **Tabla de ObtenerTipoCurso**
+    - ![](Imagenes/obtenerTipoCurso.png)
+    - **Tabla de ObtenerIngresos**
+    - ![](Imagenes/obtenerIngresos.png)
 
 
 ## **BACKLOG DEL SPRINT 3**
@@ -94,7 +111,7 @@ Al acabarlo, será planteada una corta reunión retrospectiva sobre el sprint pa
 
 Este sprint comienza con el trabajo de una nueva herramienta, por lo que puede que parte del trabajo (como la búsqueda de alternativas a los problemas encontrados en Sonar) se arrastre hacia próximos Sprints.
 
-
+![](Imagenes/Sprint3.PNG)
 ## **BACKLOG DEL SPRINT 4**
 
 - **Características del sprint:**
@@ -118,6 +135,7 @@ Al acabarlo, será planteada una corta reunión retrospectiva sobre el sprint pa
 
 En este sprint, nos dedicaremos a corregir los problemas detectados con SonarCloud e instalaremos el enterno de pruebas para comenzar con los test en el proyecto.
 
+![](Imagenes/Sprint4.PNG)
 
 ## **BACKLOG DEL SPRINT 5**
 
@@ -143,7 +161,7 @@ Siendo este el último Sprint, cualquier problema que haya sido arrastrado de ot
 **Notas:**
 
 En este sprint nos centraremos en mantenimiento y analizar los informes de Sonar y el resumen final del estado del sistema.
-
+![](Imagenes/Sprint5.PNG)
 
 
 
