@@ -1,17 +1,18 @@
 {
 	"folders": {},
 	"connections": {
-		"derby-184292c6597-614466220e43ef5a": {
+		"derby-1851c347c15-370446c2fcdd41e9": {
 			"provider": "generic",
 			"driver": "derby",
 			"name": "iso2_db",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
-				"database": "C:\\Users\\Mario\\git\\ISO2\\ISO_II\\iso2_db",
-				"url": "jdbc:derby:C:\\Users\\Mario\\git\\ISO2\\ISO_II\\iso2_db",
+				"database": "C:\\Users\\loren\\git\\ISO2\\iso2_db",
+				"url": "jdbc:derby:C:\\Users\\loren\\git\\ISO2\\iso2_db",
 				"type": "dev",
-				"auth-model": "native"
+				"auth-model": "native",
+				"handlers": {}
 			}
 		}
 	},

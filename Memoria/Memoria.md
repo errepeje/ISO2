@@ -1,149 +1,220 @@
 # Supra Software Engineering
 
-#### **HERRAMIENTAS UTILIZADAS:**
+## Herramientas utilizadas
 
 - **Github:** Utilizado para compartir código entre los empleados para trabajar en paralelo en elementos del product backlog. Fue necesario la creación de varias ramas para poder dividir bien la implementación.
+- **GitHub Desktop:** Utilizada conjuntamente con GitHUb la hemos usado para poder facilitar tanto la creación y unión de ramas como la realización de *commits*
 - **Hibernate:** Utilizado en persistencia para guardar objetos en la base de datos utilizando la clase *AbstractEntityDAO*.
 - **Maven:** Utilizado para controlar la configuración del proyecto y no tener problemas de versiones de software o de librerías entre los empleados.
-- **Eclipse:** El entorno de desarrollo elegido para la implementación del código, principalmente para facilitar la implementación de la capa de presentación gracias a la extensión *WindowBuilder* y el tratado de datos de la base de datos con la extensión *DBeaver*.
+- **Eclipse:** El entorno de desarrollo elegido para la implementación del código, principalmente para facilitar la implementación de la capa de presentación gracias a la extensión *WindowBuilder* y el tratado de datos de   la base de datos con la extensión *DBeaver*.
 - **DerbyDB:** La base de datos elegida para este proyecto es la proporcionada por Apache ya que esta tiene una versión embebida que es perfecta para los requisitos del tratado de datos del proyecto.
+- **Sonar:** Sonar se trata de una herramienta de análisis estático de código que hemos utilizado para poder observar varias características de nuestro código tales como los bugs, vulnerabilidades, *code Smells*, covertura y código duplicado.
+- **JUnit:** Herramienta utilizada para poder realizar los distintintos test del código para asegurar la consistencia y la funcionalidad del código implementado.
+- **Jacoco:** Jacoco se tratra de un plugin utilizado en Java para poder evaluar la covertura de los test realizados por la herramienta JUnit.
+- **Miro:** Miro se trata de una aplicación web que hemos utilizado para la representación gráfica de los distintos sprints.
 
-#### **PROBLEMAS:**
+## Problemas
 
-- **GitHub:** El primer problema que hemos encontrado utilizando esta herramienta fue al momento de realizar los commits dado que únicamente se subían los archivos .class y no los .java. El siguiente de los problemas fue en relación a la utilización de las ramas dado que desde Eclipse no se conseguía hacer el Checkout entre las distintas ramas y además al unir ramas nos aparecían diferentes conflictos que tuvimos que solucionar.
-- **Hibernate:** Errores con la configuración de la herramienta y creación de la relación de herencia entre las clases de *Profesor*, *ProfesorUCLM* y *ProfesorExterno*.
-- **Eclipse:** Errores de compatibilidad entre versiones, por lo que hubo que reinstalar la herramienta y descargar la última versión de la misma, notificando a todos los integrantes para que todos posean la misma versión.
-- **DerbyDB:** Problemas al crear la base de datos dado que no permite editar las tablas ya creadas en la base de datos, además los errores que te indica la base de datos no son errores concluyentes.
+ - **Sonar:** Cuando comenzamos a utilizar esta herramienta, nos encontramos con la problemática de que únicamente nos analizaba la rama *main* la cual solo recibe actualizaciones cuando el código ya ha sido terminado y analizado, por lo que cambiamos esa configuración para que nos funcionase correctamente y así poder analizar nuestro código correctamente antes de poder sacarlo a producción.
+ - **JUnit:** En el momento de realizar los test a uno de nuestros compañeros se le realizaban test de métodos no existentes y que portanto daban errores.
+ - **Jacoco:** Uno de los problemas que mas quebraderos de cabeza nos han ocasionado ha sido con respecto a Jacoco ya que en el momento de realizar el análisis no era generado el .exec necesario para poder ver nuestra covertura en SonarCloud.
+- **Maven:** Hemos tenido problemas de compatibilidad con maven dado que entre distintos compañeros nos encontrabamos con versiones distintas y por tanto alguno de ellos no podía realizar MavenBuild
 
-#### **UML ACTUALIZADO:**
-![](Aspose.Words.5f0b6885-34f2-4041-8844-0c546775ad86.001.jpeg)
 
-#### **BACKLOG DEL SPRINT 1**
+## **BACKLOG DEL SPRINT 3**
 
 - **Características del sprint:**
 
-Duración: 2 semanas (28/09/22 - 17/10/22). Estimación de tiempo de trabajo: 12 horas.
+Duración: 2 semanas (10/11/22 - 24/11/22). Estimación de tiempo de trabajo: 16 horas.
 
-Tomaremos este sprint como una prueba para los próximos sprints, así aprenderemos a estimar mejor la carga de trabajo por objetivo y la cantidad de objetivos que somos capaces de cumplir.
+Usaremos este sprint para acabar el código restante de la funcionalidad mínima y comenzar con el uso de SonarCloud para analizar el proyecto.  
 
-Al acabarlo, será planteada una corta reunión retrospectiva sobre el sprint para analizar nuestro desempeño y efectividad a la hora de cumplir los objetivos en el plazo acordado. Con esto podremos preparar mejor el backlog del sprint 2.
+Al acabarlo, será planteada una corta reunión retrospectiva sobre el sprint para analizar nuestro desempeño y efectividad a la hora de cumplir los objetivos en el plazo acordado. Con esto podremos preparar mejor el backlog del sprint 4.
 
 - **Objetivos del Sprint:**
   - Seguir y llevar al día las clases de laboratorio.
-  - Crear proyecto Maven.
-  - Configurar y crear repositorio git.
-  - Generar el esqueleto del código.
-  - Crear y configurar la base de datos.
-  - Comenzar con los casos de uso (realizar propuestas de curso, editar
-propuestas de curso, visualizar propuesta de curso). El número de casos que
-realicemos en este sprint podrá cambiar si vemos imposible realizarlos todos
-en este periodo de tiempo.
-  - Plantear si es necesaria una revisión del sprint con el cliente.
+  - Configurar Sonar.
+  - Primeros análisis del proyecto con Sonar.
+  - Observar y analizar los resultados del análisis de Sonar.
+  - Revisión de los CdU de los Sprints 1 y 2.
+  - CdU8: Login.
+  - CdU9: Informes para evaluar propuesta.
+  - Buscar soluciones alternativas a los problemas encontrados en Sonar.
 
 **Notas:**
 
-Este sprint puede que tenga estimaciones de tiempo y carga de trabajo por sprint incorrecto o inapropiado, en los próximos sprints backlogs, deberemos tener en cuenta lo aprendido en este sprint para mejorar la planificación.
+Este sprint comienza con el trabajo de una nueva herramienta, por lo que puede que parte del trabajo (como la búsqueda de alternativas a los problemas encontrados en Sonar) se arrastre hacia próximos Sprints.
 
-![](https://i.imgur.com/RF1PyU9.png)
-
-#### **BACKLOG DEL SPRINT 2**
+![](Imagenes/Sprint3.PNG)
+## **BACKLOG DEL SPRINT 4**
 
 - **Características del sprint:**
 
-Duración: 2 semanas (19/10/22- 1/11/22). Estimación de tiempo de trabajo: 13 horas.
+Duración: 2 semanas (24/11/22 - 8/12/22). Estimación de tiempo de trabajo: 15 horas.
 
-En este sprint revisaremos y finalizaremos casos de uso comenzados en el sprint 1 además de finalizar nuevos casos de uso.
+Usaremos este sprint para instalar el entorno de desarrollo de pruebas y comenzar con los tests. También nos encargaremos de reducir los CodeSmells, bugs y código duplicado.  
 
-Al acabarlo, plantearemos una corta reunión retrospectiva sobre el sprint para analizar nuestro desempeño y efectividad a la hora de cumplir los objetivos en el plazo acordado. Con esto podremos preparar mejor futuros backlogs de los próximos sprints.
+Al acabarlo, será planteada una corta reunión retrospectiva sobre el sprint para analizar nuestro desempeño y efectividad a la hora de cumplir los objetivos en el plazo acordado. Con esto podremos preparar mejor el backlog del sprint 5.
 
 - **Objetivos del Sprint:**
-  - Revisar y finalizar el CdU1.
-  - Revisar y finalizar el CdU2.
-  - Revisar y finalizar el CdU3.
-  - CdU4: Realizar Consulta de Cursos.
-  - CdU5: Consultar Ingresos.
-  - CdU6: Consultar Cursos Aprobados/Rechazados y el resto de estados.
-  - CdU7: Consultar Ingresos.
-  - CdU8: Consultar listado de ediciones.
-  - Revisión de los CdU realizados en busca de errores.
-  - Comprobaciones finales para la entrega intermedia.
-
+  - Instalación del entorno de pruebas.
+  - Solucionar problemas relacionados con Sonar y POM.
+  - Reducir código duplicado.
+  - Reducción CodeSmells y bugs de controladores.
+  - Reducción CodeSmells y bugs de entidades.
+  - Reducción CodeSmells y bugs de persistencia.
+  - Reducción CodeSmells y bugs de presentación.
+  - Unión de pantallas ConsultarCurso.
 **Notas:**
 
-Este sprint está centrado en generar código y realizar los casos de uso necesario para él proyecto. Con esta entrega estamos proporcionando un prototipo, en busca de feedback del cliente para realizar cambios y mejoras.
+En este sprint, nos dedicaremos a corregir los problemas detectados con SonarCloud e instalaremos el enterno de pruebas para comenzar con los test en el proyecto.
 
-![](https://i.imgur.com/TNo3iNI.png)
+![](Imagenes/Sprint4.PNG)
+
+## **BACKLOG DEL SPRINT 5**
+
+- **Características del sprint:**
+
+Duración: 2 semanas (8/12/22 - 22/12/22). Estimación de tiempo de trabajo: 17 horas.
+
+En este sprint acabaremos los test del código junto con sus tablas. Tras acabar el periodo de reducción de CodeSmells, bugs y código reducido, haremos una revisión final de los informes de SonarCloud y terminaremos con un resumen del estado del sistema tras la ejecución del plan basado en el análisis de Sonar. Por último terminaremos con un análisis de la mejora de calidad del proyecto.
+
+Para finalizar el sprint, redactaremos la memoria de la entrega final y haremos las comprobaciones finales del proyecto a entregar.
+
+Siendo este el último Sprint, cualquier problema que haya sido arrastrado de otros sprints o encontremos en el sprint actual terdrá que ser resuelto sin excepción. Esto podría significar un aumento de la carga de trabajo.
+
+- **Objetivos del Sprint:**
+  - Definición del plan de mantenimiento.
+  - Tests del código y tablas de los tests.
+  - Reducción final de CodeSmells y bugs.
+  - Revisión final de los informes generados por las herramientas (SonarCloud).
+  - Revisión y resumen final del estado del sistema, tras la ejecución del plan basado en el  análisis de SonarCloud.
+  - Análisis de la mejora de calidad.
+  - Memoria de la entrega final.
+  - Comprobaciones finales del proyecto a entregar.
+**Notas:**
+
+En este sprint nos centraremos en mantenimiento y analizar los informes de Sonar y el resumen final del estado del sistema.
+![](Imagenes/Sprint5.PNG)
+
+ ## Mantenimiento
+ 
+ Para la gestión del mantenimiento de nuestro programa hemos utilizado esencialmente SonarCloud donde observábamos un análisis detallado de lo que contenía nuestro código.  
+ El primer análisis realizado el día  nos muestra lo siguiente:     
+ 
+![](Imagenes/PrimerAnalisis.png)
 
 
-#### **PLAN DE GESTIÓN DE CONFIGURACIÓN:** 
+ Uno de los mayores  problemas que pudimos observar era la gran cantidad de código duplicado que ascendía hasta el 39.8% y que supone un problema con respecto a la calidad de nuestro código, según SonarCloud el código duplicado idóneo no debería superar el 3% de todo el código.
 
-#### **Propósito del plan:**
+Tras una exhaustiva investigación encontramos el origen de todo este código duplicado se encontraba en la capa de presentación, dado que todas las pantallas que utilizabamos eran prácticamente iguales. Para reducir el código duplicado  principalmente en declaraciones de variables comunes en todas las pantallas implementamos la clase *PantallaPadre* en la que englobamos muchas de estas variables para que el resto de clases pudiesen heredar de esta y así reducir el problema del código duplicado.
 
-Para cumplir con los requisitos del cliente, seguiremos la metodología Scrum (una metodología de desarrollo ágil), lo que implica que estimaremos y planificaremos de forma predecible las tareas necesarias para crear el sistema. Adaptaremos esta metodología a nuestro proyecto y nuestra organización.
+![](Imagenes/duplicado.png)
 
-Celebraremos una serie de reuniones de coordinación a lo largo del proyecto para mantener el trabajo actualizado y al día. En esas reuniones identificaremos tareas, revisaremos el trabajo ya realizado en busca de posibles mejoras, ya sea al producto o a la organización del equipo y prepararemos una serie de sprints.
+Otro de los problemas encontrados es la gran cantidad de *CodeSemlls* encontrados que al inicio ascendían hasta la cantidad de: 648.  
 
-Usaremos los sprints para que nuestro equipo de desarrollo trabaje y se auto organice sobre ellos. Para completar el proceso, el equipo usará herramientas como Github, Eclipse, Maven y DerbyDB (se añadirán más herramientas a lo largo de la práctica).
+![](Imagenes/CodeSmells.png)
 
-El equipo deberá preparar una entrega para antes del 3/11/2022, en esa fecha se le mostrará al cliente un prototipo del sistema al cliente. Dado el feedback del cliente, el equipo tendrá hasta el 22/12/2022 para finalizar el producto y corregir o cambiar aspectos que el cliente señale sobre el prototipo.
+También teníamos 2 Vulnerabilidades y 23 bugs que finalmente pudimos solucionar y tener 0 vulnerabilidades y 0 bugs y además para mejorar el análisis de sonar en nuestro programa editamos algunas de las reglas establecidas.
 
-#### **Alcance:**
+Para mejorar la cobertura de nuestro programa comenzamos a realizar distintos test en los gestores como GestorLogin en el que conseguimos una covertura del 90% tras implementar test en los métodos utilizados en estos gestores.
 
-Crearemos un sistema informático para la gestión de las enseñanzas propias de la UCLM.
+Finalmente este sería el estado final de nuestro sistema:
 
-Este sistema deberá tener funcionalidades para que los distintos usuarios y roles puedan iniciar sesión. Dependiendo de cada rol, los usuarios tendrán acceso a distintas funcionalidades.
+![](Memoria/Imagenes/estadoFinal.png)
+**Definición de los test realizados:**
 
-El director de curso podrá realizar, editar y consultar propuestas de curso.
+- **Tablas de GestorLoginTest**
 
-El personal de vicerrectorado podrá evaluar propuestas de curso y completar informes de subsanaciones sobre estas.
 
-El jefe de gabinete de vicerrectorado podrá realizar consultas sobre los cursos, entre ellas: consultar los ingresos de los distintos tipos de cursos, consultar los cursos aprobados, rechazados y el resto de los estados posibles y consultar un listado de ediciones de los cursos.
+   ![](Imagenes/GestorLoginTestpng.png)
 
-#### **Relación con la organización y otros proyectos:**
+- **Tabla de GestorPropuestaCurso**
+    - **Tabla realizarPropuesta**
+   ![](Imagenes/GestorPropuestaCurso1.png)
 
-La organización será basada en los principios de Scrum, realizando reuniones y creando sprints para facilitar el trabajo del equipo.
+    - **Tabla de ObtenerCurso**
+    - ![](Imagenes/ObtenerCurso.png)
 
-Durante el proyecto el equipo de desarrollo se encargará de seguir ciertos aspectos de los ciclos de vida, como la definición (análisis de requisitos del sistema y planificación del proyecto software), el desarrollo (diseño del software, generación del código y pruebas sobre este) y despliegue y mantenimiento del software (donde el equipo se encargará de la corrección, adaptación y mejor del producto).
+    - **Tabla de ObtenerCursosDenegados**
+    - ![](Imagenes/ObtenerCursosDenegados.png)
 
-#### **Limitaciones y suposiciones que afectan al plan:**
+    - **Tabla de ObtenerCentros**
+    - ![](Imagenes/ObtenerCentros.png)
 
-Puede haber problemas de tiempo debido a que el equipo de desarrollo se encuentra realizando otros proyectos al mismo tiempo que este. También puede que haya cambios en el calendario debido a posibles errores menores que deban ser corregidos en hotfixes. Todo esto puede suponer que haya cambios en el plan y se deban realizar alteraciones para cumplir con los objetivos propuestos a tiempo.
+    - **Tabla de ObtenerSecretarios**
+    - ![](Imagenes/ObtenerSecretarios.png)
 
-#### **Responsabilidades y autoridades del Plan:**
+    - **Tabla de ObtenerProfesor**
+    - ![](Imagenes/ObtenerProfesor.png)
 
-- SCRUM MASTER:
-  - Mario Rodríguez Serrano
-- EQUIPO DE DESARROLLO:
-  - Jonathan Jerónimo Parro
-  - Fernando Lorente Calvo
-  - Gonzalo Moreno Bielsa
-  - Mario Rodrliguez Serrano
+    - **Tabla de ObtenerCentro**
+    - ![](Imagenes/ObtenerCentro.png)
 
-#### **Organización del proyecto:**
+    - **Tabla de EvaluarPropuesta**
+    - ![](Imagenes/EvaluarPropuesta.png)
+- **Tabla de GestorConsultas**
+    - **Tabla de ObtenerCursos**
+    - ![](Imagenes/ObtenerCursos.png)
+    - **Tabla de obtenerEdicion**
+    - ![](Imagenes/obtenerEdicion.png)
+    - **Tabla de ObtenerEstado**
+    - ![](Imagenes/obtenerEstado.png)
+    - **Tabla de ObtenerTipoCurso**
+    - ![](Imagenes/obtenerTipoCurso.png)
+    - **Tabla de ObtenerIngresos**
+    - ![](Imagenes/obtenerIngresos.png)
 
-Tendremos un equipo de desarrollo que se encargará de completar las funcionalidades y solucionar posibles errores. Este equipo será autogestionado y multifuncional.
 
-El Gestor del proyecto deberá asegurar que se siga la estructura y planificación acordada, además de encargarse de que los equipos permanezcan totalmente funcionales y productivos.
+## Plan de mantenimiento 
 
-Todos estos roles deberán cooperar y comunicarse entre sí, para asegurar el correcto desarrollo del proyecto. El Gestor del proyecto deberá asegurar que se cumplan estos valores.
+Nuestro plan de mantenimiento se divide en las siguientes secciones:
 
-#### **Responsabilidades del CM:**
+* ### Alcance
 
-Implementar, monitorizar, controlar y mejorar los servicios del CM. Determinar el estado de las actividades del CM para que estas y las tareas realizadas se lleven a cabo de acuerdo a los planes y que satisfagan objetivos técnicos.
+Para garantizar el correcto funcionamiento del sistema se van a tener en cuenta principalmente los controladores como son el Gestor de consultas, el gestor del login y el gestor de las propuestas de los cursos.  
+Además también debemos mantener aquellas clases que se encuentren dentro de la persistencia dado que se trata de las clases que tienen constante intercambio con la base de datos  
 
-Recopilar información sobre la configuración para identificar la desviación y variación de otros proyectos del CM. Redireccionar el proyecto para corregir estas variaciones puede incluir una re-planificación
+* ### Responsabilidades
 
-#### **Políticas aplicables, directivas y procedimientos**
+Para que nuestro plan de mantenimiento sea correctamente ejecutado debemos asignar a una serie de personas que tengan unas funciones específicas en nuestro plan:
+- **Personal encargado de realizar test en el sistema**
+    En nuestro sistema debemos tener a una persona o equipo de personas que se encarguen de realizar un correcto testeo de las nuevas funcionalidades implementadas en el sistema y controlar que estas funciones no tienen conflictos con el resto del sistema.
+- **Personal encargado de la gestion del versionado del sistema**
+    Una vez finalizado el proyecto para asegurar el mantenimiento debemos tener un equipo encargado de versionar correctamente si se adhieren correctamente nuevas funcionalidades al sistema y demás de que las herramientas del sistema no generen problemas con sus actualizaciones. 
+- **Personal encargado de analizar el sistma**
+    El sistema al igual que durante su desarrollo debe tener un personal encargado de controlar la calidad del código así como puede ser controlar mediante *Sonar* la cantidad de *CodeSmells*, *Bugs*, *Security HotsPots*.
+    
+* ### Frecuencia
+    
+La frecuencia con la que se debe realizar tareas de mantenimiento dependerá de bastantes factores, como el uso del software, la complejidad del software, la necesidad de actualizaciones y cambios o la calidad de mantenimientos previos.
 
-Seguiremos las políticas establecidas por Supra Software Engineering, que garantizarán el correcto trabajo sobre el proyecto, y que esto se realice de forma segura y sin correr riesgos innecesarios sobre la inversión del cliente o que afecte a la planificación o calendario del proyecto.
+Idealmente, en cada sprint que se realice se debería trabajar en el mantenimiento del código previamente implementado.
 
-#### **Actividades planificadas, agenda y recursos**
+Si se ignora durante un largo periodo de tiempo los esfuerzos de mantenimiento, futuros trabajo de mantenimiento será más costoso y complicado.
 
-- Agenda del CM: se describe en el tiempo las actividades que deberían ser realizadas.
-- Recursos del CM: herramientas, técnicas, personal... Con los que cuenta el CM para la implementación de las actividades de configuración
+Por esto hemos decicido que la mejor opción será un mantenimiento continuo. Este mantenimiento suele usarse en software crítico para la organización, que se use constantemente y no pueda permitirse tiempo de inactividad.
 
-#### **Mantenimiento del Plan de CM:**
+En consecuencia, el mantenimiento continuo será el más óptimo, teniendo en cuenta la naturaleza de nuestro cliente y su necesidad de que el software este disponible en todo momento para la evaluación, consulta y propuestas de cursos.
 
-Realizaremos una revisión del plan en cada fase del proyecto y en ciertos puntos del calendario que veamos apropiado o necesario, para realizar los cambios que veamos necesario. Estos cambios deben ser aprobados y distribuidos al equipo de trabajo. Además, el plan debe incluir un historial de los cambios realizados sobre el plan inicial.
+* ### Revisión del plan de mantenimiento
 
-El gestor de proyecto se encargará de monitorizar el plan, acordar la frecuencia en la que se deben dar las actualizaciones, evaluar y aprobar los cambios y comunicar estos cambios tanto al equipo de desarrollo como al cliente.
+Por lo general, el plan de mantenimiento del software debe revisarse regularmente para asegurarse de que sea adecuado y de su efectividad. La frecuencia de esta revisión depende de varios factores, similares a los factores de frecuencia del mantenimiento.
+
+En general, se deberían revisar estos planes como mínimo una vez al año, aunque si hay cambios significativos en el código o la organización, es probable que se necesiten revisiones más frecuentes.
+
+Es importante tener en cuenta que el plan de mantenimiento es un documento "vivo", que debe adaptarse a las necesidades cambiantes de la organización, el cliente y el código.
+
+
+
+## conclusiones finales
+
+Supra Software Engineering ha usado varias herramientas para el desarrollo y mantenimiento del software, como GitHub, Maven, Sonar, JUnit y JaCoCo. 
+
+En el mantenimiento del proyecto, hemos usado principalmente SonarCloud para la realización de análisis del código. Gracias a esto detectamos una gran cantidad de CodeSmells, bugs y código duplicado. Que a lo largo de los Sprints 4 y 5 hemos ido reduciendo, hasta obtener buenos números.
+
+También tuvimos que diseñar un plan de mantenimiento, basado en alcance, responsabilidades y frecuencia. Además este plan debe ser revisado para asegurar que siga siendo adecuado y efectivo.
+
+
+
+
