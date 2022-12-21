@@ -121,8 +121,7 @@ Para mejorar la cobertura de nuestro programa comenzamos a realizar distintos te
 
 Finalmente este sería el estado final de nuestro sistema:
 
---------------Insertar imagen del estado final del sistema--
-
+![](Memoria/Imagenes/estadoFinal.png)
 **Definición de los test realizados:**
 
 - **Tablas de GestorLoginTest**
