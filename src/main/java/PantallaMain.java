@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
-import presentacion.PantallaConsultarCursos;
+import presentacion.PantallaConsultarCursosCompleto;
 import presentacion.PantallaDireccionCursos;
 import presentacion.PantallaEmpleadosVicerrectorado;
 
@@ -51,7 +51,7 @@ public class PantallaMain extends JFrame {
 		JButton btnJefegabinete = new JButton("Jefe de gabinete ");
 		btnJefegabinete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				PantallaConsultarCursos.main(null);
+				PantallaConsultarCursosCompleto.main(null);
 			}
 		});
 		contentPanel.add(btnJefegabinete);

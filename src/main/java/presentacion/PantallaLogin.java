@@ -6,6 +6,7 @@ import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import controllers.GestorPropuestasCursos;
+import entities.Generated;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -16,6 +17,7 @@ import javax.swing.UIManager;
 
 import java.awt.Color;
 
+@Generated
 public class PantallaLogin extends PantallaPadre {
 	private JTextField textFieldUser;
 	private JTextField textFieldPass;
@@ -92,7 +94,7 @@ public class PantallaLogin extends PantallaPadre {
 					uID = gl.iniciarSesion(textFieldUser.getText(),textFieldPass.getText());
 					typeOfUser = gl.obtenerTipoUsuario(uID);
 					if (typeOfUser.equals("JefeGabinete")) 
-						PantallaConsultarCursos.main(null);
+						PantallaConsultarCursosCompleto.main(null);
 					if (typeOfUser.equals("Vicerrectorado")) 
 						PantallaEmpleadosVicerrectorado.main(null);
 					if (typeOfUser.equals("Profesor"))

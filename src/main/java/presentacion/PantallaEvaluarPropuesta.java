@@ -9,6 +9,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import entities.EstadoCurso;
+import entities.Generated;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -20,6 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
+@Generated
 public class PantallaEvaluarPropuesta extends PantallaPadre {
 	/**
 	 * Launch the application.
