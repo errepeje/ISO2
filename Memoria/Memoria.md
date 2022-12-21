@@ -37,7 +37,7 @@ Tras una exhaustiva investigación encontramos el origen de todo este código du
 
 Otro de los problemas encontrados es la gran cantidad de *CodeSemlls* encontrados que al inicio ascendían hasta la cantidad de: 648.  
 
-----------------Decir cantidad final de code smells-------------------
+![](Imagenes/CodeSmells.png)
 
 También teníamos 2 Vulnerabilidades y 23 bugs que finalmente pudimos solucionar y tener 0 vulnerabilidades y 0 bugs y además para mejorar el análisis de sonar en nuestro programa editamos algunas de las reglas establecidas.
 
