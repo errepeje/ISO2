@@ -21,76 +21,6 @@
 - **Maven:** Hemos tenido problemas de compatibilidad con maven dado que entre distintos compañeros nos encontrabamos con versiones distintas y por tanto alguno de ellos no podía realizar MavenBuild
 
 
- ## Mantenimiento
- 
- Para la gestión del mantenimiento de nuestro programa hemos utilizado esencialmente SonarCloud donde observábamos un análisis detallado de lo que contenía nuestro código.  
- El primer análisis realizado el día  nos muestra lo siguiente:     
- 
-![](Imagenes/PrimerAnalisis.png)
-
-
- Uno de los mayores  problemas que pudimos observar era la gran cantidad de código duplicado que ascendía hasta el 39.8% y que supone un problema con respecto a la calidad de nuestro código, según SonarCloud el código duplicado idóneo no debería superar el 3% de todo el código.
-
-Tras una exhaustiva investigación encontramos el origen de todo este código duplicado se encontraba en la capa de presentación, dado que todas las pantallas que utilizabamos eran prácticamente iguales. Para reducir el código duplicado  principalmente en declaraciones de variables comunes en todas las pantallas implementamos la clase *PantallaPadre* en la que englobamos muchas de estas variables para que el resto de clases pudiesen heredar de esta y así reducir el problema del código duplicado.
-
-![](Imagenes/duplicado.png)
-
-Otro de los problemas encontrados es la gran cantidad de *CodeSemlls* encontrados que al inicio ascendían hasta la cantidad de: 648.  
-
-![](Imagenes/CodeSmells.png)
-
-También teníamos 2 Vulnerabilidades y 23 bugs que finalmente pudimos solucionar y tener 0 vulnerabilidades y 0 bugs y además para mejorar el análisis de sonar en nuestro programa editamos algunas de las reglas establecidas.
-
-Para mejorar la cobertura de nuestro programa comenzamos a realizar distintos test en los gestores como GestorLogin en el que conseguimos una covertura del 90% tras implementar test en los métodos utilizados en estos gestores.
-
-Finalmente este sería el estado final de nuestro sistema:
-
---------------Insertar imagen del estado final del sistema--
-
-**Definición de los test realizados:**
-
-- **Tablas de GestorLoginTest**
-
-
-   ![](Imagenes/GestorLoginTestpng.png)
-
-- **Tabla de GestorPropuestaCurso**
-    - **Tabla realizarPropuesta**
-   ![](Imagenes/GestorPropuestaCurso1.png)
-
-    - **Tabla de ObtenerCurso**
-    - ![](Imagenes/ObtenerCurso.png)
-
-    - **Tabla de ObtenerCursosDenegados**
-    - ![](Imagenes/ObtenerCursosDenegados.png)
-
-    - **Tabla de ObtenerCentros**
-    - ![](Imagenes/ObtenerCentros.png)
-
-    - **Tabla de ObtenerSecretarios**
-    - ![](Imagenes/ObtenerSecretarios.png)
-
-    - **Tabla de ObtenerProfesor**
-    - ![](Imagenes/ObtenerProfesor.png)
-
-    - **Tabla de ObtenerCentro**
-    - ![](Imagenes/ObtenerCentro.png)
-
-    - **Tabla de EvaluarPropuesta**
-    - ![](Imagenes/EvaluarPropuesta.png)
-- **Tabla de GestorConsultas**
-    - **Tabla de ObtenerCursos**
-    - ![](Imagenes/ObtenerCursos.png)
-    - **Tabla de obtenerEdicion**
-    - ![](Imagenes/obtenerEdicion.png)
-    - **Tabla de ObtenerEstado**
-    - ![](Imagenes/obtenerEstado.png)
-    - **Tabla de ObtenerTipoCurso**
-    - ![](Imagenes/obtenerTipoCurso.png)
-    - **Tabla de ObtenerIngresos**
-    - ![](Imagenes/obtenerIngresos.png)
-
-
 ## **BACKLOG DEL SPRINT 3**
 
 - **Características del sprint:**
@@ -167,6 +97,76 @@ Siendo este el último Sprint, cualquier problema que haya sido arrastrado de ot
 En este sprint nos centraremos en mantenimiento y analizar los informes de Sonar y el resumen final del estado del sistema.
 ![](Imagenes/Sprint5.PNG)
 
+ ## Mantenimiento
+ 
+ Para la gestión del mantenimiento de nuestro programa hemos utilizado esencialmente SonarCloud donde observábamos un análisis detallado de lo que contenía nuestro código.  
+ El primer análisis realizado el día  nos muestra lo siguiente:     
+ 
+![](Imagenes/PrimerAnalisis.png)
+
+
+ Uno de los mayores  problemas que pudimos observar era la gran cantidad de código duplicado que ascendía hasta el 39.8% y que supone un problema con respecto a la calidad de nuestro código, según SonarCloud el código duplicado idóneo no debería superar el 3% de todo el código.
+
+Tras una exhaustiva investigación encontramos el origen de todo este código duplicado se encontraba en la capa de presentación, dado que todas las pantallas que utilizabamos eran prácticamente iguales. Para reducir el código duplicado  principalmente en declaraciones de variables comunes en todas las pantallas implementamos la clase *PantallaPadre* en la que englobamos muchas de estas variables para que el resto de clases pudiesen heredar de esta y así reducir el problema del código duplicado.
+
+![](Imagenes/duplicado.png)
+
+Otro de los problemas encontrados es la gran cantidad de *CodeSemlls* encontrados que al inicio ascendían hasta la cantidad de: 648.  
+
+![](Imagenes/CodeSmells.png)
+
+También teníamos 2 Vulnerabilidades y 23 bugs que finalmente pudimos solucionar y tener 0 vulnerabilidades y 0 bugs y además para mejorar el análisis de sonar en nuestro programa editamos algunas de las reglas establecidas.
+
+Para mejorar la cobertura de nuestro programa comenzamos a realizar distintos test en los gestores como GestorLogin en el que conseguimos una covertura del 90% tras implementar test en los métodos utilizados en estos gestores.
+
+Finalmente este sería el estado final de nuestro sistema:
+
+--------------Insertar imagen del estado final del sistema--
+
+**Definición de los test realizados:**
+
+- **Tablas de GestorLoginTest**
+
+
+   ![](Imagenes/GestorLoginTestpng.png)
+
+- **Tabla de GestorPropuestaCurso**
+    - **Tabla realizarPropuesta**
+   ![](Imagenes/GestorPropuestaCurso1.png)
+
+    - **Tabla de ObtenerCurso**
+    - ![](Imagenes/ObtenerCurso.png)
+
+    - **Tabla de ObtenerCursosDenegados**
+    - ![](Imagenes/ObtenerCursosDenegados.png)
+
+    - **Tabla de ObtenerCentros**
+    - ![](Imagenes/ObtenerCentros.png)
+
+    - **Tabla de ObtenerSecretarios**
+    - ![](Imagenes/ObtenerSecretarios.png)
+
+    - **Tabla de ObtenerProfesor**
+    - ![](Imagenes/ObtenerProfesor.png)
+
+    - **Tabla de ObtenerCentro**
+    - ![](Imagenes/ObtenerCentro.png)
+
+    - **Tabla de EvaluarPropuesta**
+    - ![](Imagenes/EvaluarPropuesta.png)
+- **Tabla de GestorConsultas**
+    - **Tabla de ObtenerCursos**
+    - ![](Imagenes/ObtenerCursos.png)
+    - **Tabla de obtenerEdicion**
+    - ![](Imagenes/obtenerEdicion.png)
+    - **Tabla de ObtenerEstado**
+    - ![](Imagenes/obtenerEstado.png)
+    - **Tabla de ObtenerTipoCurso**
+    - ![](Imagenes/obtenerTipoCurso.png)
+    - **Tabla de ObtenerIngresos**
+    - ![](Imagenes/obtenerIngresos.png)
+
+
 ## Plan de mantenimiento 
 
 Nuestro plan de mantenimiento se divide en las siguientes secciones:
@@ -206,6 +206,15 @@ En general, se deberían revisar estos planes como mínimo una vez al año, aunq
 
 Es importante tener en cuenta que el plan de mantenimiento es un documento "vivo", que debe adaptarse a las necesidades cambiantes de la organización, el cliente y el código.
 
+
+
+## conclusiones finales
+
+Supra Software Engineering ha usado varias herramientas para el desarrollo y mantenimiento del software, como GitHub, Maven, Sonar, JUnit y JaCoCo. 
+
+En el mantenimiento del proyecto, hemos usado principalmente SonarCloud para la realización de análisis del código. Gracias a esto detectamos una gran cantidad de CodeSmells, bugs y código duplicado. Que a lo largo de los Sprints 4 y 5 hemos ido reduciendo, hasta obtener buenos números.
+
+También tuvimos que diseñar un plan de mantenimiento, basado en alcance, responsabilidades y frecuencia. Además este plan debe ser revisado para asegurar que siga siendo adecuado y efectivo.
 
 
 
