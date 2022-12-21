@@ -1,15 +1,12 @@
 package controllers;
 
-import java.util.Date;
 import java.util.List;
 
 import entities.Centro;
 import entities.CursoPropio;
-import entities.TipoCurso;
 import persistencia.CentroDAO;
 import persistencia.CursoPropioDAO;
 import persistencia.ProfesorDAO;
-import entities.EstadoCurso;
 import entities.ProfesorUCLM;
 
 public class GestorConsultas {

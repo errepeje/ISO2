@@ -29,7 +29,7 @@ public class Estudiante extends Usuario {
 		this.apellidos = apellidos;
 		this.titulacion = titulacion;
 		this.cualificacion = cualificacion;
-		matriculas = new Vector<Matricula>();
+		matriculas = new Vector<>();
 	}
 	public Estudiante() {}
 	
