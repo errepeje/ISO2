@@ -33,7 +33,7 @@
 
 Tras una exhaustiva investigación encontramos el origen de todo este código duplicado se encontraba en la capa de presentación, dado que todas las pantallas que utilizabamos eran prácticamente iguales. Para reducir el código duplicado  principalmente en declaraciones de variables comunes en todas las pantallas implementamos la clase *PantallaPadre* en la que englobamos muchas de estas variables para que el resto de clases pudiesen heredar de esta y así reducir el problema del código duplicado.
 
--------------Insertar Gráfica Código Duplicado----------------------------
+![](Imagenes/duplicado.png)
 
 Otro de los problemas encontrados es la gran cantidad de *CodeSemlls* encontrados que al inicio ascendían hasta la cantidad de: 648.  
 
@@ -42,6 +42,10 @@ Otro de los problemas encontrados es la gran cantidad de *CodeSemlls* encontrado
 También teníamos 2 Vulnerabilidades y 23 bugs que finalmente pudimos solucionar y tener 0 vulnerabilidades y 0 bugs y además para mejorar el análisis de sonar en nuestro programa editamos algunas de las reglas establecidas.
 
 Para mejorar la covertura de nuestro programa comenzamos a realizar distintos test en los gestores como GestorLogin en el que conseguimos una covertura del 90% tras implementar test en los métodos utilizados en estos gestores.
+
+Finalmente este sería el estado final de nuestro sistema:
+
+--------------Insertar imagen del estado final del sistema--
 
 **Definición de los test realizados:**
 
@@ -163,7 +167,44 @@ Siendo este el último Sprint, cualquier problema que haya sido arrastrado de ot
 En este sprint nos centraremos en mantenimiento y analizar los informes de Sonar y el resumen final del estado del sistema.
 ![](Imagenes/Sprint5.PNG)
 
+## Plan de mantenimiento 
 
+Nuestro plan de mantenimiento se divide en las siguientes secciones:
+
+* ### Alcance
+
+Para garantizar el correcto funcionamiento del sistema se van a tener en cuenta principalmente los controladores como son el Gestor de consultas, el gestor del login y el gestor de las propuestas de los cursos.  
+Además también debemos mantener aquellas clases que se encuentren dentro de la persistencia dado que se trata de las clases que tienen constante intercambio con la base de datos  
+
+* ### Responsabilidades
+
+Para que nuestro plan de mantenimiento sea correctamente ejecutado debemos asignar a una serie de personas que tengan unas funciones específicas en nuestro plan:
+- **Personal encargado de realizar test en el sistema**
+    En nuestro sistema debemos tener a una persona o equipo de personas que se encarguen de realizar un correcto testeo de las nuevas funcionalidades implementadas en el sistema y controlar que estas funciones no tienen conflictos con el resto del sistema.
+- **Personal encargado de la gestion del versionado del sistema**
+    Una vez finalizado el proyecto para asegurar el mantenimiento debemos tener un equipo encargado de versionar correctamente si se adhieren correctamente nuevas funcionalidades al sistema y demás de que las herramientas del sistema no generen problemas con sus actualizaciones. 
+- **Personal encargado de analizar el sistma**
+    El sistema al igual que durante su desarrollo debe tener un personal encargado de controlar la calidad del código así como puede ser controlar mediante *Sonar* la cantidad de *CodeSmells*, *Bugs*, *Security HotsPots*.
+    
+* ### Frecuencia
+    
+La frecuencia con la que se debe realizar tareas de mantenimiento dependerá de bastantes factores, como el uso del software, la complejidad del software, la necesidad de actualizaciones y cambios o la calidad de mantenimientos previos.
+
+Idealmente, en cada sprint que se realice se debería trabajar en el mantenimiento del código previamente implementado.
+
+Si se ignora durante un largo periodo de tiempo los esfuerzos de mantenimiento, futuros trabajo de mantenimiento será más costoso y complicado.
+
+Por esto hemos decicido que la mejor opción será un mantenimiento continuo. Este mantenimiento suele usarse en software crítico para la organización, que se use constantemente y no pueda permitirse tiempo de inactividad.
+
+En consecuencia, el mantenimiento continuo será el más óptimo, teniendo en cuenta la naturaleza de nuestro cliente y su necesidad de que el software este disponible en todo momento para la evaluación, consulta y propuestas de cursos.
+
+* ### Revisión del plan de mantenimiento
+
+Por lo general, el plan de mantenimiento del software debe revisarse regularmente para asegurarse de que sea adecuado y de su efectividad. La frecuencia de esta revisión depende de varios factores, similares a los factores de frecuencia del mantenimiento.
+
+En general, se deberían revisar estos planes como mínimo una vez al año, aunque si hay cambios significativos en el código o la organización, es probable que se necesiten revisiones más frecuentes.
+
+Es importante tener en cuenta que el plan de mantenimiento es un documento "vivo", que debe adaptarse a las necesidades cambiantes de la organización, el cliente y el código.
 
 
 
