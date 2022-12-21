@@ -1,5 +1,7 @@
 package controllers;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
@@ -19,16 +21,36 @@ public class GestorPropuestasCursosTest {
 	@Test
 	public void testRealizarPropuestaCurso() throws ParseException {
 		int propuestasAntes = gestorPropuestasCursos.obtenerCursosDenegados().length;
-		CursoPropio cursoPropio = gestorPropuestasCursos.realizarPropuestaCurso("C4", 10, new Date(2022,12,12), new Date(2023,12,12), 400, 1, "ESI", "87423456", "87423456", TipoCurso.EXPERTO);	
+		CursoPropio cursoPropio = gestorPropuestasCursos.realizarPropuestaCurso("C4", 10, new Date(2022,9,9), new Date(2023,9,9), 700, 1, "ESI", "87423456", "87423456", TipoCurso.EXPERTO);	
 		int propuestasDespues = gestorPropuestasCursos.obtenerCursosDenegados().length;
 		
 		assertTrue(propuestasDespues - propuestasAntes == 1);
 	}
 	
 	@Test
+	public void testRealizarPropuestaCurso1() throws ParseException {
+		CursoPropio cursoPropio = gestorPropuestasCursos.realizarPropuestaCurso("C4", 0, new Date(2022,9,9), new Date(2023,9,9), 0, 0, "ESI", "87423456", "87423456", TipoCurso.EXPERTO);	
+		
+		assertNull(cursoPropio);
+	}
+	
+	@Test
+	public void testRealizarPropuestaCurso2() throws ParseException {
+		CursoPropio cursoPropio = gestorPropuestasCursos.realizarPropuestaCurso("C4", -4, new Date(2022,9,9), new Date(2023,9,9), -10, -20, "ESI", "87423456", "87423456", TipoCurso.EXPERTO);	
+		
+		assertNull(cursoPropio);
+	}
+	
+	@Test
 	public void testEvaluarPropuesta() {
-		CursoPropio cursoPropio = gestorPropuestasCursos.evaluarPropuesta(1106, EstadoCurso.PROPUESTO, "No cumple los requisitos");
-		assertTrue(cursoPropio.getid() == 1106 && cursoPropio.getestado() == EstadoCurso.PROPUESTO);
+		CursoPropio cursoPropio = gestorPropuestasCursos.evaluarPropuesta(1106, EstadoCurso.PROPUESTA_RECHAZADA, "No cumple los requisitos");
+		assertTrue(cursoPropio.getid() == 1106);
+	}
+	
+	@Test
+	public void testEvaluarPropuesta1() {
+		CursoPropio cursoPropio = gestorPropuestasCursos.evaluarPropuesta(-10, EstadoCurso.PROPUESTA_RECHAZADA, "No cumple los requisitos");
+		assertNull(cursoPropio);
 	}
 
 	@Test
@@ -52,14 +74,7 @@ public class GestorPropuestasCursosTest {
 	@Test
 	public void testObtenerSecretarios1() {
 		String[] idSecretarios = GestorPropuestasCursos.obtenerSecretarios();
-		boolean noNulo = true;
-		
-		for(int i=0; i < idSecretarios.length; i++) {
-			if(idSecretarios[i] == null)
-				noNulo = false;
-		}
-		
-		assertTrue(noNulo);
+		assertFalse(idSecretarios.length <= 0);
 	}
 
 	@Test
@@ -71,14 +86,7 @@ public class GestorPropuestasCursosTest {
 	@Test
 	public void testObtenerCentros1() {
 		String[] idCentros = GestorPropuestasCursos.obtenerCentros();
-		boolean noNulo = true;
-		
-		for(int i=0; i < idCentros.length; i++) {
-			if(idCentros[i] == null)
-				noNulo = false;
-		}
-		
-		assertTrue(noNulo);
+		assertFalse(idCentros.length <= 0);
 	}
 
 	@Test
@@ -90,14 +98,7 @@ public class GestorPropuestasCursosTest {
 	@Test
 	public void testObtenerCursosDenegados1() {
 		int[] idCursosDenegados = GestorPropuestasCursos.obtenerCursosDenegados();
-		boolean noNulo = true;
-		
-		for(int i=0; i < idCursosDenegados.length; i++) {
-			if(idCursosDenegados[i] < 0)
-				noNulo = false;
-		}
-		
-		assertTrue(noNulo);
+		assertFalse(idCursosDenegados.length <= 0);
 	}
 
 	@Test
@@ -105,5 +106,16 @@ public class GestorPropuestasCursosTest {
 		CursoPropio c = GestorPropuestasCursos.obtenerCurso(1102);
 		assertTrue(c.getid() == 1102);
 	}
-
+	
+	@Test
+	public void testObtenerCurso1() {
+		CursoPropio c = GestorPropuestasCursos.obtenerCurso(0);
+		assertNull(c);
+	}
+	
+	@Test
+	public void testObtenerCurso2() {
+		CursoPropio c = GestorPropuestasCursos.obtenerCurso(-10);
+		assertNull(c);
+	}
 }

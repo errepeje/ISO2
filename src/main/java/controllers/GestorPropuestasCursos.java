@@ -38,7 +38,13 @@ public class GestorPropuestasCursos {
 					tasaMatricula, edicion, null, centro, p1, p2, null,
 					EstadoCurso.PROPUESTO, tipoCurso);
 
+			if(cursoPropio.geteCTS() <= 0 || cursoPropio.gettasaMatricula() <= 0 || cursoPropio.getedicion() <= 0) {
+				return null;
+			}
+			
 			cpDAO.persist(cursoPropio);
+			
+			
 		} catch (Exception e) {
 			Logger logger = Logger.getLogger(GestorPropuestasCursos.class.getName());
 			logger.log(null, "Error Gestor Propuesta");
@@ -55,9 +61,12 @@ public class GestorPropuestasCursos {
 		CursoPropio evaluado = null;
 		
 		evaluado = (CursoPropio) cpDAO.findById(CursoPropio.class, idCurso);
-		evaluado.setestado(evaluacion);
-		evaluado.setinforme(informe);
-		editarPropuestaCurso(evaluado);	
+		
+		if (evaluado != null) {
+			evaluado.setestado(evaluacion);
+			evaluado.setinforme(informe);
+			editarPropuestaCurso(evaluado);				
+		}
 		
 		return evaluado;
 	}
