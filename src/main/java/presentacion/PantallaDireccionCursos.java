@@ -10,12 +10,14 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
+import entities.Generated;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.SystemColor;
 
+@Generated
 @SuppressWarnings("serial")
 public class PantallaDireccionCursos extends PantallaPadre {
 	/**

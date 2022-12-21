@@ -6,6 +6,9 @@ import java.awt.Font;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import entities.Generated;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
@@ -14,6 +17,7 @@ import javax.swing.DefaultListModel;
 
 import javax.swing.JLabel;
 
+@Generated
 public class PantallaVisualizarPropuesta extends PantallaPadre {
 	/**
 	 * Launch the application.

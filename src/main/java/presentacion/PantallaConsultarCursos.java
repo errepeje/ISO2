@@ -6,11 +6,13 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
+import entities.Generated;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@Generated
 public class PantallaConsultarCursos extends PantallaPadre {
 	/**
 	 * Launch the application.

@@ -6,6 +6,8 @@ import java.awt.SystemColor;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import entities.Generated;
+
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.JButton;
@@ -13,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
+@Generated
 public class PantallaEmpleadosVicerrectorado extends PantallaPadre {
 	/**
 	 * Launch the application.

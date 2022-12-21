@@ -10,6 +10,7 @@ import javax.swing.event.ListSelectionListener;
 
 import controllers.GestorPropuestasCursos;
 import entities.EstadoCurso;
+import entities.Generated;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -27,6 +28,7 @@ import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 
+@Generated
 public class PantallaConsultarRechazadoAceptado extends PantallaPadre {
 	/**
 	 * Launch the application.
