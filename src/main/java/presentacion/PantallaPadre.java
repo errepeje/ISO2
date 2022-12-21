@@ -14,7 +14,9 @@ import controllers.GestorConsultas;
 import controllers.GestorLogin;
 import controllers.GestorPropuestasCursos;
 import entities.CursoPropio;
+import entities.Generated;
 
+@Generated
 public class PantallaPadre extends JFrame{
 	protected JPanel contentPane = new JPanel();
 	protected JPanel panel;

@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import entities.Generated;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
@@ -15,6 +17,7 @@ import javax.swing.DefaultListModel;
 
 import javax.swing.JLabel;
 
+@Generated
 public class PantallaVisualizarPropuesta extends PantallaPadre {
 	/**
 	 * Launch the application.
@@ -44,41 +47,6 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		int[] idCursosDenegados = gpc.obtenerCursosDenegados();
 		for(int i=0; i<idCursosDenegados.length; i++)
 			listModel.addElement(idCursosDenegados[i]);
-
-		JList listCursos = new JList(listModel);
-		listCursos.setBounds(10, 11, 166, 525);
-		contentPane.add(listCursos);
-		listCursos.addListSelectionListener(new ListSelectionListener() {
-			@Override
-			public void valueChanged(ListSelectionEvent e) {
-				if (listCursos.getSelectedValue() != null) {
-					cp = gpc.obtenerCurso(Integer.parseInt(listCursos.getSelectedValue().toString()));
-					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
-					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
-
-					String[] resultInicio = cp.getfechaInicio().toString().split("-");
-					String[] solI = resultInicio[2].split(" ");
-					String[] resultFin = cp.getfechaFin().toString().split("-");
-					String[] solF = resultFin[2].split(" ");
-					
-					textFieldNombre.setText(cp.getnombre());
-					textFieldEdicion.setText(Integer.toString(cp.getedicion()));
-					textNombreCentro.setText(cp.getNombreCentro());
-					textDirector.setText(cp.getIdDirector());
-					textFieldSecretario.setText(cp.idSecretario);
-					textFieldTipoCurso.setText(cp.gettipo().toString());
-					textFieldEstadoCurso.setText(cp.getestado().toString());
-					
-					textFieldDiaInicio.setText(solI[0]);
-					textFieldMesInicio.setText(Integer.toString(cp.getfechaInicio().getMonth() + 1));
-					textFieldAnyoInicio.setText(Integer.toString(cp.getfechaInicio().getYear() + 1900));
-
-					textFieldDiaFin.setText(solF[0]);
-					textFieldMesFin.setText(Integer.toString(cp.getfechaFin().getMonth() + 1));
-					textFieldAnyoFin.setText(Integer.toString(cp.getfechaFin().getYear() + 1900));
-				}
-			}
-		});
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font(fuente, Font.PLAIN, 15));
@@ -89,6 +57,42 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		textFieldNombre.setColumns(10);
 		textFieldNombre.setBounds(186, 29, 239, 20);
 		contentPane.add(textFieldNombre);
+
+		JList listCursos = new JList(listModel);
+		listCursos.setBounds(10, 11, 166, 525);
+		contentPane.add(listCursos);
+		listCursos.addListSelectionListener(new ListSelectionListener() {
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				if (listCursos.getSelectedValue() != null) {
+					String[] resultInicio = cp.getfechaInicio().toString().split("-");
+					String[] solI = resultInicio[2].split(" ");
+					String[] resultFin = cp.getfechaFin().toString().split("-");
+					String[] solF = resultFin[2].split(" ");
+
+					cp = gpc.obtenerCurso(Integer.parseInt(listCursos.getSelectedValue().toString()));
+					textFieldTasa.setText(Integer.toString(cp.gettasaMatricula()));
+					textFieldECTS.setText(Integer.toString(cp.geteCTS()));
+
+					textFieldDiaInicio.setText(solI[0]);
+					textFieldMesInicio.setText(Integer.toString(cp.getfechaInicio().getMonth() + 1));
+					textFieldAnyoInicio.setText(Integer.toString(cp.getfechaInicio().getYear() + 1900));
+					
+					textFieldDiaFin.setText(solF[0]);
+					textFieldMesFin.setText(Integer.toString(cp.getfechaFin().getMonth() + 1));
+					textFieldAnyoFin.setText(Integer.toString(cp.getfechaFin().getYear() + 1900));
+					
+					textFieldNombre.setText(cp.getnombre());
+					textFieldEdicion.setText(Integer.toString(cp.getedicion()));
+					textNombreCentro.setText(cp.getNombreCentro());
+					textDirector.setText(cp.getIdDirector());
+					textFieldSecretario.setText(cp.idSecretario);
+					textFieldTipoCurso.setText(cp.gettipo().toString());
+					textFieldEstadoCurso.setText(cp.getestado().toString());
+					
+				}
+			}
+		});
 		
 		JLabel lblEdicion = new JLabel("Edicion:");
 		lblEdicion.setFont(new Font(fuente, Font.PLAIN, 15));
@@ -124,16 +128,16 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		lblFechaInicio.setFont(new Font(fuente, Font.PLAIN, 15));
 		lblFechaInicio.setBounds(186, 199, 279, 19);
 		contentPane.add(lblFechaInicio);
-		textFieldDiaInicio.setEditable(false);
-		textFieldDiaInicio.setToolTipText("");
-		textFieldDiaInicio.setColumns(10);
-		textFieldDiaInicio.setBounds(186, 221, 66, 20);
-		contentPane.add(textFieldDiaInicio);
 		JLabel lblg1 = new JLabel("-");
 		lblg1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblg1.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg1.setBounds(253, 224, 16, 14);
 		contentPane.add(lblg1);
+		textFieldDiaInicio.setEditable(false);
+		textFieldDiaInicio.setToolTipText("");
+		textFieldDiaInicio.setColumns(10);
+		textFieldDiaInicio.setBounds(186, 221, 66, 20);
+		contentPane.add(textFieldDiaInicio);
 		textFieldMesInicio.setEditable(false);
 		textFieldMesInicio.setColumns(10);
 		textFieldMesInicio.setBounds(273, 221, 66, 20);
@@ -162,6 +166,17 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		lblg11.setFont(new Font(fuente, Font.PLAIN, 24));
 		lblg11.setBounds(253, 279, 16, 14);
 		contentPane.add(lblg11);
+		
+		JLabel lblTasaMatricula = new JLabel("Tasa: ");
+		lblTasaMatricula.setFont(new Font(fuente, Font.PLAIN, 15));
+		lblTasaMatricula.setBounds(186, 307, 279, 19);
+		contentPane.add(lblTasaMatricula);
+		textFieldTasa = new JTextField();
+		textFieldTasa.setEditable(false);
+		textFieldTasa.setBounds(186, 326, 239, 20);
+		contentPane.add(textFieldTasa);
+		textFieldTasa.setColumns(10);
+		
 		textFieldMesFin = new JTextField();
 		textFieldMesFin.setEditable(false);
 		textFieldMesFin.setColumns(10);
@@ -177,15 +192,6 @@ public class PantallaVisualizarPropuesta extends PantallaPadre {
 		textFieldAnyoFin.setBounds(359, 275, 66, 20);
 		contentPane.add(textFieldAnyoFin);
 
-		JLabel lblTasaMatricula = new JLabel("Tasa: ");
-		lblTasaMatricula.setFont(new Font(fuente, Font.PLAIN, 15));
-		lblTasaMatricula.setBounds(186, 307, 279, 19);
-		contentPane.add(lblTasaMatricula);
-		textFieldTasa = new JTextField();
-		textFieldTasa.setEditable(false);
-		textFieldTasa.setBounds(186, 326, 239, 20);
-		contentPane.add(textFieldTasa);
-		textFieldTasa.setColumns(10);
 
 		JLabel lblEditaLosEcts = new JLabel("ECTS: ");
 		lblEditaLosEcts.setFont(new Font(fuente, Font.PLAIN, 15));
